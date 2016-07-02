@@ -73,6 +73,8 @@
     <Compile Include="Assets\Kodlar\Menü\OyunSatınAl.cs" />
     <Compile Include="Assets\Kodlar\Menü\SesAyarları.cs" />
     <Compile Include="Assets\Kodlar\Menü\YüksekSkor.cs" />
+    <Compile Include="Assets\Kodlar\PatlamaEfektiniYoket.cs" />
+    <Compile Include="Assets\Kodlar\TestKodu.cs" />
     <Compile Include="Assets\_MK\_MKGlow\_Internal\MKGlow.cs" />
   </ItemGroup>
   <ItemGroup>
