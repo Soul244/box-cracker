@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2015
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoxCracker.CSharp", "BoxCracker.CSharp.csproj", "{F50AD7E0-A479-C8E6-42FA-B57891132E2B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoxCracker.CSharp.Editor", "BoxCracker.CSharp.Editor.csproj", "{D69D0FF1-EDF1-A207-0998-A75E03B37CD3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F50AD7E0-A479-C8E6-42FA-B57891132E2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F50AD7E0-A479-C8E6-42FA-B57891132E2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F50AD7E0-A479-C8E6-42FA-B57891132E2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F50AD7E0-A479-C8E6-42FA-B57891132E2B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D69D0FF1-EDF1-A207-0998-A75E03B37CD3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D69D0FF1-EDF1-A207-0998-A75E03B37CD3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D69D0FF1-EDF1-A207-0998-A75E03B37CD3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D69D0FF1-EDF1-A207-0998-A75E03B37CD3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

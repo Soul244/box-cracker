@@ -7,6 +7,7 @@ public class KutuKontrol : MonoBehaviour
 {
     public GameObject kutu;
     public GameObject parlakKutu;
+    public GameObject patlamaEfekti;
     public static int genişlik = 6, yükseklik = 8;
     public static Vector3 tıklananKutu = new Vector3(-1, -1, -1);
     Color[] renkler = new Color[] { Color.red, Color.blue, Color.yellow, Color.green };
@@ -77,7 +78,7 @@ public class KutuKontrol : MonoBehaviour
         foreach (Kutu item in Kutular)
         {
             renkSayıları[RenkTanımlayıcı[item.GetComponent<Renderer>().material.color]]--;
-            item.Patlat();
+            item.Patlat(patlamaEfekti);
         }
     }
     void BölümüBitirme()
