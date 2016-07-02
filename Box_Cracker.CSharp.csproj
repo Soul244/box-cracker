@@ -63,6 +63,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Kodlar\Can.cs" />
     <Compile Include="Assets\Kodlar\Kutu.cs" />
     <Compile Include="Assets\Kodlar\KutuKontrol.cs" />
     <Compile Include="Assets\Kodlar\Menü\BolumMantık.cs" />
