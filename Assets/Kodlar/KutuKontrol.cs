@@ -5,30 +5,52 @@ using UnityEngine.SceneManagement;
 
 public class KutuKontrol : MonoBehaviour
 {
+    [Space(15)]
+    [Header("Kutular")]
     public GameObject kutu;
     public GameObject parlakKutu;
+    [Space(15)]
+    [Header("Efektler")]
     public GameObject patlamaEfekti;
-    public static int genişlik = 6, yükseklik = 8;
+    [Space(15)]
+    [Header("Kutu Sayıları")]
+    [Range(1, 10)]
+    public int Genişlik = 6;
+    public static int genişlik = 6;
+    [Range(1, 10)]
+    public int Yükseklik = 8;
+    public static int yükseklik = 8;
+    public int kutuSayısı = 64;
+    [Space(15)]
     public static Vector3 tıklananKutu = new Vector3(-1, -1, -1);
     Color[] renkler = new Color[] { Color.red, Color.blue, Color.yellow, Color.green };
-    public int kutuSayısı = 64;
-    public int yıldız1, yıldız2, yıldız3;
-    public int parlakKutuŞansı = 50, siyahKutuŞansı = 100;
+    [Header("Bölüm Geçme Koşulları")]
+    public int yıldız1;
+    public int yıldız2;
+    public int yıldız3;
+    [Space(15)]
+    [Header("Özel Kutu Gelme Şansı")]
+    [Tooltip("1000 üzerinden değerlendirilir")]
+    public int parlakKutuŞansı = 50;
+    [Tooltip("1000 üzerinden değerlendirilir")]
+    public int siyahKutuŞansı = 100;
     public Dictionary<string, int> renkSayıları;
     Dictionary<Color, string> RenkTanımlayıcı;
     int puan = 0;
     float kontrolZamanlayıcı = 1f;
     void RenkTanımla()
     {
-        RenkTanımlayıcı = new Dictionary<Color,string>();
-        RenkTanımlayıcı.Add(Color.red,"Red");
-        RenkTanımlayıcı.Add(Color.blue,"Blue");
-        RenkTanımlayıcı.Add(Color.yellow,"Yellow" );
+        RenkTanımlayıcı = new Dictionary<Color, string>();
+        RenkTanımlayıcı.Add(Color.red, "Red");
+        RenkTanımlayıcı.Add(Color.blue, "Blue");
+        RenkTanımlayıcı.Add(Color.yellow, "Yellow");
         RenkTanımlayıcı.Add(Color.green, "Green");
         RenkTanımlayıcı.Add(Color.black, "Black");
     }
     void Awake()
     {
+        genişlik = Genişlik;
+        yükseklik = Yükseklik;
         RenkTanımla();
         renkSayıları = new Dictionary<string, int>();
         foreach (Color item in renkler)
@@ -89,7 +111,7 @@ public class KutuKontrol : MonoBehaviour
             //Application.LoadLevel("Anamenü");
             SceneManager.LoadScene("LevelMenü");
             int öncekiPuan = PlayerPrefs.GetInt("High Score");
-            if(puan<öncekiPuan)
+            if (puan < öncekiPuan)
             {
                 return;
             }
@@ -131,7 +153,7 @@ public class KutuKontrol : MonoBehaviour
         foreach (Kutu item in FindObjectsOfType<Kutu>())
         {
             Renderer rend = item.GetComponent<Renderer>();
-            if (rend!=null)
+            if (rend != null)
             {
                 if (rend.material.color == Renk)
                 {
@@ -188,12 +210,13 @@ public class KutuKontrol : MonoBehaviour
         }
         return etrafdakiKutular;
     }
-    int SiyahKutuPatlaması(Kutu SeçilenKutu){
+    int SiyahKutuPatlaması(Kutu SeçilenKutu)
+    {
         List<Kutu> patlatılacakKutular = EtrafındakiKutularıAl(SeçilenKutu);
         int puan = 0;
         foreach (Kutu item in patlatılacakKutular)
         {
-            if (!item.Patlak && item.GetComponent<Renderer>().material.color==Color.black)
+            if (!item.Patlak && item.GetComponent<Renderer>().material.color == Color.black)
             {
                 item.Patlak = true;
                 puan += SiyahKutuPatlaması(item);
@@ -201,7 +224,7 @@ public class KutuKontrol : MonoBehaviour
         }
         patlatılacakKutular.Add(SeçilenKutu);
         KutularıKaldır(patlatılacakKutular);
-        return Puanla(patlatılacakKutular)+puan;
+        return Puanla(patlatılacakKutular) + puan;
     }
     void Update()
     {
