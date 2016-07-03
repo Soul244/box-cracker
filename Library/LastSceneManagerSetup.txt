@@ -1,8 +1,4 @@
 sceneSetups:
-<<<<<<< HEAD
-- path: Assets/Sahneler/1.unity
-=======
-- path: "Assets/Sahneler/LevelMen\xFC.unity"
->>>>>>> origin/master
+- path: "Assets/Sahneler/Ana Men\xFC.unity"
   isLoaded: 1
   isActive: 1
