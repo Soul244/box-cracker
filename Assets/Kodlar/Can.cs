@@ -7,17 +7,22 @@ public class Can : MonoBehaviour {
     public Text can;
     public Text süre;
     float zaman = 0f;
-    float cansayisi = 0f;
+    int cansayisi = 0;
     float süresayisi = 300f;
     int gecici = 0;
     int dk, sn = 0;
 	// Use this for initialization
 	void Start () {
-        cansayisi = float.Parse(can.text);
-        süre.text = süresayisi.ToString();             
+        PlayerPrefs.SetInt("Can Sayısı", int.Parse(can.text));
+        if (PlayerPrefs.GetInt("Süre")>0)
+        {
+            süresayisi = PlayerPrefs.GetInt("Süre");
+        }
+        süre.text = süresayisi.ToString();        
     }	
 	// Update is called once per frame
 	void Update () {
+        cansayisi = PlayerPrefs.GetInt("Can Sayısı");
         if (cansayisi != 5)
         {
             zaman += Time.deltaTime;
@@ -35,15 +40,19 @@ public class Can : MonoBehaviour {
             if (sn == 0)
             {
                 süre.text = dk.ToString() + ":" + sn.ToString()+"0";
+                PlayerPrefs.SetInt("Süre", gecici);
             }
             else
             {
                 süre.text = dk.ToString() + ":" + sn.ToString();
+                PlayerPrefs.SetInt("Süre", gecici);
             }   
             if (zaman >= süresayisi)
             {
-                can.text = (cansayisi + 1).ToString();
                 cansayisi++;
+                can.text = (cansayisi).ToString();
+                PlayerPrefs.SetInt("Can Sayısı", cansayisi);
+                süresayisi = 300f;
                 zaman = 0;
             }
         }

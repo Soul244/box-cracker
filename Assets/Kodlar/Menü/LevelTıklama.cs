@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class LevelTıklama : MonoBehaviour {
-
 	// Use this for initialization
 	void Start () {
 	
@@ -15,7 +15,8 @@ public class LevelTıklama : MonoBehaviour {
 	}
     public void Buton1()
     {
-        SceneManager.LoadScene("1");
+        // SceneManager.LoadScene("1");     
+        Eksilt(); 
     }
     public void Buton2()
     {
@@ -52,5 +53,10 @@ public class LevelTıklama : MonoBehaviour {
     public void Buton10()
     {
         SceneManager.LoadScene("10");
+    }
+    public void Eksilt()
+    {
+        PlayerPrefs.SetInt("Can Sayısı", PlayerPrefs.GetInt("Can Sayısı") - 1);
+        GetComponent<Text>().text = PlayerPrefs.GetInt("Can Sayısı").ToString();
     }
 }
