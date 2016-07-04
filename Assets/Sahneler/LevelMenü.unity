@@ -184,6 +184,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86b964bb19652bd4b843e46b21e0bbd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  obje: {fileID: 0}
 --- !u!1 &193434462
 GameObject:
   m_ObjectHideFlags: 0
@@ -871,9 +872,9 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_NormalColor: {r: 0, g: 0.83137256, b: 1, a: 1}
     m_HighlightedColor: {r: 0, g: 0.83137256, b: 1, a: 1}
-    m_PressedColor: {r: 0.058823526, g: 0.022923876, b: 0.022923876, a: 1}
+    m_PressedColor: {r: 0.5514706, g: 0.53525084, b: 0.53525084, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -1363,7 +1364,6 @@ GameObject:
   - 222: {fileID: 1995287894}
   - 114: {fileID: 1995287893}
   - 114: {fileID: 1995287892}
-  - 114: {fileID: 1995287895}
   m_Layer: 5
   m_Name: "Can Say\u0131s\u0131"
   m_TagString: Untagged
@@ -1441,17 +1441,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1995287890}
---- !u!114 &1995287895
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1995287890}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86b964bb19652bd4b843e46b21e0bbd7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2057712285
 GameObject:
   m_ObjectHideFlags: 0

@@ -2,23 +2,23 @@
 using System.Collections;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using System;
 
 public class LevelTıklama : MonoBehaviour {
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
+    // Use this for initialization
+    Text tx;
+    int can;
+    void Start () {
+    }
+    public GameObject obje;
 	// Update is called once per frame
 	void Update () {
 	
 	}
     public void Buton1()
     {
-        if (gameObject.name == "Can Sayısı")
-        {
-            GetComponent<Text>().text = "Abc";
-        }    
+        SceneManager.LoadScene("1");
+        caneksilt();
     }
     public void Buton2()
     {
@@ -55,5 +55,13 @@ public class LevelTıklama : MonoBehaviour {
     public void Buton10()
     {
         SceneManager.LoadScene("10");
+    }
+    void caneksilt()
+    {
+        obje = GameObject.Find("Can Sayısı");
+        tx = obje.GetComponent<Text>();
+        can = Convert.ToInt16(tx.text);
+        tx.text = Convert.ToString(can - 1);
+        PlayerPrefs.SetInt("Can Sayısı", can);
     }
 }
