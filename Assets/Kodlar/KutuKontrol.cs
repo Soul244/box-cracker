@@ -37,6 +37,7 @@ public class KutuKontrol : MonoBehaviour
     public Dictionary<string, int> renkSayıları;
     Dictionary<Color, string> RenkTanımlayıcı;
     int puan = 0;
+    public static int sonPuan = 0;
     float kontrolZamanlayıcı = 1f;
     void RenkTanımla()
     {
@@ -248,13 +249,15 @@ public class KutuKontrol : MonoBehaviour
             if (tıklananKutu.z == 0) //Tıklanan Kutu Parlaksa
             {
                 patlatılacakKutular = AynıRenkliKutularıAl(seçilenKutu.GetComponent<Renderer>().material.color);
-                puan += Puanla(patlatılacakKutular);
+                sonPuan= Puanla(patlatılacakKutular);
+                puan += sonPuan;
                 KutularıKaldır(patlatılacakKutular);
                 kontrolZamanlayıcı = 1f;
             }
             else if (tıklananKutu.z == 1) //Tıklanan Kutu Siyahsa
             {
-                puan += SiyahKutuPatlaması(seçilenKutu);
+                sonPuan = SiyahKutuPatlaması(seçilenKutu);
+                puan += sonPuan;
                 kontrolZamanlayıcı = 1f;
             }
             else //Normal Kutuya Tıklandıysa
@@ -262,7 +265,8 @@ public class KutuKontrol : MonoBehaviour
                 patlatılacakKutular = TaşırmaAlgoritması((int)tıklananKutu.x, (int)tıklananKutu.y, new bool[genişlik, yükseklik], seçilenKutu.GetComponent<Renderer>().material.color);
                 if (patlatılacakKutular.Count > 2)
                 {
-                    puan += Puanla(patlatılacakKutular);
+                    sonPuan = Puanla(patlatılacakKutular);
+                    puan += sonPuan;
                     KutularıKaldır(patlatılacakKutular);
                     kontrolZamanlayıcı = 1f;
                 }
@@ -309,7 +313,7 @@ public class KutuKontrol : MonoBehaviour
         }
         return false;
     }
-    private int Puanla(List<Kutu> patlayanlar)
+    public static int Puanla(List<Kutu> patlayanlar)
     {
         int puan = 1, çoklayıcı = 1;
         çoklayıcı = patlayanlar.Count / 2;
