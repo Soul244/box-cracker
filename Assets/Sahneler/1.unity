@@ -295,7 +295,6 @@ GameObject:
   - 4: {fileID: 1803876350}
   - 114: {fileID: 1803876348}
   - 114: {fileID: 1803876349}
-  - 114: {fileID: 1803876351}
   - 114: {fileID: 1803876352}
   m_Layer: 0
   m_Name: "OyunAyarlar\u0131"
@@ -338,6 +337,13 @@ MonoBehaviour:
   "y\u0131ld\u0131z3": 250
   "parlakKutu\u015Eans\u0131": 40
   "siyahKutu\u015Eans\u0131": 30
+  arkaplanNesnesi: {fileID: 1202150871}
+  arkaplanMateryalleri:
+  - {fileID: 2100000, guid: 61c089d25d8acfd4a81e5126ddb6d69c, type: 2}
+  - {fileID: 2100000, guid: 144f39f309679774191570ab9e32587e, type: 2}
+  - {fileID: 2100000, guid: eba822f1f916808459ead4170aa0312c, type: 2}
+  - {fileID: 2100000, guid: b8c891541fea3ab48acc69bffc79b80e, type: 2}
+  - {fileID: 2100000, guid: 12848cfc3cec9364e911f3d17fdaec8e, type: 2}
 --- !u!4 &1803876350
 Transform:
   m_ObjectHideFlags: 0
@@ -351,17 +357,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
---- !u!114 &1803876351
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1803876347}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c0bde7b448f7b6e4799fcfb54613bd60, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1803876352
 MonoBehaviour:
   m_ObjectHideFlags: 0

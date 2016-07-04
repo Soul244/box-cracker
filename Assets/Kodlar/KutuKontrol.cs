@@ -34,6 +34,10 @@ public class KutuKontrol : MonoBehaviour
     public int parlakKutuŞansı = 50;
     [Tooltip("1000 üzerinden değerlendirilir")]
     public int siyahKutuŞansı = 100;
+    [Space(15)]
+    [Header("Arkaplan Özellikleri")]
+    public GameObject arkaplanNesnesi;
+    public Material[] arkaplanMateryalleri;
     public Dictionary<string, int> renkSayıları;
     Dictionary<Color, string> RenkTanımlayıcı;
     int puan = 0;
@@ -50,6 +54,7 @@ public class KutuKontrol : MonoBehaviour
     }
     void Awake()
     {
+        
         genişlik = Genişlik;
         yükseklik = Yükseklik;
         RenkTanımla();
@@ -59,6 +64,10 @@ public class KutuKontrol : MonoBehaviour
             renkSayıları.Add(RenkTanımlayıcı[item], 0);
         }
         renkSayıları.Add("Black", 0);
+    }
+    void Start()
+    {
+        arkaplanNesnesi.GetComponent<Renderer>().material = arkaplanMateryalleri[Random.Range(0, arkaplanMateryalleri.Length - 1)];
     }
     public static Kutu KutuVarmı(float x, float y)
     {

@@ -14,6 +14,7 @@ public class Can : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         //PlayerPrefs.SetInt("Can Sayısı", int.Parse(can.text));
+
         if (PlayerPrefs.GetInt("Süre")>0)
         {
             süresayisi = PlayerPrefs.GetInt("Süre");
