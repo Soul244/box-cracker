@@ -15,7 +15,10 @@ public class LevelTıklama : MonoBehaviour {
 	}
     public void Buton1()
     {
-        SceneManager.LoadScene("1");     
+        if (gameObject.name == "Can Sayısı")
+        {
+            GetComponent<Text>().text = "Abc";
+        }    
     }
     public void Buton2()
     {
