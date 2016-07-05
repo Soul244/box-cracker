@@ -119,7 +119,7 @@ public class KutuKontrol : MonoBehaviour
         if (HamleKaldımı() == false)// YAPILACAK HAMLE KALMADIYSA OYUNU BİTİR
         {
             //Application.LoadLevel("Anamenü");
-            SceneManager.LoadScene("LevelMenü");
+            //SceneManager.LoadScene("LevelMenü");
             int öncekiPuan = PlayerPrefs.GetInt("High Score");
             if (puan < öncekiPuan)
             {
@@ -156,6 +156,16 @@ public class KutuKontrol : MonoBehaviour
         //2 = 1 Yıldız
         //3 = 2 Yıldız
         //4 = 3 YIldız
+    }
+    void OnGUI()
+    {
+        var centeredStyle = GUI.skin.GetStyle("Label");
+        centeredStyle.alignment = TextAnchor.UpperCenter;
+        GUI.color = Color.red;
+        GUI.Label(new Rect(Screen.width- (Screen.width) / 9, 0, (Screen.width) / 9, (Screen.height) / 20), puan.ToString(), centeredStyle);
+        //if (HamleKaldımı()==false)
+        //{
+        //}
     }
     List<Kutu> AynıRenkliKutularıAl(Color Renk)
     {
