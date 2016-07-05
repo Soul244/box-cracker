@@ -13,7 +13,7 @@ public class Can : MonoBehaviour {
     int dk, sn = 0;
 	// Use this for initialization
 	void Start () {
-        //PlayerPrefs.SetInt("Can Sayısı", int.Parse(can.text));
+        PlayerPrefs.SetInt("Can Sayısı", 10); // Debug için şimdilik böyle kalsın
 
         if (PlayerPrefs.GetInt("Süre")>0)
         {

@@ -119,7 +119,7 @@ public class KutuKontrol : MonoBehaviour
         if (HamleKaldımı() == false)// YAPILACAK HAMLE KALMADIYSA OYUNU BİTİR
         {
             //Application.LoadLevel("Anamenü");
-            //SceneManager.LoadScene("LevelMenü");
+            SceneManager.LoadScene("LevelMenü");
             int öncekiPuan = PlayerPrefs.GetInt("High Score");
             if (puan < öncekiPuan)
             {
@@ -304,10 +304,18 @@ public class KutuKontrol : MonoBehaviour
     {
         for (int x = 0; x < genişlik; x++)
         {
+            if( KutuVarmı(x, 0)==null)
+            {
+                break;
+            }
             for (int y = 0; y < yükseklik; y++)
             {
                 List<Kutu> patlatılacakKutular = new List<Kutu>();
                 Kutu geç = KutuVarmı(x, y);
+                if (geç==null)
+                {
+                    break;
+                }
                 if (geç != null)
                 {
                     if (!geç.Patlak)
