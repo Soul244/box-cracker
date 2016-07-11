@@ -31,7 +31,7 @@ public class Kutu : MonoBehaviour {
     }
     public void Patlat(GameObject PatlamaEfekti)
     {
-        patlak = true;
+        patlak = true;      
         Instantiate(PatlamaEfekti, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }

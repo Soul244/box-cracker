@@ -1,10 +1,11 @@
 fileFormatVersion: 2
 guid: 944d75132ba797b4f95df93bc0b947a7
-timeCreated: 1467140182
+timeCreated: 1468266975
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - PatlamaSesi: {fileID: 8300000, guid: 9f3d8f7c494561d41a2d72a5dff38d62, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

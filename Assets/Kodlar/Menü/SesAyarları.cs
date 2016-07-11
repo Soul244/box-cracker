@@ -28,10 +28,8 @@ public class SesAyarları : MonoBehaviour {
             if (item.name=="Main Camera")
             {
                 continue;
-
             }
             item.GetComponent<AudioSource>().mute = sesKapalı;
         }
-
     }
 }
