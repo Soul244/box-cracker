@@ -13,15 +13,22 @@ public class MüzikAyarları : MonoBehaviour
         //b.image.sprite = açık;
         ses = GameObject.Find("Main Camera").GetComponent<AudioSource>();
         b = GetComponent<Button>();
-        if (PlayerPrefs.GetInt("Ses") == 0)
+        try
         {
-            ses.mute = true;
-            b.image.sprite = kapalı;
+            if (PlayerPrefs.GetInt("Ses") == 0)
+            {
+                ses.mute = true;
+                b.image.sprite = kapalı;
+            }
+            else
+            {
+                ses.mute = false;
+                b.image.sprite = açık;
+            }
         }
-        else
+        catch
         {
-            ses.mute = false;
-            b.image.sprite = açık;
+
         }
     }
     public void MüzikAyarla()
@@ -30,7 +37,6 @@ public class MüzikAyarları : MonoBehaviour
         b = GetComponent<Button>();
         if (ses.mute)
         {
-            Debug.Log("Ses kapalı");
             ses.mute = false;
             b.image.sprite = açık;
             PlayerPrefs.SetInt("Ses", 1);
@@ -38,7 +44,6 @@ public class MüzikAyarları : MonoBehaviour
         }
         else
         {
-            Debug.Log("Ses kapalı");
             ses.mute = true;
             b.image.sprite = kapalı;
             PlayerPrefs.SetInt("Ses", 0);
