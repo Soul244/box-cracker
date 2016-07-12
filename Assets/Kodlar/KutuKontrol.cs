@@ -297,7 +297,7 @@ public class KutuKontrol : MonoBehaviour
                     puan += sonPuan;
                     KutularıKaldır(patlatılacakKutular);
                     kontrolZamanlayıcı = 1f;
-                    SesOynat("Tıklama Sesi 1");
+                    SesOynat("Patlama Sesi 1");
                 }
                 else
                 {
