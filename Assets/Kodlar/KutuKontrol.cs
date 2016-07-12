@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
+using System;
 
 public class KutuKontrol : MonoBehaviour
 {
@@ -67,7 +68,7 @@ public class KutuKontrol : MonoBehaviour
     }
     void Start()
     {
-        arkaplanNesnesi.GetComponent<Renderer>().material = arkaplanMateryalleri[Random.Range(0, arkaplanMateryalleri.Length - 1)];
+        arkaplanNesnesi.GetComponent<Renderer>().material = arkaplanMateryalleri[UnityEngine.Random.Range(0, arkaplanMateryalleri.Length - 1)];
     }
     public static Kutu KutuVarmı(float x, float y)
     {
@@ -83,8 +84,8 @@ public class KutuKontrol : MonoBehaviour
     }
     void KutuKoy(float x, float y)
     {
-        int şans = Random.Range(0, 1000);
-        int index = Random.Range(0, renkler.Length);
+        int şans = UnityEngine.Random.Range(0, 1000);
+        int index = UnityEngine.Random.Range(0, renkler.Length);
         Color kutuRengi = renkler[index];
         GameObject temp;
         if (şans < siyahKutuŞansı)
@@ -123,6 +124,9 @@ public class KutuKontrol : MonoBehaviour
             int öncekiPuan = PlayerPrefs.GetInt("High Score");
             if (puan < öncekiPuan)
             {
+                if (puan >= yıldız1 && puan < yıldız2) SesOynat("Kazanma 1 Yıldız");
+                else if (puan >= yıldız2 && puan < yıldız3) SesOynat("Kazanma 2 Yıldız");
+                else if (puan >= yıldız3) SesOynat("Kazanma 3 Yıldız");
                 return;
             }
             else
@@ -130,20 +134,23 @@ public class KutuKontrol : MonoBehaviour
                 PlayerPrefs.SetInt("High Score", puan);
                 if (puan >= yıldız1 && puan < yıldız2)
                 {
+                    SesOynat("Kazanma 1 Yıldız");
                     Debug.Log(puan.ToString());
                     sonrakiBolum = int.Parse(Application.loadedLevelName) + 1;
                     PlayerPrefs.SetInt("Level " + sonrakiBolum.ToString() + " Buton", 1);
                     PlayerPrefs.SetInt("Level " + Application.loadedLevelName + " Buton", 2);
                 }
-                if (puan >= yıldız2 && puan < yıldız3)
+                else if (puan >= yıldız2 && puan < yıldız3)
                 {
+                    SesOynat("Kazanma 2 Yıldız");
                     Debug.Log("iki yıldız");
                     sonrakiBolum = int.Parse(Application.loadedLevelName) + 1;
                     PlayerPrefs.SetInt("Level " + sonrakiBolum.ToString() + " Buton", 1);
                     PlayerPrefs.SetInt("Level " + Application.loadedLevelName + " Buton", 3);
                 }
-                if (puan >= yıldız3)
+                else if (puan >= yıldız3)
                 {
+                    SesOynat("Kazanma 3 Yıldız");
                     Debug.Log("üç yıldız");
                     sonrakiBolum = int.Parse(Application.loadedLevelName) + 1;
                     PlayerPrefs.SetInt("Level " + sonrakiBolum.ToString() + " Buton", 1);
@@ -272,12 +279,14 @@ public class KutuKontrol : MonoBehaviour
                 puan += sonPuan;
                 KutularıKaldır(patlatılacakKutular);
                 kontrolZamanlayıcı = 1f;
+                SesOynat("Patlama Sesi 1");
             }
             else if (tıklananKutu.z == 1) //Tıklanan Kutu Siyahsa
             {
                 sonPuan = SiyahKutuPatlaması(seçilenKutu);
                 puan += sonPuan;
                 kontrolZamanlayıcı = 1f;
+                SesOynat("Patlama Sesi 1");
             }
             else //Normal Kutuya Tıklandıysa
             {
@@ -288,6 +297,11 @@ public class KutuKontrol : MonoBehaviour
                     puan += sonPuan;
                     KutularıKaldır(patlatılacakKutular);
                     kontrolZamanlayıcı = 1f;
+                    SesOynat("Tıklama Sesi 1");
+                }
+                else
+                {
+                    SesOynat("Boş Tıklama 1");
                 }
             }
             tıklananKutu = new Vector3(-1, -1, -1);
@@ -300,6 +314,12 @@ public class KutuKontrol : MonoBehaviour
         }
 
     }
+
+    private void SesOynat(string ObjeAdı)
+    {
+        GameObject.Find(ObjeAdı).GetComponent<AudioSource>().Play();
+    }
+
     public bool HamleKaldımı()
     {
         for (int x = 0; x < genişlik; x++)
