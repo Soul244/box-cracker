@@ -980,7 +980,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   kutu: {fileID: 107272, guid: 25508220a8e774d42b3772e7f51285f6, type: 2}
   parlakKutu: {fileID: 165104, guid: 1b26b74100eb41b4e808abfbca36a3b9, type: 2}
-  patlamaEfekti: {fileID: 178028, guid: 97a728e8738a083458d2be65e22ea5ee, type: 2}
+  patlamaEfekti: {fileID: 121104, guid: 572bb41ced8d2e9488ba44910d551fa2, type: 2}
   "Geni\u015Flik": 6
   "Y\xFCkseklik": 8
   "kutuSay\u0131s\u0131": 64
