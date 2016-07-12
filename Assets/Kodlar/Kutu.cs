@@ -32,7 +32,7 @@ public class Kutu : MonoBehaviour {
     public void Patlat(GameObject PatlamaEfekti)
     {
         patlak = true;      
-        Instantiate(PatlamaEfekti, transform.position, Quaternion.identity);
+        Instantiate(PatlamaEfekti, new Vector3(transform.position.x,transform.position.y,transform.position.z-0.5f), Quaternion.identity);
         Destroy(gameObject);
     }
     public bool AynıRenk(Kutu DiğerKutu)
