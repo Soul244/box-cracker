@@ -63,27 +63,26 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Kodlar\ArkaplanKaydır2.cs" />
-    <Compile Include="Assets\Kodlar\Can.cs" />
-    <Compile Include="Assets\Kodlar\Kutu.cs" />
-    <Compile Include="Assets\Kodlar\KutuKontrol.cs" />
-    <Compile Include="Assets\Kodlar\Menü\ArkaplanKaydır.cs" />
-    <Compile Include="Assets\Kodlar\Menü\BolumMantık.cs" />
-    <Compile Include="Assets\Kodlar\Menü\BölümSeç.cs" />
-    <Compile Include="Assets\Kodlar\Menü\LevelSıfırlama.cs" />
-    <Compile Include="Assets\Kodlar\Menü\LevelTıklama.cs" />
-    <Compile Include="Assets\Kodlar\Menü\MüzikAyarları.cs" />
-    <Compile Include="Assets\Kodlar\Menü\OyunSatınAl.cs" />
-    <Compile Include="Assets\Kodlar\Menü\SesAyarları.cs" />
-    <Compile Include="Assets\Kodlar\Menü\YüksekSkor.cs" />
-    <Compile Include="Assets\Kodlar\PatlamaEfektiniYoket.cs" />
-    <Compile Include="Assets\Kodlar\PuanGöster.cs" />
-    <Compile Include="Assets\Kodlar\TestKodu.cs" />
-    <Compile Include="Assets\_MK\_MKGlow\_Internal\MKGlow.cs" />
+    <Compile Include="Assets\MKGlow\_MKGlow\_Internal\MKGlow.cs" />
+    <Compile Include="Assets\Scripts\ArkaplanKaydır2.cs" />
+    <Compile Include="Assets\Scripts\Can.cs" />
+    <Compile Include="Assets\Scripts\Kutu.cs" />
+    <Compile Include="Assets\Scripts\KutuKontrol.cs" />
+    <Compile Include="Assets\Scripts\Menü\ArkaplanKaydır.cs" />
+    <Compile Include="Assets\Scripts\Menü\BolumMantık.cs" />
+    <Compile Include="Assets\Scripts\Menü\BölümSeç.cs" />
+    <Compile Include="Assets\Scripts\Menü\LevelSıfırlama.cs" />
+    <Compile Include="Assets\Scripts\Menü\LevelTıklama.cs" />
+    <Compile Include="Assets\Scripts\Menü\MüzikAyarları.cs" />
+    <Compile Include="Assets\Scripts\Menü\OyunSatınAl.cs" />
+    <Compile Include="Assets\Scripts\Menü\SesAyarları.cs" />
+    <Compile Include="Assets\Scripts\Menü\YüksekSkor.cs" />
+    <Compile Include="Assets\Scripts\PatlamaEfektiniYoket.cs" />
+    <Compile Include="Assets\Scripts\PuanGöster.cs" />
+    <Compile Include="Assets\Scripts\TestKodu.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Assets\_MK\_MKGlow\_Shader\_MKBase\Illumin\MK_Illumin-ParallaxSpec.shader" />
-    <None Include="Assets\Çeşitli İkonlar 2\Credits.txt" />
+    <None Include="Assets\MKGlow\_MKGlow\_Shader\_MKBase\Illumin\MK_Illumin-ParallaxSpec.shader" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
 </Project>
