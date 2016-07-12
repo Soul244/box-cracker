@@ -13,7 +13,7 @@ public class Can : MonoBehaviour {
     int dk, sn = 0;
 	// Use this for initialization
 	void Start () {
-        PlayerPrefs.SetInt("Can Sayısı", 10); // Debug için şimdilik böyle kalsın
+        PlayerPrefs.SetInt("Can Sayısı",10); // Debug için şimdilik böyle kalsın
 
         if (PlayerPrefs.GetInt("Süre")>0)
         {
@@ -41,7 +41,12 @@ public class Can : MonoBehaviour {
             }
             if (sn == 0)
             {
-                süre.text = dk.ToString() + ":" + sn.ToString()+"0";
+                süre.text = dk.ToString() + ":00";
+                PlayerPrefs.SetInt("Süre", gecici);
+            }
+            else if(sn<10 && sn>0)
+            {
+                süre.text = dk.ToString() + ":0" + sn.ToString();
                 PlayerPrefs.SetInt("Süre", gecici);
             }
             else
