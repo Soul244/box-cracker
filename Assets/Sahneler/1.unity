@@ -891,6 +891,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parlak: 0
+  siyah: 0
 --- !u!114 &1803876349
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -904,6 +905,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   kutu: {fileID: 180260, guid: 46c004b311a1a264f9a35579128f890d, type: 2}
   parlakKutu: {fileID: 180260, guid: b7a815b863cbf2f40a3d2d68d734689a, type: 2}
+  siyahKutu: {fileID: 166536, guid: c135172bc37bdb146bb9179ecf73941d, type: 2}
   patlamaEfekti: {fileID: 121104, guid: 572bb41ced8d2e9488ba44910d551fa2, type: 2}
   "Geni\u015Flik": 6
   "Y\xFCkseklik": 8

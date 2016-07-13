@@ -10,6 +10,7 @@ public class KutuKontrol : MonoBehaviour
     [Header("Kutular")]
     public GameObject kutu;
     public GameObject parlakKutu;
+    public GameObject siyahKutu;
     [Space(15)]
     [Header("Efektler")]
     public GameObject patlamaEfekti;
@@ -51,7 +52,6 @@ public class KutuKontrol : MonoBehaviour
         RenkTanımlayıcı.Add(Color.blue, "Blue");
         RenkTanımlayıcı.Add(Color.yellow, "Yellow");
         RenkTanımlayıcı.Add(Color.green, "Green");
-        RenkTanımlayıcı.Add(Color.black, "Black");
     }
     void Awake()
     {
@@ -64,7 +64,6 @@ public class KutuKontrol : MonoBehaviour
         {
             renkSayıları.Add(RenkTanımlayıcı[item], 0);
         }
-        renkSayıları.Add("Black", 0);
     }
     void Start()
     {
@@ -90,8 +89,7 @@ public class KutuKontrol : MonoBehaviour
         GameObject temp;
         if (şans < siyahKutuŞansı)
         {
-            temp = (GameObject)Instantiate(kutu, new Vector2(x, y), Quaternion.identity);
-            kutuRengi = Color.black;
+            temp = (GameObject)Instantiate(siyahKutu, new Vector2(x, y), Quaternion.identity);
         }
         else if (şans < parlakKutuŞansı)
         {

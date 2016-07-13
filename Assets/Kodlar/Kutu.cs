@@ -4,6 +4,7 @@ using System.Collections;
 public class Kutu : MonoBehaviour {
     bool patlak;
     public bool parlak;
+    public bool siyah;
     public bool Patlak
     {
         get
@@ -23,7 +24,7 @@ public class Kutu : MonoBehaviour {
         {
             kutuÖzelliği = 0;
         }
-        else if (GetComponent<Renderer>().material.color==Color.black)
+        else if (siyah)
         {
             kutuÖzelliği = 1;
         }
