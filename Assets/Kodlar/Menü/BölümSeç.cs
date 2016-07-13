@@ -5,7 +5,7 @@ public class BölümSeç : MonoBehaviour {
     public void OnMouseUpAsButton()
     {
         GetComponent<AudioSource>().Play();
-        Application.LoadLevel("LevelMenü");
+        Application.LoadLevel("1");
     }
     // Use this for initialization
     void Start () {

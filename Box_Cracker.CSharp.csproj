@@ -71,6 +71,7 @@
   <ItemGroup>
     <Compile Include="Assets\Kodlar\ArkaplanKaydır2.cs" />
     <Compile Include="Assets\Kodlar\Can.cs" />
+    <Compile Include="Assets\Kodlar\IşıkHareketi.cs" />
     <Compile Include="Assets\Kodlar\Kutu.cs" />
     <Compile Include="Assets\Kodlar\KutuKontrol.cs" />
     <Compile Include="Assets\Kodlar\Menü\ArkaplanKaydır.cs" />

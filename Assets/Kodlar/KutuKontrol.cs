@@ -90,6 +90,7 @@ public class KutuKontrol : MonoBehaviour
         if (şans < siyahKutuŞansı)
         {
             temp = (GameObject)Instantiate(siyahKutu, new Vector2(x, y), Quaternion.identity);
+            kutuRengi = Color.white;
         }
         else if (şans < parlakKutuŞansı)
         {
