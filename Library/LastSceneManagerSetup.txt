@@ -1,8 +1,4 @@
 sceneSetups:
-<<<<<<< HEAD
-- path: "Assets/Scenes/Ana Men\xFC.unity"
-=======
-- path: "Assets/Sahneler/Ana Men\xFC.unity"
->>>>>>> parent of 267312c... *Küçük Değişiklikler Versiyon BilmemKaç
+- path: Assets/Sahneler/Oyun.unity
   isLoaded: 1
   isActive: 1
