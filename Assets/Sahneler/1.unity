@@ -943,7 +943,7 @@ MonoBehaviour:
   patlamaEfekti: {fileID: 121104, guid: 572bb41ced8d2e9488ba44910d551fa2, type: 2}
   "Geni\u015Flik": 6
   "Y\xFCkseklik": 8
-  "kutuSay\u0131s\u0131": 64
+  "kutuSay\u0131s\u0131": 1000
   "y\u0131ld\u0131z1": 50
   "y\u0131ld\u0131z2": 150
   "y\u0131ld\u0131z3": 250
