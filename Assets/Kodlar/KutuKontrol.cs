@@ -117,7 +117,6 @@ public class KutuKontrol : MonoBehaviour
     }
     void BölümüBitirme()
     {
-        int sonrakiBolum;
         if (HamleKaldımı() == false)// YAPILACAK HAMLE KALMADIYSA OYUNU BİTİR
         {
             //Application.LoadLevel("Anamenü");
@@ -125,38 +124,38 @@ public class KutuKontrol : MonoBehaviour
             int öncekiPuan = PlayerPrefs.GetInt("High Score");
             if (puan < öncekiPuan)
             {
-                if (puan >= yıldız1 && puan < yıldız2) SesOynat("Kazanma 1 Yıldız");
-                else if (puan >= yıldız2 && puan < yıldız3) SesOynat("Kazanma 2 Yıldız");
-                else if (puan >= yıldız3) SesOynat("Kazanma 3 Yıldız");
-                return;
+                //if (puan >= yıldız1 && puan < yıldız2) SesOynat("Kazanma 1 Yıldız");
+                //else if (puan >= yıldız2 && puan < yıldız3) SesOynat("Kazanma 2 Yıldız");
+                //else if (puan >= yıldız3) SesOynat("Kazanma 3 Yıldız");
+                //return;
             }
             else
             {
                 PlayerPrefs.SetInt("High Score", puan);
-                if (puan >= yıldız1 && puan < yıldız2)
-                {
-                    SesOynat("Kazanma 1 Yıldız");
-                    Debug.Log(puan.ToString());
-                    sonrakiBolum = int.Parse(Application.loadedLevelName) + 1;
-                    PlayerPrefs.SetInt("Level " + sonrakiBolum.ToString() + " Buton", 1);
-                    PlayerPrefs.SetInt("Level " + Application.loadedLevelName + " Buton", 2);
-                }
-                else if (puan >= yıldız2 && puan < yıldız3)
-                {
-                    SesOynat("Kazanma 2 Yıldız");
-                    Debug.Log("iki yıldız");
-                    sonrakiBolum = int.Parse(Application.loadedLevelName) + 1;
-                    PlayerPrefs.SetInt("Level " + sonrakiBolum.ToString() + " Buton", 1);
-                    PlayerPrefs.SetInt("Level " + Application.loadedLevelName + " Buton", 3);
-                }
-                else if (puan >= yıldız3)
-                {
-                    SesOynat("Kazanma 3 Yıldız");
-                    Debug.Log("üç yıldız");
-                    sonrakiBolum = int.Parse(Application.loadedLevelName) + 1;
-                    PlayerPrefs.SetInt("Level " + sonrakiBolum.ToString() + " Buton", 1);
-                    PlayerPrefs.SetInt("Level " + Application.loadedLevelName + " Buton", 4);
-                }
+                //    if (puan >= yıldız1 && puan < yıldız2)
+                //    {
+                //        SesOynat("Kazanma 1 Yıldız");
+                //        Debug.Log(puan.ToString());
+                //        sonrakiBolum = int.Parse(Application.loadedLevelName) + 1;
+                //        PlayerPrefs.SetInt("Level " + sonrakiBolum.ToString() + " Buton", 1);
+                //        PlayerPrefs.SetInt("Level " + Application.loadedLevelName + " Buton", 2);
+                //    }
+                //    else if (puan >= yıldız2 && puan < yıldız3)
+                //    {
+                //        SesOynat("Kazanma 2 Yıldız");
+                //        Debug.Log("iki yıldız");
+                //        sonrakiBolum = int.Parse(Application.loadedLevelName) + 1;
+                //        PlayerPrefs.SetInt("Level " + sonrakiBolum.ToString() + " Buton", 1);
+                //        PlayerPrefs.SetInt("Level " + Application.loadedLevelName + " Buton", 3);
+                //    }
+                //    else if (puan >= yıldız3)
+                //    {
+                //        SesOynat("Kazanma 3 Yıldız");
+                //        Debug.Log("üç yıldız");
+                //        sonrakiBolum = int.Parse(Application.loadedLevelName) + 1;
+                //        PlayerPrefs.SetInt("Level " + sonrakiBolum.ToString() + " Buton", 1);
+                //        PlayerPrefs.SetInt("Level " + Application.loadedLevelName + " Buton", 4);
+                //    }
             }
         }
         //0 = Bölüm kitli
@@ -165,16 +164,7 @@ public class KutuKontrol : MonoBehaviour
         //3 = 2 Yıldız
         //4 = 3 YIldız
     }
-    void OnGUI()
-    {
-        var centeredStyle = GUI.skin.GetStyle("Label");
-        centeredStyle.alignment = TextAnchor.UpperCenter;
-        GUI.color = Color.red;
-        GUI.Label(new Rect(Screen.width- (Screen.width) / 9, 0, (Screen.width) / 9, (Screen.height) / 20), puan.ToString(), centeredStyle);
-        //if (HamleKaldımı()==false)
-        //{
-        //}
-    }
+
     List<Kutu> AynıRenkliKutularıAl(Color Renk)
     {
         List<Kutu> patlatılacakKutular = new List<Kutu>();
@@ -366,6 +356,9 @@ public class KutuKontrol : MonoBehaviour
         int puan = 1, çoklayıcı = 1;
         çoklayıcı = patlayanlar.Count / 2;
         puan = patlayanlar.Count * çoklayıcı;
+        GameObject.Find("Skor").GetComponent<TextMesh>().text = Convert.ToString(puan + Convert.ToInt32(GameObject.Find("Skor").GetComponent<TextMesh>().text));
+        float süre = puan * 0.01f;
+        //GameObject.Find("Süre").GetComponent<TextMesh>().text = Convert.ToString(Convert.toFl(GameObject.Find("Süre").GetComponent<TextMesh>().text) + süre);
         return puan;
     }
     static bool EtrafındaAynıRenkVarmı(float x, float y)

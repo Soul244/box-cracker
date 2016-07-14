@@ -111,18 +111,19 @@
     <Compile Include="Assets\Kodlar\Kutu.cs" />
     <Compile Include="Assets\Kodlar\KutuKontrol.cs" />
     <Compile Include="Assets\Kodlar\Menü\ArkaplanKaydır.cs" />
-    <Compile Include="Assets\Kodlar\Menü\BolumMantık.cs" />
     <Compile Include="Assets\Kodlar\Menü\BölümSeç.cs" />
     <Compile Include="Assets\Kodlar\Menü\LevelSıfırlama.cs" />
-    <Compile Include="Assets\Kodlar\Menü\LevelTıklama.cs" />
     <Compile Include="Assets\Kodlar\Menü\MüzikAyarları.cs" />
     <Compile Include="Assets\Kodlar\Menü\OyunSatınAl.cs" />
     <Compile Include="Assets\Kodlar\Menü\SesAyarları.cs" />
-    <Compile Include="Assets\Kodlar\Menü\YüksekSkor.cs" />
+    <Compile Include="Assets\Kodlar\Menü\z_BolumMantık.cs" />
+    <Compile Include="Assets\Kodlar\Menü\z_LevelTıklama.cs" />
     <Compile Include="Assets\Kodlar\PatlamaEfektiniYoket.cs" />
     <Compile Include="Assets\Kodlar\PuanGöster.cs" />
     <Compile Include="Assets\Kodlar\Reklam.cs" />
+    <Compile Include="Assets\Kodlar\Süre.cs" />
     <Compile Include="Assets\Kodlar\TestKodu.cs" />
+    <Compile Include="Assets\Kodlar\YüksekSkor.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Plugins\Android\GoogleMobileAdsPlugin\AndroidManifest.xml" />
