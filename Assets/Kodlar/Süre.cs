@@ -4,7 +4,6 @@ using System;
 using UnityEngine.SceneManagement;
 
 public class Süre : MonoBehaviour {
-    double zaman = 0f;
     double gecici = 0f;
     double süresayisi = 60f;
     TextMesh tx;
@@ -16,7 +15,7 @@ public class Süre : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         süresayisi = Convert.ToDouble(tx.text);
-        gecici = süresayisi - Math.Round(Time.deltaTime, 2);
+        gecici = süresayisi - Math.Round(Time.deltaTime,2);
         if (gecici<=10)
         {
             tx.color = Color.red;
@@ -29,6 +28,6 @@ public class Süre : MonoBehaviour {
         {
             SceneManager.LoadScene("Ana Menü");
         }
-        tx.text = gecici.ToString();
+        tx.text = gecici.ToString("0.00");
     }
 }

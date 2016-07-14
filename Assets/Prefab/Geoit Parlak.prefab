@@ -41,7 +41,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Convex: 0
+  m_Convex: 1
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!114 &11482388
 MonoBehaviour:
@@ -55,6 +55,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parlak: 1
+  siyah: 0
 --- !u!212 &21222050
 SpriteRenderer:
   m_ObjectHideFlags: 1
