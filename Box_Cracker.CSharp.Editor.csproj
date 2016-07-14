@@ -85,20 +85,14 @@
     <Reference Include="UnityEditor.Android.Extensions">
       <HintPath>Library\UnityAssemblies\UnityEditor.Android.Extensions.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEditor.iOS.Extensions">
-      <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEditor.WindowsStandalone.Extensions">
       <HintPath>Library\UnityAssemblies\UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="SyntaxTree.VisualStudio.Unity.Bridge">
       <HintPath>Library\UnityAssemblies\SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEditor.iOS.Extensions.Xcode">
-      <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.iOS.Extensions.Common">
-      <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Common.dll</HintPath>
+    <Reference Include="JarResolverLib">
+      <HintPath>Assets\PlayServicesResolver\Editor\JarResolverLib.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -108,10 +102,19 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\MKGlow\_MKGlow\_Internal\Editor\MKGlowEditor.cs" />
+    <Compile Include="Assets\GoogleMobileAds\Editor\CocoaPodHelper.cs" />
+    <Compile Include="Assets\GoogleMobileAds\Editor\PostProcessor.cs" />
+    <Compile Include="Assets\PlayServicesResolver\Editor\AdMobDependencies.cs" />
+    <Compile Include="Assets\PlayServicesResolver\Editor\DefaultResolver.cs" />
+    <Compile Include="Assets\PlayServicesResolver\Editor\IResolver.cs" />
+    <Compile Include="Assets\PlayServicesResolver\Editor\PlayServicesResolver.cs" />
+    <Compile Include="Assets\PlayServicesResolver\Editor\ResolverVer1_1.cs" />
+    <Compile Include="Assets\PlayServicesResolver\Editor\ResolverVer1_2.cs" />
+    <Compile Include="Assets\PlayServicesResolver\Editor\SampleDependencies.cs" />
+    <Compile Include="Assets\PlayServicesResolver\Editor\SettingsDialog.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Assets\MKGlow\_MKGlow\_Shader\_MKBase\Illumin\MK_Illumin-ParallaxSpec.shader" />
+    <None Include="Assets\Plugins\Android\GoogleMobileAdsPlugin\AndroidManifest.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
 </Project>
