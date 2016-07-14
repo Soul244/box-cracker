@@ -357,8 +357,9 @@ public class KutuKontrol : MonoBehaviour
         çoklayıcı = patlayanlar.Count / 2;
         puan = patlayanlar.Count * çoklayıcı;
         GameObject.Find("Skor").GetComponent<TextMesh>().text = Convert.ToString(puan + Convert.ToInt32(GameObject.Find("Skor").GetComponent<TextMesh>().text));
-        float süre = puan * 0.01f;
-        //GameObject.Find("Süre").GetComponent<TextMesh>().text = Convert.ToString(Convert.toFl(GameObject.Find("Süre").GetComponent<TextMesh>().text) + süre);
+        double süre = puan * 0.01;
+        Debug.Log(süre);
+        GameObject.Find("Süre").GetComponent<TextMesh>().text = Convert.ToString(Convert.ToDouble(GameObject.Find("Süre").GetComponent<TextMesh>().text) + süre);
         return puan;
     }
     static bool EtrafındaAynıRenkVarmı(float x, float y)
