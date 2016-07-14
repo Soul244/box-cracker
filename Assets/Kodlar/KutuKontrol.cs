@@ -52,6 +52,7 @@ public class KutuKontrol : MonoBehaviour
         RenkTanımlayıcı.Add(Color.blue, "Blue");
         RenkTanımlayıcı.Add(Color.yellow, "Yellow");
         RenkTanımlayıcı.Add(Color.green, "Green");
+        RenkTanımlayıcı.Add(Color.white, "Bomb");
     }
     void Awake()
     {
@@ -64,6 +65,7 @@ public class KutuKontrol : MonoBehaviour
         {
             renkSayıları.Add(RenkTanımlayıcı[item], 0);
         }
+        renkSayıları.Add("Bomb", 0);
     }
     void Start()
     {
@@ -119,7 +121,7 @@ public class KutuKontrol : MonoBehaviour
         if (HamleKaldımı() == false)// YAPILACAK HAMLE KALMADIYSA OYUNU BİTİR
         {
             //Application.LoadLevel("Anamenü");
-            SceneManager.LoadScene("LevelMenü");
+            SceneManager.LoadScene("Ana Menü");
             int öncekiPuan = PlayerPrefs.GetInt("High Score");
             if (puan < öncekiPuan)
             {
