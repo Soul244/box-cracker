@@ -41,6 +41,11 @@ public class KutuKontrol : MonoBehaviour
     public GameObject arkaplanNesnesi;
     public Material[] arkaplanMateryalleri;
     public Dictionary<string, int> renkSayıları;
+    [Space(15)]
+    [Header("Patlama Efektleri")]
+    public GameObject[] patlamaEfektleri;
+    public float patlamaEfektiKalmaSüresi=0.15f;
+    public static float patlamaEfektiSüresi;
     Dictionary<Color, string> RenkTanımlayıcı;
     int puan = 0;
     public static int sonPuan = 0;
@@ -56,7 +61,7 @@ public class KutuKontrol : MonoBehaviour
     }
     void Awake()
     {
-        
+        patlamaEfektiSüresi = patlamaEfektiKalmaSüresi;
         genişlik = Genişlik;
         yükseklik = Yükseklik;
         RenkTanımla();
@@ -112,7 +117,7 @@ public class KutuKontrol : MonoBehaviour
         foreach (Kutu item in Kutular)
         {
             renkSayıları[RenkTanımlayıcı[item.GetComponent<Renderer>().material.color]]--;
-            item.Patlat(patlamaEfekti);
+            item.Patlat(patlamaEfektleri[UnityEngine.Random.Range(0,3)]);
         }
     }
     void BölümüBitirme()
@@ -246,6 +251,7 @@ public class KutuKontrol : MonoBehaviour
     }
     void Update()
     {
+        patlamaEfektiSüresi = patlamaEfektiKalmaSüresi; // Oyun son haldeyken bu satır silenecek. Deneme amaçlı
         kontrolZamanlayıcı -= Time.deltaTime;
         if (kutuSayısı > 0)
         {

@@ -9,8 +9,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 469448}
   - 212: {fileID: 21222050}
-  - 64: {fileID: 6456828}
   - 114: {fileID: 11482388}
+  - 61: {fileID: 6121790}
   m_Layer: 0
   m_Name: Geoit Parlak
   m_TagString: Untagged
@@ -25,24 +25,26 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 180260}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.9678304, y: 2.5553799, z: -14.826783}
+  m_LocalPosition: {x: -41.180347, y: -5.800001, z: -14.826783}
   m_LocalScale: {x: 0.79, y: 0.79, z: 0.79}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!64 &6456828
-MeshCollider:
+--- !u!61 &6121790
+BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 180260}
+  m_Enabled: 1
+  m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Convex: 1
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+  m_Size: {x: 1.28, y: 1.28}
 --- !u!114 &11482388
 MonoBehaviour:
   m_ObjectHideFlags: 1

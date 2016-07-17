@@ -1331,6 +1331,12 @@ MonoBehaviour:
   - {fileID: 2100000, guid: eba822f1f916808459ead4170aa0312c, type: 2}
   - {fileID: 2100000, guid: b8c891541fea3ab48acc69bffc79b80e, type: 2}
   - {fileID: 2100000, guid: 12848cfc3cec9364e911f3d17fdaec8e, type: 2}
+  patlamaEfektleri:
+  - {fileID: 171572, guid: 3883bd98cfba0f3459d6a6851048aea0, type: 2}
+  - {fileID: 166378, guid: b763a6d5989e44a4e8550da6d3ae024f, type: 2}
+  - {fileID: 138812, guid: eb59577b7e17c67438da31af7024f890, type: 2}
+  - {fileID: 157896, guid: e8f8f6211c5e1f648a296e0f860b7547, type: 2}
+  "patlamaEfektiKalmaS\xFCresi": 0.15
 --- !u!4 &1803876350
 Transform:
   m_ObjectHideFlags: 0
