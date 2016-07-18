@@ -125,7 +125,7 @@ public class KutuKontrol : MonoBehaviour
         if (HamleKaldımı() == false)// YAPILACAK HAMLE KALMADIYSA OYUNU BİTİR
         {
             //Application.LoadLevel("Anamenü");
-            SceneManager.LoadScene("Ana Menü");
+            //SceneManager.LoadScene("Ana Menü");
             int öncekiPuan = PlayerPrefs.GetInt("High Score");
             if (puan < öncekiPuan)
             {

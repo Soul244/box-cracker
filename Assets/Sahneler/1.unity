@@ -174,6 +174,84 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 585be7c1cad1a1045ae01819a70bce0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &97805522
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 97805525}
+  - 23: {fileID: 97805524}
+  - 102: {fileID: 97805523}
+  m_Layer: 0
+  m_Name: "Skor Yaz\u0131"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!102 &97805523
+TextMesh:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 97805522}
+  m_Text: 'Score:'
+  m_OffsetZ: 0
+  m_CharacterSize: 0.05
+  m_LineSpacing: 1
+  m_Anchor: 4
+  m_Alignment: 1
+  m_TabSize: 4
+  m_FontSize: 100
+  m_FontStyle: 0
+  m_RichText: 1
+  m_Font: {fileID: 12800000, guid: 0bb66c7eefa304f92920d01e09224c5d, type: 3}
+  m_Color:
+    serializedVersion: 2
+    rgba: 4278248191
+--- !u!23 &97805524
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 97805522}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_Materials:
+  - {fileID: 2100000, guid: 0bb66c7eefa304f92920d01e09224c5d, type: 3}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 1
+  m_ReflectionProbeUsage: 1
+  m_ProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+--- !u!4 &97805525
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 97805522}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.28, y: 11.7045, z: 5.434}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children:
+  - {fileID: 810343220}
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
 --- !u!1 &237659661
 GameObject:
   m_ObjectHideFlags: 0
@@ -560,7 +638,7 @@ TextMesh:
   m_Anchor: 4
   m_Alignment: 1
   m_TabSize: 4
-  m_FontSize: 110
+  m_FontSize: 100
   m_FontStyle: 0
   m_RichText: 1
   m_Font: {fileID: 12800000, guid: 0bb66c7eefa304f92920d01e09224c5d, type: 3}
@@ -600,12 +678,12 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 810343217}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.6276693, y: 11.59, z: 5.434}
+  m_LocalPosition: {x: 1.56, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_Father: {fileID: 97805525}
+  m_RootOrder: 0
 --- !u!1 &814907894
 GameObject:
   m_ObjectHideFlags: 0
@@ -734,7 +812,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 839083026}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.02, y: 0.11, z: -0.15}
+  m_LocalPosition: {x: 0.025, y: 0.096, z: -0.16}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -760,7 +838,7 @@ TextMesh:
   m_Font: {fileID: 12800000, guid: 0bb66c7eefa304f92920d01e09224c5d, type: 3}
   m_Color:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4282402056
 --- !u!23 &839083029
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -944,7 +1022,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 347cb8dc813531045868a8f436b2062f, type: 3}
-  m_Color: {r: 0.85294116, g: 0.8422145, b: 0.46410033, a: 1}
+  m_Color: {r: 0.9411765, g: 0.9260948, b: 0.39446366, a: 1}
   m_FlipX: 0
   m_FlipY: 0
 --- !u!4 &1228003112
@@ -1336,7 +1414,7 @@ MonoBehaviour:
   - {fileID: 166378, guid: b763a6d5989e44a4e8550da6d3ae024f, type: 2}
   - {fileID: 138812, guid: eb59577b7e17c67438da31af7024f890, type: 2}
   - {fileID: 157896, guid: e8f8f6211c5e1f648a296e0f860b7547, type: 2}
-  "patlamaEfektiKalmaS\xFCresi": 0.15
+  "patlamaEfektiKalmaS\xFCresi": 0.2
 --- !u!4 &1803876350
 Transform:
   m_ObjectHideFlags: 0
