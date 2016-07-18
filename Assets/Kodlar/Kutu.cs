@@ -17,24 +17,35 @@ public class Kutu : MonoBehaviour {
             patlak = value;
         }
     }
+    bool patlamaDurumu = false;
+    float kaybolmaSayacı;
+    void Awake()
+    {
+        kaybolmaSayacı = KutuKontrol.patlamaEfektiSüresi;
+    }
     void OnMouseUpAsButton()
     {
-        int kutuÖzelliği = -1;
-        if (parlak)
+
+        if (!KutuKontrol.patlamaVar)
         {
-            kutuÖzelliği = 0;
+            int kutuÖzelliği = -1;
+            if (parlak)
+            {
+                kutuÖzelliği = 0;
+            }
+            else if (siyah)
+            {
+                kutuÖzelliği = 1;
+            }
+            KutuKontrol.tıklananKutu = new Vector3(transform.position.x, transform.position.y, kutuÖzelliği);
         }
-        else if (siyah)
-        {
-            kutuÖzelliği = 1;
-        }
-        KutuKontrol.tıklananKutu = new Vector3(transform.position.x,transform.position.y,kutuÖzelliği);
     }
     public void Patlat(GameObject PatlamaEfekti)
     {
         patlak = true;      
         Instantiate(PatlamaEfekti, new Vector3(transform.position.x,transform.position.y,transform.position.z-0.5f), Quaternion.identity);
-        Destroy(gameObject);
+        KutuKontrol.patlamaVar=patlamaDurumu = true;
+        
     }
     public bool AynıRenk(Kutu DiğerKutu)
     {
@@ -50,6 +61,15 @@ public class Kutu : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        if (patlamaDurumu)
+        {
+            kaybolmaSayacı -= Time.deltaTime;
+            if (kaybolmaSayacı<=0)
+            {
+                Destroy(gameObject); patlamaDurumu = KutuKontrol.patlamaVar = false;
+                return;
+            }
+        }
         float x = transform.position.x;
         float y = transform.position.y;
         if (y > 0 && !KutuKontrol.KutuVarmı(x, y - 1))

@@ -47,6 +47,7 @@ public class KutuKontrol : MonoBehaviour
     public float patlamaEfektiKalmaSüresi=0.15f;
     public static float patlamaEfektiSüresi;
     Dictionary<Color, string> RenkTanımlayıcı;
+    public static bool patlamaVar=false;
     int puan = 0;
     public static int sonPuan = 0;
     float kontrolZamanlayıcı = 1f;
