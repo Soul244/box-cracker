@@ -240,7 +240,7 @@ public class KutuKontrol : MonoBehaviour
         int puan = 0;
         foreach (Kutu item in patlatılacakKutular)
         {
-            if (!item.Patlak && item.GetComponent<Renderer>().material.color == Color.black)
+            if (!item.Patlak && item.siyah)
             {
                 item.Patlak = true;
                 puan += SiyahKutuPatlaması(item);
