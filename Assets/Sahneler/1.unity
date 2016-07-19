@@ -117,7 +117,7 @@ TextMesh:
   m_Anchor: 4
   m_Alignment: 1
   m_TabSize: 4
-  m_FontSize: 250
+  m_FontSize: 350
   m_FontStyle: 0
   m_RichText: 1
   m_Font: {fileID: 12800000, guid: 91529ed5c996a4687b589fdac15ba868, type: 3}
@@ -157,7 +157,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 80343073}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.002311624, y: 0.39101487, z: 0}
+  m_LocalPosition: {x: 0.007, y: 0.378, z: 0}
   m_LocalScale: {x: 0.07430451, y: 0.047974087, z: 0.99900097}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -245,7 +245,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 97805522}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.01753934, y: 0.43707, z: 0}
+  m_LocalPosition: {x: -0.345, y: 0.357, z: 0}
   m_LocalScale: {x: 0.1341001, y: 0.08082569, z: 0.99900097}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -436,8 +436,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   renkler:
-  - {r: 1, g: 0, b: 0.93103456, a: 0}
-  - {r: 0.44117647, g: 0.8381339, b: 1, a: 0}
+  - {r: 0.77931046, g: 1, b: 0, a: 0}
+  - {r: 0.6351643, g: 0.8734309, b: 0.9705882, a: 0}
   - {r: 0.6769926, g: 0.6985294, b: 0.30817476, a: 0}
 --- !u!95 &314798612
 Animator:
@@ -867,7 +867,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 660301880}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.15802735, y: 0.39293382, z: 0}
+  m_LocalPosition: {x: 0.118, y: 0.415, z: 0}
   m_LocalScale: {x: 0.07430451, y: 0.047974087, z: 0.99900097}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []

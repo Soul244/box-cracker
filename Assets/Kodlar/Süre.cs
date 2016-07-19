@@ -27,7 +27,7 @@ public class Süre : MonoBehaviour {
         }
         else
         {
-            tx.color = Color.green;
+            tx.color = Color.white;
         }
         if (süresayisi <= 0f)
         {
