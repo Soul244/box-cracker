@@ -51,6 +51,9 @@ public class KutuKontrol : MonoBehaviour
     int puan = 0;
     public static int sonPuan = 0;
     float kontrolZamanlayıcı = 1f;
+    [Space(15)]
+    [Header("Artı Süre Silme Süresi")]
+    public static float artSüreSil = 0.15f;
     void RenkTanımla()
     {
         RenkTanımlayıcı = new Dictionary<Color, string>();
@@ -365,7 +368,8 @@ public class KutuKontrol : MonoBehaviour
         puan = patlayanlar.Count * çoklayıcı;
         GameObject.Find("Skor").GetComponent<TextMesh>().text = Convert.ToString(puan + Convert.ToInt32(GameObject.Find("Skor").GetComponent<TextMesh>().text));
         double süre = puan * 0.01;
-        Debug.Log(süre);
+        GameObject.Find("Artı Süre").GetComponent<TextMesh>().text = "+" + süre;
+        artısüreyisil(artSüreSil);
         GameObject.Find("Süre").GetComponent<TextMesh>().text = Convert.ToString(Convert.ToDouble(GameObject.Find("Süre").GetComponent<TextMesh>().text) + süre);
         return puan;
     }
@@ -429,5 +433,13 @@ public class KutuKontrol : MonoBehaviour
             patlayacak.AddRange(TaşırmaAlgoritması(x, y + 1, kontrolEdildi, Renk));
         }
         return patlayacak;
+    }
+    public static void artısüreyisil(float artsüre)
+    {
+        artsüre-= Time.deltaTime;
+        if (artsüre <= 0)
+        {
+            GameObject.Find("Artı Süre").GetComponent<TextMesh>().text = "";
+        }
     }
 }
