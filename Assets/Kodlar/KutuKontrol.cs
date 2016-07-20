@@ -58,7 +58,9 @@ public class KutuKontrol : MonoBehaviour
     float kontrolZamanlayıcı = 1f;
     [Space(15)]
     [Header("Artı Süre Silme Süresi")]
-    public static float artSüreSil = 0.15f;
+    public float artSüreSilmeZamanı = 0.15f;
+    static bool artıSüreyiGöster = false;
+    float artSüreSil;
     void RenkTanımla()
     {
         RenkTanımlayıcı = new Dictionary<Color, string>();
@@ -70,6 +72,8 @@ public class KutuKontrol : MonoBehaviour
     }
     void Awake()
     {
+        artSüreSil = artSüreSilmeZamanı;
+        artıSüreyiGöster = false;
         patlamaVar = false;
         puanEksiltme = puanEksiltmeOranı;
         patlamaEfektiSüresi = patlamaEfektiKalmaSüresi;
@@ -327,6 +331,7 @@ public class KutuKontrol : MonoBehaviour
             BölümüBitirme();
             kontrolZamanlayıcı = 1f;
         }
+        ArtıSüreyiAyarla();
 
     }
 
@@ -382,8 +387,8 @@ public class KutuKontrol : MonoBehaviour
         {
             GameObject.Find("Skor").GetComponent<TextMesh>().text= Convert.ToString(Convert.ToInt32(GameObject.Find("Skor").GetComponent<TextMesh>().text)-puanEksiltme);
             GameObject.Find("Artı Süre").GetComponent<TextMesh>().text = "-" + puanEksiltme/100;
-            artısüreyisil(artSüreSil);
             Süre.KalanSüre = Süre.KalanSüre - puanEksiltme / 100;
+            artıSüreyiGöster = true;
             return puanEksiltme;
         }
         int puan = 1, çoklayıcı = 1;
@@ -392,7 +397,7 @@ public class KutuKontrol : MonoBehaviour
         GameObject.Find("Skor").GetComponent<TextMesh>().text = Convert.ToString(puan + Convert.ToInt32(GameObject.Find("Skor").GetComponent<TextMesh>().text));
         float süre = puan * 0.01f;
         GameObject.Find("Artı Süre").GetComponent<TextMesh>().text = "+" + süre;
-        artısüreyisil(artSüreSil);
+        artıSüreyiGöster = true;
         Süre.KalanSüre += süre;
         return puan;
     }
@@ -457,12 +462,17 @@ public class KutuKontrol : MonoBehaviour
         }
         return patlayacak;
     }
-    public static void artısüreyisil(float artsüre)
+    public  void ArtıSüreyiAyarla()
     {
-        artsüre-= Time.deltaTime;
-        if (artsüre <= 0)
+        if (artıSüreyiGöster)
         {
-            GameObject.Find("Artı Süre").GetComponent<TextMesh>().text = "";
+            artSüreSil -= Time.deltaTime;
+            if (artSüreSil <= 0)
+            {
+                GameObject.Find("Artı Süre").GetComponent<TextMesh>().text = "";
+                artSüreSil = artSüreSilmeZamanı;
+                artıSüreyiGöster = false;
+            }
         }
     }
 }
