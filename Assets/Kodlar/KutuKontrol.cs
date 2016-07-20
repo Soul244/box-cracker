@@ -46,6 +46,11 @@ public class KutuKontrol : MonoBehaviour
     public GameObject[] patlamaEfektleri;
     public float patlamaEfektiKalmaSüresi=0.15f;
     public static float patlamaEfektiSüresi;
+    [Space(15)]
+    [Header("Puanlama Sistemi")]
+    [Range(1,5)]
+    public float puanÇoklayıcı = 1f;
+    public int puanEksiltmeOranı=100;
     Dictionary<Color, string> RenkTanımlayıcı;
     public static bool patlamaVar=false;
     int puan = 0;
@@ -65,6 +70,8 @@ public class KutuKontrol : MonoBehaviour
     }
     void Awake()
     {
+        patlamaVar = false;
+        puanEksiltme = puanEksiltmeOranı;
         patlamaEfektiSüresi = patlamaEfektiKalmaSüresi;
         genişlik = Genişlik;
         yükseklik = Yükseklik;
@@ -237,10 +244,10 @@ public class KutuKontrol : MonoBehaviour
         }
         return etrafdakiKutular;
     }
-    int SiyahKutuPatlaması(Kutu SeçilenKutu)
+    float SiyahKutuPatlaması(Kutu SeçilenKutu)
     {
         List<Kutu> patlatılacakKutular = EtrafındakiKutularıAl(SeçilenKutu);
-        int puan = 0;
+        float puan = 0;
         foreach (Kutu item in patlatılacakKutular)
         {
             if (!item.Patlak && item.siyah)
@@ -276,7 +283,7 @@ public class KutuKontrol : MonoBehaviour
             if (tıklananKutu.z == 0) //Tıklanan Kutu Parlaksa
             {
                 patlatılacakKutular = AynıRenkliKutularıAl(seçilenKutu.GetComponent<Renderer>().material.color);
-                sonPuan= Puanla(patlatılacakKutular);
+                sonPuan= Convert.ToInt32(Puanla(patlatılacakKutular)*puanÇoklayıcı);
                 puan += sonPuan;
                 KutularıKaldır(patlatılacakKutular);
                 kontrolZamanlayıcı = 1f;
@@ -284,7 +291,7 @@ public class KutuKontrol : MonoBehaviour
             }
             else if (tıklananKutu.z == 1) //Tıklanan Kutu Siyahsa
             {
-                sonPuan = SiyahKutuPatlaması(seçilenKutu);
+                sonPuan = Convert.ToInt32(SiyahKutuPatlaması(seçilenKutu)*puanÇoklayıcı);
                 puan += sonPuan;
                 kontrolZamanlayıcı = 1f;
                 SesOynat("Patlama Sesi 1");
@@ -292,9 +299,10 @@ public class KutuKontrol : MonoBehaviour
             else //Normal Kutuya Tıklandıysa
             {
                 patlatılacakKutular = TaşırmaAlgoritması((int)tıklananKutu.x, (int)tıklananKutu.y, new bool[genişlik, yükseklik], seçilenKutu.GetComponent<Renderer>().material.color);
+                sonPuan = Convert.ToInt32(Puanla(patlatılacakKutular) * puanÇoklayıcı);
                 if (patlatılacakKutular.Count > 2)
                 {
-                    sonPuan = Puanla(patlatılacakKutular);
+                    
                     puan += sonPuan;
                     KutularıKaldır(patlatılacakKutular);
                     kontrolZamanlayıcı = 1f;
@@ -302,6 +310,8 @@ public class KutuKontrol : MonoBehaviour
                 }
                 else
                 {
+                    sonPuan = puanEksiltmeOranı;
+                    puan -= puanEksiltmeOranı;
                     SesOynat("Boş Tıklama 1");
                 }
             }
@@ -361,16 +371,25 @@ public class KutuKontrol : MonoBehaviour
         }
         return false;
     }
-    public static int Puanla(List<Kutu> patlayanlar)
+    static int puanEksiltme;
+    public static float Puanla(List<Kutu> patlayanlar)
     {
+        if (patlayanlar.Count<3)
+        {
+            GameObject.Find("Skor").GetComponent<TextMesh>().text= Convert.ToString(Convert.ToInt32(GameObject.Find("Skor").GetComponent<TextMesh>().text)-puanEksiltme);
+            GameObject.Find("Artı Süre").GetComponent<TextMesh>().text = "-" + puanEksiltme/100;
+            artısüreyisil(artSüreSil);
+            Süre.KalanSüre = Süre.KalanSüre - puanEksiltme / 100;
+            return puanEksiltme;
+        }
         int puan = 1, çoklayıcı = 1;
         çoklayıcı = patlayanlar.Count / 2;
         puan = patlayanlar.Count * çoklayıcı;
         GameObject.Find("Skor").GetComponent<TextMesh>().text = Convert.ToString(puan + Convert.ToInt32(GameObject.Find("Skor").GetComponent<TextMesh>().text));
-        double süre = puan * 0.01;
+        float süre = puan * 0.01f;
         GameObject.Find("Artı Süre").GetComponent<TextMesh>().text = "+" + süre;
         artısüreyisil(artSüreSil);
-        GameObject.Find("Süre").GetComponent<TextMesh>().text = Convert.ToString(Convert.ToDouble(GameObject.Find("Süre").GetComponent<TextMesh>().text) + süre);
+        Süre.KalanSüre += süre;
         return puan;
     }
     static bool EtrafındaAynıRenkVarmı(float x, float y)

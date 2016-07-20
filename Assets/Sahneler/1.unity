@@ -530,7 +530,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 374472982}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 655758094}
+        m_MethodName: "AnaMen\xFCyeD\xF6n"
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &374472982
@@ -750,6 +761,7 @@ GameObject:
   - 114: {fileID: 655758090}
   - 114: {fileID: 655758089}
   - 222: {fileID: 655758093}
+  - 114: {fileID: 655758094}
   m_Layer: 5
   m_Name: "Ara Men\xFC"
   m_TagString: Untagged
@@ -843,6 +855,17 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 655758088}
+--- !u!114 &655758094
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 655758088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aeb74b2ebf34b584a88897f336921d68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &660301880
 GameObject:
   m_ObjectHideFlags: 0
@@ -1277,7 +1300,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 914846728}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 655758094}
+        m_MethodName: TekrarOyna
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &914846728

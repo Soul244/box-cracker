@@ -26,7 +26,7 @@ public class Kutu : MonoBehaviour {
     void OnMouseUpAsButton()
     {
 
-        if (!KutuKontrol.patlamaVar)
+        if (!KutuKontrol.patlamaVar && !AraMenüFonksiyonları.oyunDurdu)
         {
             int kutuÖzelliği = -1;
             if (parlak)
@@ -80,13 +80,13 @@ public class Kutu : MonoBehaviour {
             }
             transform.position = new Vector2(x, y);
         }
-        else if (y==0 && !KutuKontrol.KutuVarmı(x-1,0))
-        {
-            while (x>0 && !KutuKontrol.KutuVarmı(x-1,0))
-            {
-                x--;
-            }
-            transform.position = new Vector2(x, y);
-        }
+        //else if (y==0 && !KutuKontrol.KutuVarmı(x-1,0))
+        //{
+        //    while (x>0 && !KutuKontrol.KutuVarmı(x-1,0))
+        //    {
+        //        x--;
+        //    }
+        //    transform.position = new Vector2(x, y);
+        //}
     }
 }
