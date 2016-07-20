@@ -796,12 +796,12 @@ MonoBehaviour:
   m_Script: {fileID: 1980459831, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 1
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -1909,7 +1909,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1803876350}
-  - 114: {fileID: 1803876348}
   - 114: {fileID: 1803876349}
   - 114: {fileID: 1803876352}
   m_Layer: 0
@@ -1919,19 +1918,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1803876348
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1803876347}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 944d75132ba797b4f95df93bc0b947a7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  parlak: 0
-  siyah: 0
 --- !u!114 &1803876349
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1950,6 +1936,7 @@ MonoBehaviour:
   "Geni\u015Flik": 6
   "Y\xFCkseklik": 8
   "kutuSay\u0131s\u0131": 10000
+  "kutuD\xFC\u015FmeH\u0131z\u0131": 0.75
   "y\u0131ld\u0131z1": 50
   "y\u0131ld\u0131z2": 150
   "y\u0131ld\u0131z3": 250
@@ -2136,7 +2123,7 @@ Camera:
   m_GameObject: {fileID: 1888385135}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
+  m_ClearFlags: 4
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0.019607844}
   m_NormalizedViewPortRect:
     serializedVersion: 2

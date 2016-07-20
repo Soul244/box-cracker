@@ -5,6 +5,7 @@ public class Kutu : MonoBehaviour {
     bool patlak;
     public bool parlak;
     public bool siyah;
+    int x, y;
     public bool Patlak
     {
         get
@@ -17,10 +18,29 @@ public class Kutu : MonoBehaviour {
             patlak = value;
         }
     }
+
+    public int X
+    {
+        get
+        {
+            return x;
+        }
+    }
+
+    public int Y
+    {
+        get
+        {
+            return y;
+        }
+    }
+
     bool patlamaDurumu = false;
     float kaybolmaSayacı;
     void Awake()
     {
+        x = (int)transform.position.x;
+        y = (int)transform.position.y;
         kaybolmaSayacı = KutuKontrol.patlamaEfektiSüresi;
     }
     void OnMouseUpAsButton()
@@ -37,13 +57,13 @@ public class Kutu : MonoBehaviour {
             {
                 kutuÖzelliği = 1;
             }
-            KutuKontrol.tıklananKutu = new Vector3(transform.position.x, transform.position.y, kutuÖzelliği);
+            KutuKontrol.tıklananKutu = new Vector3(x, y, kutuÖzelliği);
         }
     }
     public void Patlat(GameObject PatlamaEfekti)
     {
         patlak = true;      
-        Instantiate(PatlamaEfekti, new Vector3(transform.position.x,transform.position.y,transform.position.z-0.5f), Quaternion.identity);
+        Instantiate(PatlamaEfekti, new Vector3(x,y,transform.position.z-0.5f), Quaternion.identity);
         KutuKontrol.patlamaVar=patlamaDurumu = true;
         
     }
@@ -70,16 +90,23 @@ public class Kutu : MonoBehaviour {
                 return;
             }
         }
-        float x = transform.position.x;
-        float y = transform.position.y;
+        float x = this.x;
+        float y = this.y;
         if (y > 0 && !KutuKontrol.KutuVarmı(x, y - 1))
         {
             while (y > 0 && !KutuKontrol.KutuVarmı(x, y - 1))
             {
                 y--;
             }
-            transform.position = new Vector2(x, y);
+            this.y = (int)y;
+            
+            //transform.position = new Vector2(x, y);
         }
+        if (this.y!=transform.position.y)
+        {
+            transform.position = Vector2.Lerp(transform.position, new Vector2(x, y), KutuKontrol.KutuDüşmeHızı);
+        }
+        
         //else if (y==0 && !KutuKontrol.KutuVarmı(x-1,0))
         //{
         //    while (x>0 && !KutuKontrol.KutuVarmı(x-1,0))

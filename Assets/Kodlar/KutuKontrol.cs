@@ -15,7 +15,7 @@ public class KutuKontrol : MonoBehaviour
     [Header("Efektler")]
     public GameObject patlamaEfekti;
     [Space(15)]
-    [Header("Kutu Sayıları")]
+    [Header("Kutu Ayarları")]
     [Range(1, 10)]
     public int Genişlik = 6;
     public static int genişlik = 6;
@@ -23,6 +23,9 @@ public class KutuKontrol : MonoBehaviour
     public int Yükseklik = 8;
     public static int yükseklik = 8;
     public int kutuSayısı = 64;
+    [Range(0.01f, 1f)]
+    public float kutuDüşmeHızı;
+    public static float KutuDüşmeHızı;
     [Space(15)]
     public static Vector3 tıklananKutu = new Vector3(-1, -1, -1);
     Color[] renkler = new Color[] { Color.red, Color.blue, Color.yellow, Color.green };
@@ -55,7 +58,7 @@ public class KutuKontrol : MonoBehaviour
     public static bool patlamaVar=false;
     int puan = 0;
     public static int sonPuan = 0;
-    float kontrolZamanlayıcı = 1f;
+    float kontrolZamanlayıcı = 6f;
     [Space(15)]
     [Header("Artı Süre Silme Süresi")]
     public float artSüreSilmeZamanı = 0.15f;
@@ -72,6 +75,7 @@ public class KutuKontrol : MonoBehaviour
     }
     void Awake()
     {
+        KutuDüşmeHızı = kutuDüşmeHızı;
         artSüreSil = artSüreSilmeZamanı;
         artıSüreyiGöster = false;
         patlamaVar = false;
@@ -96,7 +100,7 @@ public class KutuKontrol : MonoBehaviour
         Kutu[] kutular = FindObjectsOfType<Kutu>();
         foreach (Kutu item in kutular)
         {
-            if ((Vector2)item.transform.position == new Vector2(x, y))
+            if (item.X==x && item.Y==y)
             {
                 return item;
             }
@@ -208,7 +212,7 @@ public class KutuKontrol : MonoBehaviour
     List<Kutu> EtrafındakiKutularıAl(Kutu kontrolKutusu)
     {
         List<Kutu> etrafdakiKutular = new List<Kutu>();
-        Vector2 p = kontrolKutusu.transform.position;
+        Vector2 p = new Vector2(kontrolKutusu.X,kontrolKutusu.Y);
         Kutu yanKutu;
         yanKutu = KutuVarmı(p.x - 1, p.y);     //Sol
         if (yanKutu != null)
@@ -270,7 +274,10 @@ public class KutuKontrol : MonoBehaviour
     }
     void Update()
     {
-        patlamaEfektiSüresi = patlamaEfektiKalmaSüresi; // Oyun son haldeyken bu satır silenecek. Deneme amaçlı
+        #region Son Sürümde Silinecek Kodlar
+        patlamaEfektiSüresi = patlamaEfektiKalmaSüresi;
+        KutuDüşmeHızı = kutuDüşmeHızı;
+        #endregion
         kontrolZamanlayıcı -= Time.deltaTime;
         if (kutuSayısı > 0)
         {
@@ -368,7 +375,7 @@ public class KutuKontrol : MonoBehaviour
                         {
                             return true;
                         }
-                        patlatılacakKutular = TaşırmaAlgoritması((int)geç.transform.position.x, (int)geç.transform.position.y, new bool[genişlik, yükseklik], geç.GetComponent<Renderer>().material.color);
+                        patlatılacakKutular = TaşırmaAlgoritması((int)geç.X, (int)geç.Y, new bool[genişlik, yükseklik], geç.GetComponent<Renderer>().material.color);
                         if (patlatılacakKutular.Count > 2)
                         {
                             return true;
