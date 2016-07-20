@@ -10,25 +10,29 @@ public class AraMenüFonksiyonları : MonoBehaviour {
     {
         oyunDurdu = oyunBitti = false;
     }
+    public void AraMenüGöster()
+    {
+        if (!oyunBitti)
+        {
+            Canvas AraMenü = GetComponent<Canvas>();
+            if (AraMenü.enabled)
+            {
+                oyunDurdu = false;
+                AraMenü.enabled = false;
+            }
+            else {
+                GameObject.Find("highscore").GetComponent<Text>().text = "High Score: " + PlayerPrefs.GetInt("High Score").ToString();
+                GameObject.Find("score").GetComponent<Text>().text = "Score: " + GameObject.Find("Skor").GetComponent<TextMesh>().text;
+                AraMenü.enabled = true;
+                oyunDurdu = true;
+            }
+        }
+    }
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (!oyunBitti)
-            {
-                Canvas AraMenü = GetComponent<Canvas>();
-                if (AraMenü.enabled)
-                {
-                    oyunDurdu = false;
-                    AraMenü.enabled = false;
-                }
-                else {
-                    GameObject.Find("highscore").GetComponent<Text>().text = "High Score: " + PlayerPrefs.GetInt("High Score").ToString();
-                    GameObject.Find("score").GetComponent<Text>().text = "Score: " + GameObject.Find("Skor").GetComponent<TextMesh>().text;
-                    AraMenü.enabled = true;
-                    oyunDurdu = true;
-                }
-            }
+            AraMenüGöster();
         }
     }
 	public void AnaMenüyeDön()

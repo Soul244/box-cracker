@@ -173,6 +173,10 @@ public class KutuKontrol : MonoBehaviour
                 //        PlayerPrefs.SetInt("Level " + Application.loadedLevelName + " Buton", 4);
                 //    }
             }
+            GameObject.Find("highscore").GetComponent<UnityEngine.UI.Text>().text = "High Score: " + PlayerPrefs.GetInt("High Score").ToString();
+            GameObject.Find("score").GetComponent<UnityEngine.UI.Text>().text = "Score: " + GameObject.Find("Skor").GetComponent<TextMesh>().text;
+            GameObject.Find("Ara Menü").GetComponent<Canvas>().enabled = true;
+            AraMenüFonksiyonları.oyunDurdu = AraMenüFonksiyonları.oyunBitti = true;
         }
         //0 = Bölüm kitli
         //1= Bölüm Açık
@@ -355,7 +359,7 @@ public class KutuKontrol : MonoBehaviour
                         {
                             return true;
                         }
-                        else if (geç.GetComponent<Renderer>().material.color == Color.black)
+                        else if (geç.siyah)
                         {
                             return true;
                         }
