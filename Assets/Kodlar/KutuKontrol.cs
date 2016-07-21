@@ -325,11 +325,12 @@ public class KutuKontrol : MonoBehaviour
                 }
                 else
                 {
-                    sonPuan = puanEksiltmeOranı;
+                    sonPuan = 0-puanEksiltmeOranı;
                     puan -= puanEksiltmeOranı;
                     SesOynat("Boş Tıklama 1");
                 }
             }
+            PuanGöster.puanGösterilecekKutu = tıklananKutu;
             tıklananKutu = new Vector3(-1, -1, -1);
 
         }

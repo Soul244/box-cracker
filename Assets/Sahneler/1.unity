@@ -1982,6 +1982,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 503585cdd7ccebc4bab811d4130f3058, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  "puanG\xF6sterilecekObje": {fileID: 109394, guid: 3e4c18513bb4e8c4cb353980133d786e,
+    type: 2}
 --- !u!1 &1864420846
 GameObject:
   m_ObjectHideFlags: 0

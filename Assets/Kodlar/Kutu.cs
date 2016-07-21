@@ -57,6 +57,7 @@ public class Kutu : MonoBehaviour {
             {
                 kutuÖzelliği = 1;
             }
+            PuanGöster.yeniKutuyaTıklanıldı = true;
             KutuKontrol.tıklananKutu = new Vector3(x, y, kutuÖzelliği);
         }
     }

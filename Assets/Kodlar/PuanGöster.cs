@@ -2,28 +2,24 @@
 using System.Collections;
 
 public class PuanGöster : MonoBehaviour {
-    Ray ışın;
-    RaycastHit darbe;
-    bool puanGöster = false;
+    public static Vector3 puanGösterilecekKutu;
+    public static bool yeniKutuyaTıklanıldı;
+    public GameObject puanGösterilecekObje;
 	// Use this for initialization
 	void Start () {
-	
+        yeniKutuyaTıklanıldı = false;
+        puanGösterilecekKutu= new Vector3(-1,-1,-1);
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        ışın = Camera.main.ScreenPointToRay(Input.mousePosition);
-        if (KutuKontrol.tıklananKutu != new Vector3(-1, -1, -1) && Physics.Raycast(ışın, out darbe,Mathf.Infinity))
+        if (yeniKutuyaTıklanıldı)
         {
-            puanGöster = darbe.collider.tag == "Küp" ? true : false;
+            string gösterilecek = KutuKontrol.sonPuan < 0 ?KutuKontrol.sonPuan.ToString() : "+" + KutuKontrol.sonPuan.ToString();
+            puanGösterilecekObje.GetComponent<TextMesh>().text = gösterilecek;
+                Instantiate(puanGösterilecekObje, puanGösterilecekKutu, Quaternion.identity);
+            yeniKutuyaTıklanıldı = false;
         }
 
-    }
-    void OnGUI()
-    {
-        if (puanGöster) //Artık puanı nasıl göstericeğimize karar verdiğimizde şekillendiririz.
-        {
-            GUI.Label(new Rect((Vector2)KutuKontrol.tıklananKutu, new Vector2(200, 60)), KutuKontrol.sonPuan.ToString());
-        }
     }
 }

@@ -14,7 +14,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - "Yaz\u0131"
   - 
   - 
   - 
@@ -39,6 +39,12 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Kutu
+    uniqueID: 3992083731
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: "\xD6ne \xC7\u0131kacak Yaz\u0131lar"
+    uniqueID: 3798663353
     locked: 0
