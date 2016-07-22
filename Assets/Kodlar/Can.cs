@@ -20,13 +20,14 @@ public class Can : MonoBehaviour {
             süresayisi = PlayerPrefs.GetInt("Süre");
         }
         süre.text = süresayisi.ToString();
-        can.text = PlayerPrefs.GetInt("Can Sayısı").ToString();        
+        can.text = PlayerPrefs.GetInt("Can Sayısı").ToString();
     }	
 	// Update is called once per frame
 	void Update () {
         cansayisi = PlayerPrefs.GetInt("Can Sayısı");
-        if (cansayisi != 5)
+        if (cansayisi != 10)
         {
+            GameObject.Find("Süre Arkaplanı").GetComponent<SpriteRenderer>().enabled = true;
             zaman += Time.deltaTime;
             gecici = Convert.ToInt32(süresayisi - int.Parse(zaman.ToString().Split('.')[0]));
             if (gecici>59)
@@ -66,6 +67,8 @@ public class Can : MonoBehaviour {
         else
         {
             süre.text = "";
+            PlayerPrefs.SetInt("Süre", 300);
+            GameObject.Find("Süre Arkaplanı").GetComponent<SpriteRenderer>().enabled = false;
         }
     }
 }
