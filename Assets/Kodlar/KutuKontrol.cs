@@ -480,7 +480,7 @@ public class KutuKontrol : MonoBehaviour
     {
         if (artıSüreyiGöster)
         {
-            artSüreSil -= Time.deltaTime;
+            //artSüreSil -= Time.deltaTime;
             if (artSüreSil <= 0)
             {
                 GameObject.Find("Artı Süre").GetComponent<TextMesh>().text = "";
