@@ -93,6 +93,7 @@ public class KutuKontrol : MonoBehaviour
     }
     void Start()
     {
+        YüksekSkorKontrolü();
         //arkaplanNesnesi.GetComponent<Renderer>().material = arkaplanMateryalleri[UnityEngine.Random.Range(0, arkaplanMateryalleri.Length - 1)];
     }
     public static Kutu KutuVarmı(float x, float y)
@@ -332,7 +333,7 @@ public class KutuKontrol : MonoBehaviour
             }
             PuanGöster.puanGösterilecekKutu = tıklananKutu;
             tıklananKutu = new Vector3(-1, -1, -1);
-
+            YüksekSkorKontrolü();
         }
         if (kontrolZamanlayıcı <= 0)
         {
@@ -342,7 +343,12 @@ public class KutuKontrol : MonoBehaviour
         ArtıSüreyiAyarla();
 
     }
-
+    void YüksekSkorKontrolü()
+    {
+        TextMesh yazılacakAlan = GameObject.Find("Yüksek Skor").GetComponent<TextMesh>();
+        int geçmişYüksekSkor = PlayerPrefs.GetInt("High Score");
+        yazılacakAlan.text = geçmişYüksekSkor > puan ? geçmişYüksekSkor.ToString() : puan.ToString();
+    }
     private void SesOynat(string ObjeAdı)
     {
         GameObject.Find(ObjeAdı).GetComponent<AudioSource>().Play();
@@ -394,7 +400,7 @@ public class KutuKontrol : MonoBehaviour
         if (patlayanlar.Count<3)
         {
             GameObject.Find("Skor").GetComponent<TextMesh>().text= Convert.ToString(Convert.ToInt32(GameObject.Find("Skor").GetComponent<TextMesh>().text)-puanEksiltme);
-            GameObject.Find("Artı Süre").GetComponent<TextMesh>().text = "-" + puanEksiltme/100;
+            GameObject.Find("Artı Süre").GetComponent<TextMesh>().text = "-" + (puanEksiltme/100).ToString("0.0");
             Süre.KalanSüre = Süre.KalanSüre - puanEksiltme / 100;
             artıSüreyiGöster = true;
             return puanEksiltme;
@@ -404,7 +410,7 @@ public class KutuKontrol : MonoBehaviour
         puan = patlayanlar.Count * çoklayıcı;
         GameObject.Find("Skor").GetComponent<TextMesh>().text = Convert.ToString(puan + Convert.ToInt32(GameObject.Find("Skor").GetComponent<TextMesh>().text));
         float süre = puan * 0.01f;
-        GameObject.Find("Artı Süre").GetComponent<TextMesh>().text = "+" + süre;
+        GameObject.Find("Artı Süre").GetComponent<TextMesh>().text = "+" + süre.ToString("0.0");
         artıSüreyiGöster = true;
         Süre.KalanSüre += süre;
         return puan;
