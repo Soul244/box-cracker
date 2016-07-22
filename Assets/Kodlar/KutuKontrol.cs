@@ -94,6 +94,7 @@ public class KutuKontrol : MonoBehaviour
     void Start()
     {
         YüksekSkorKontrolü();
+        GameObject.Find("Artı Süre").GetComponent<TextMesh>().text = "";
         //arkaplanNesnesi.GetComponent<Renderer>().material = arkaplanMateryalleri[UnityEngine.Random.Range(0, arkaplanMateryalleri.Length - 1)];
     }
     public static Kutu KutuVarmı(float x, float y)
@@ -295,6 +296,7 @@ public class KutuKontrol : MonoBehaviour
         if (tıklananKutu != new Vector3(-1, -1, -1))
         {
             Kutu seçilenKutu = KutuVarmı(tıklananKutu.x, tıklananKutu.y);
+            string oynatılacakPatlamaSesi = "Patlama Sesi " + UnityEngine.Random.Range(1, 3).ToString();
             List<Kutu> patlatılacakKutular;
             if (tıklananKutu.z == 0) //Tıklanan Kutu Parlaksa
             {
@@ -303,14 +305,14 @@ public class KutuKontrol : MonoBehaviour
                 puan += sonPuan;
                 KutularıKaldır(patlatılacakKutular);
                 kontrolZamanlayıcı = 1f;
-                SesOynat("Patlama Sesi 1");
+                SesOynat(oynatılacakPatlamaSesi);
             }
             else if (tıklananKutu.z == 1) //Tıklanan Kutu Siyahsa
             {
                 sonPuan = Convert.ToInt32(SiyahKutuPatlaması(seçilenKutu)*puanÇoklayıcı);
                 puan += sonPuan;
                 kontrolZamanlayıcı = 1f;
-                SesOynat("Patlama Sesi 1");
+                SesOynat(oynatılacakPatlamaSesi);
             }
             else //Normal Kutuya Tıklandıysa
             {
@@ -322,7 +324,7 @@ public class KutuKontrol : MonoBehaviour
                     puan += sonPuan;
                     KutularıKaldır(patlatılacakKutular);
                     kontrolZamanlayıcı = 1f;
-                    SesOynat("Patlama Sesi 1");
+                    SesOynat(oynatılacakPatlamaSesi);
                 }
                 else
                 {
@@ -480,7 +482,7 @@ public class KutuKontrol : MonoBehaviour
     {
         if (artıSüreyiGöster)
         {
-            //artSüreSil -= Time.deltaTime;
+            artSüreSil -= Time.deltaTime;
             if (artSüreSil <= 0)
             {
                 GameObject.Find("Artı Süre").GetComponent<TextMesh>().text = "";
