@@ -5,6 +5,10 @@ public class Kutu : MonoBehaviour {
     bool patlak;
     public bool parlak;
     public bool siyah;
+    public virtual Color Renk
+    {
+        get { return GetComponent<Renderer>().material.color; }
+    }
     int x, y;
     public bool Patlak
     {
@@ -72,7 +76,7 @@ public class Kutu : MonoBehaviour {
     {
         if (DiğerKutu == null)
             return false;
-        return GetComponent<Renderer>().material.color == DiğerKutu.GetComponent<Renderer>().material.color;
+        return Renk == DiğerKutu.Renk;
     }
 	// Use this for initialization
 	void Start () {
@@ -81,7 +85,7 @@ public class Kutu : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	protected void Update () {
         if (patlamaDurumu)
         {
             kaybolmaSayacı -= Time.deltaTime;

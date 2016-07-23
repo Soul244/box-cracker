@@ -54,7 +54,7 @@ public class KutuKontrol : MonoBehaviour
     [Range(1,5)]
     public float puanÇoklayıcı = 1f;
     public int puanEksiltmeOranı=100;
-    Dictionary<Color, string> RenkTanımlayıcı;
+    //Dictionary<Color, string> RenkTanımlayıcı;
     public static bool patlamaVar=false;
     int puan = 0;
     public static int sonPuan = 0;
@@ -62,19 +62,31 @@ public class KutuKontrol : MonoBehaviour
     [Space(15)]
     [Header("Artı Süre Silme Süresi")]
     public float artSüreSilmeZamanı = 0.15f;
+    [Space(15)]
+    [Header("Geçici Değerler Silinecek")]
+    [Range(0, 1)]
+    public float renkZamanlayıcı;
+    public static float _RenkZamanlayıcı;
+    [Range(0, 0.1f)]
+    public float renkPayı;
+    public static float _RenkPayı;
     static bool artıSüreyiGöster = false;
     float artSüreSil;
-    void RenkTanımla()
-    {
-        RenkTanımlayıcı = new Dictionary<Color, string>();
-        RenkTanımlayıcı.Add(Color.red, "Red");
-        RenkTanımlayıcı.Add(Color.blue, "Blue");
-        RenkTanımlayıcı.Add(Color.yellow, "Yellow");
-        RenkTanımlayıcı.Add(Color.green, "Green");
-        RenkTanımlayıcı.Add(Color.white, "Bomb");
-    }
+    //void RenkTanımla()
+    //{
+    //    RenkTanımlayıcı = new Dictionary<Color, string>();
+    //    RenkTanımlayıcı.Add(Color.red, "Red");
+    //    RenkTanımlayıcı.Add(Color.blue, "Blue");
+    //    RenkTanımlayıcı.Add(Color.yellow, "Yellow");
+    //    RenkTanımlayıcı.Add(Color.green, "Green");
+    //    RenkTanımlayıcı.Add(Color.white, "Bomb");
+    //}
     void Awake()
     {
+        #region Silinecek Değerler
+        _RenkPayı = renkPayı;
+        _RenkZamanlayıcı = renkZamanlayıcı;
+        #endregion
         KutuDüşmeHızı = kutuDüşmeHızı;
         artSüreSil = artSüreSilmeZamanı;
         artıSüreyiGöster = false;
@@ -83,13 +95,13 @@ public class KutuKontrol : MonoBehaviour
         patlamaEfektiSüresi = patlamaEfektiKalmaSüresi;
         genişlik = Genişlik;
         yükseklik = Yükseklik;
-        RenkTanımla();
-        renkSayıları = new Dictionary<string, int>();
-        foreach (Color item in renkler)
-        {
-            renkSayıları.Add(RenkTanımlayıcı[item], 0);
-        }
-        renkSayıları.Add("Bomb", 0);
+        //RenkTanımla();
+        //renkSayıları = new Dictionary<string, int>();
+        //foreach (Color item in renkler)
+        //{
+        //    renkSayıları.Add(RenkTanımlayıcı[item], 0);
+        //}
+        //renkSayıları.Add("Bomb", 0);
     }
     void Start()
     {
@@ -100,11 +112,11 @@ public class KutuKontrol : MonoBehaviour
     public static Kutu KutuVarmı(float x, float y)
     {
         Kutu[] kutular = FindObjectsOfType<Kutu>();
-        foreach (Kutu item in kutular)
+        for (int i = 0; i < kutular.Length; i++)
         {
-            if (item.X==x && item.Y==y)
+            if (kutular[i].X==x && kutular[i].Y==y)
             {
-                return item;
+                return kutular[i];
             }
         }
         return null;
@@ -130,14 +142,14 @@ public class KutuKontrol : MonoBehaviour
             temp = (GameObject)Instantiate(kutu, new Vector2(x, y), Quaternion.identity);
 
         }
-        renkSayıları[RenkTanımlayıcı[kutuRengi]]++;
+        //renkSayıları[RenkTanımlayıcı[kutuRengi]]++;
         temp.GetComponent<Renderer>().material.color = kutuRengi;
     }
     public void KutularıKaldır(List<Kutu> Kutular)
     {
         foreach (Kutu item in Kutular)
         {
-            renkSayıları[RenkTanımlayıcı[item.GetComponent<Renderer>().material.color]]--;
+            //renkSayıları[RenkTanımlayıcı[item.GetComponent<Renderer>().material.color]]--;
             item.Patlat(patlamaEfektleri[UnityEngine.Random.Range(0,3)]);
         }
     }
@@ -200,10 +212,9 @@ public class KutuKontrol : MonoBehaviour
         List<Kutu> patlatılacakKutular = new List<Kutu>();
         foreach (Kutu item in FindObjectsOfType<Kutu>())
         {
-            Renderer rend = item.GetComponent<Renderer>();
-            if (rend != null)
+            if (item != null)
             {
-                if (rend.material.color == Renk)
+                if (item.Renk == Renk)
                 {
                     patlatılacakKutular.Add(item);
                 }
@@ -279,6 +290,8 @@ public class KutuKontrol : MonoBehaviour
         #region Son Sürümde Silinecek Kodlar
         patlamaEfektiSüresi = patlamaEfektiKalmaSüresi;
         KutuDüşmeHızı = kutuDüşmeHızı;
+        _RenkPayı = renkPayı;
+        _RenkZamanlayıcı = renkZamanlayıcı;
         #endregion
         kontrolZamanlayıcı -= Time.deltaTime;
         if (kutuSayısı > 0)
@@ -300,7 +313,7 @@ public class KutuKontrol : MonoBehaviour
             List<Kutu> patlatılacakKutular;
             if (tıklananKutu.z == 0) //Tıklanan Kutu Parlaksa
             {
-                patlatılacakKutular = AynıRenkliKutularıAl(seçilenKutu.GetComponent<Renderer>().material.color);
+                patlatılacakKutular = AynıRenkliKutularıAl(seçilenKutu.Renk);
                 sonPuan= Convert.ToInt32(Puanla(patlatılacakKutular)*puanÇoklayıcı);
                 puan += sonPuan;
                 KutularıKaldır(patlatılacakKutular);
@@ -316,7 +329,7 @@ public class KutuKontrol : MonoBehaviour
             }
             else //Normal Kutuya Tıklandıysa
             {
-                patlatılacakKutular = TaşırmaAlgoritması((int)tıklananKutu.x, (int)tıklananKutu.y, new bool[genişlik, yükseklik], seçilenKutu.GetComponent<Renderer>().material.color);
+                patlatılacakKutular = TaşırmaAlgoritması((int)tıklananKutu.x, (int)tıklananKutu.y, new bool[genişlik, yükseklik], seçilenKutu.Renk);
                 sonPuan = Convert.ToInt32(Puanla(patlatılacakKutular) * puanÇoklayıcı);
                 if (patlatılacakKutular.Count > 2)
                 {
@@ -384,7 +397,7 @@ public class KutuKontrol : MonoBehaviour
                         {
                             return true;
                         }
-                        patlatılacakKutular = TaşırmaAlgoritması((int)geç.X, (int)geç.Y, new bool[genişlik, yükseklik], geç.GetComponent<Renderer>().material.color);
+                        patlatılacakKutular = TaşırmaAlgoritması((int)geç.X, (int)geç.Y, new bool[genişlik, yükseklik], geç.Renk);
                         if (patlatılacakKutular.Count > 2)
                         {
                             return true;
@@ -455,7 +468,7 @@ public class KutuKontrol : MonoBehaviour
             {
                 if (!geç.Patlak)
                 {
-                    if (geç.GetComponent<Renderer>().material.color == Renk)
+                    if (geç.Renk == Renk)
                     {
                         patlayacak.Add(geç);
 

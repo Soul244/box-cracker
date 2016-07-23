@@ -9,9 +9,9 @@ GameObject:
   m_Component:
   - 4: {fileID: 469448}
   - 212: {fileID: 21222050}
-  - 114: {fileID: 11482388}
   - 61: {fileID: 6121790}
-  m_Layer: 0
+  - 114: {fileID: 11493182}
+  m_Layer: 9
   m_Name: Geoit Parlak
   m_TagString: "K\xFCp"
   m_Icon: {fileID: 0}
@@ -25,7 +25,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 180260}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -41.180347, y: -5.800001, z: -14.826783}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.79, y: 0.79, z: 0.79}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -45,7 +45,7 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: 1.28, y: 1.28}
---- !u!114 &11482388
+--- !u!114 &11493182
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -53,11 +53,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 180260}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 944d75132ba797b4f95df93bc0b947a7, type: 3}
+  m_Script: {fileID: 11500000, guid: 83db9a6ed255c934ea920b9bcf79b15a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   parlak: 1
   siyah: 0
+  "zamanlay\u0131c\u0131": 0.08
+  "renkPay\u0131": 0.016
 --- !u!212 &21222050
 SpriteRenderer:
   m_ObjectHideFlags: 1

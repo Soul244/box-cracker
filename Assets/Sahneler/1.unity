@@ -96,7 +96,7 @@ GameObject:
   - 23: {fileID: 80343075}
   - 102: {fileID: 80343074}
   - 114: {fileID: 80343077}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: "S\xFCre"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -184,7 +184,7 @@ GameObject:
   - 4: {fileID: 97805525}
   - 23: {fileID: 97805524}
   - 102: {fileID: 97805523}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: "Skor Yaz\u0131"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -691,7 +691,7 @@ GameObject:
   - 4: {fileID: 386446548}
   - 23: {fileID: 386446550}
   - 102: {fileID: 386446549}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: "Y\xFCksek Skor"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1057,7 +1057,7 @@ GameObject:
   - 4: {fileID: 660301881}
   - 23: {fileID: 660301884}
   - 102: {fileID: 660301883}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: "Art\u0131 S\xFCre"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1237,7 +1237,7 @@ GameObject:
   - 4: {fileID: 810343220}
   - 23: {fileID: 810343219}
   - 102: {fileID: 810343218}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Skor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1915,7 +1915,7 @@ GameObject:
   - 4: {fileID: 1399613699}
   - 23: {fileID: 1399613701}
   - 102: {fileID: 1399613700}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: "Y\xFCksek Skor Yaz\u0131"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2199,7 +2199,7 @@ MonoBehaviour:
   "y\u0131ld\u0131z1": 50
   "y\u0131ld\u0131z2": 150
   "y\u0131ld\u0131z3": 250
-  "parlakKutu\u015Eans\u0131": 40
+  "parlakKutu\u015Eans\u0131": 200
   "siyahKutu\u015Eans\u0131": 30
   arkaplanNesnesi: {fileID: 0}
   arkaplanMateryalleri:
@@ -2217,6 +2217,8 @@ MonoBehaviour:
   "puan\xC7oklay\u0131c\u0131": 1
   "puanEksiltmeOran\u0131": 100
   "artS\xFCreSilmeZaman\u0131": 0.15
+  "renkZamanlay\u0131c\u0131": 0.08
+  "renkPay\u0131": 0.016
 --- !u!4 &1803876350
 Transform:
   m_ObjectHideFlags: 0
@@ -2255,7 +2257,7 @@ GameObject:
   - 64: {fileID: 1864420848}
   - 23: {fileID: 1864420847}
   - 114: {fileID: 1864420851}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Arkaplan
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2398,15 +2400,15 @@ Camera:
   field of view: 60
   orthographic: 0
   orthographic size: 5
-  m_Depth: -1
+  m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_RenderingPath: -1
+  m_RenderingPath: 3
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
   m_TargetEye: 3
-  m_HDR: 0
+  m_HDR: 1
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
