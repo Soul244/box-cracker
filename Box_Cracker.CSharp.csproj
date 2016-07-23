@@ -120,6 +120,7 @@
     <Compile Include="Assets\Kodlar\KutuKontrol.cs" />
     <Compile Include="Assets\Kodlar\KutuParlak.cs" />
     <Compile Include="Assets\Kodlar\Menü\ArkaplanKaydır.cs" />
+    <Compile Include="Assets\Kodlar\Menü\Ayarlar.cs" />
     <Compile Include="Assets\Kodlar\Menü\BölümSeç.cs" />
     <Compile Include="Assets\Kodlar\Menü\LevelSıfırlama.cs" />
     <Compile Include="Assets\Kodlar\Menü\MüzikAyarları.cs" />
