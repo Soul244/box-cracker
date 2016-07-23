@@ -6,12 +6,14 @@ using UnityEngine.UI;
 
 public class Süre : MonoBehaviour {
     static float süresayisi = 60f;
-    TextMesh tx;
     int skor,yüksekskor;
     // Use this for initialization
+    public Transform LoadingBar;
+    public Transform tx;
+    float sureoranı = 0;
+    string gecici;
     void Start () {
-        tx= GetComponent<TextMesh>();
-        süresayisi = 60f;       
+        sureoranı = 1 / süresayisi;
     }
 	public static float KalanSüre
     {
@@ -25,20 +27,23 @@ public class Süre : MonoBehaviour {
         }
     }
 	// Update is called once per frame
-	void Update () {
+	void Update () {       
         sure();
     }
     void sure()
     {
-        if(!AraMenüFonksiyonları.oyunDurdu)
-        süresayisi -= Time.deltaTime;
+        gecici = tx.GetComponent<Text>().text;
+        if (!AraMenüFonksiyonları.oyunDurdu)
+        süresayisi -= Time.deltaTime;       
         if (süresayisi <= 10)
         {
-            tx.color = Color.red;
+            tx.GetComponent<Text>().color = Color.red;
+            LoadingBar.GetComponent<Image>().color = Color.red;
         }
         else
         {
-            tx.color = Color.white;
+            tx.GetComponent<Text>().color = Color.magenta;
+            LoadingBar.GetComponent<Image>().color = Color.magenta;
         }
         if (süresayisi <= 0f)
         {
@@ -54,6 +59,14 @@ public class Süre : MonoBehaviour {
             AraMenüFonksiyonları.oyunDurdu = AraMenüFonksiyonları.oyunBitti= true;
             return;
         }
-        tx.text = süresayisi.ToString("0.0");
+        tx.GetComponent<Text>().text = süresayisi.ToString("0");
+        if (tx.GetComponent<Text>().text != gecici)
+        {
+            LoadingBar.GetComponent<Image>().fillAmount -= sureoranı;
+        }
+        else
+        {
+
+        }
     }
 }
