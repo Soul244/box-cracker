@@ -47,15 +47,15 @@ public class KutuKontrol : MonoBehaviour
     [Space(15)]
     [Header("Patlama Efektleri")]
     public GameObject[] patlamaEfektleri;
-    public float patlamaEfektiKalmaSüresi=0.15f;
+    public float patlamaEfektiKalmaSüresi = 0.15f;
     public static float patlamaEfektiSüresi;
     [Space(15)]
     [Header("Puanlama Sistemi")]
-    [Range(1,5)]
+    [Range(1, 5)]
     public float puanÇoklayıcı = 1f;
-    public int puanEksiltmeOranı=100;
+    public int puanEksiltmeOranı = 100;
     //Dictionary<Color, string> RenkTanımlayıcı;
-    public static bool patlamaVar=false;
+    public static bool patlamaVar = false;
     int puan = 0;
     public static int sonPuan = 0;
     float kontrolZamanlayıcı = 6f;
@@ -114,7 +114,7 @@ public class KutuKontrol : MonoBehaviour
         Kutu[] kutular = FindObjectsOfType<Kutu>();
         for (int i = 0; i < kutular.Length; i++)
         {
-            if (kutular[i].X==x && kutular[i].Y==y)
+            if (kutular[i].X == x && kutular[i].Y == y)
             {
                 return kutular[i];
             }
@@ -150,7 +150,7 @@ public class KutuKontrol : MonoBehaviour
         foreach (Kutu item in Kutular)
         {
             //renkSayıları[RenkTanımlayıcı[item.GetComponent<Renderer>().material.color]]--;
-            item.Patlat(patlamaEfektleri[UnityEngine.Random.Range(0,3)]);
+            item.Patlat(patlamaEfektleri[UnityEngine.Random.Range(0, 3)]);
         }
     }
     void BölümüBitirme()
@@ -225,7 +225,7 @@ public class KutuKontrol : MonoBehaviour
     List<Kutu> EtrafındakiKutularıAl(Kutu kontrolKutusu)
     {
         List<Kutu> etrafdakiKutular = new List<Kutu>();
-        Vector2 p = new Vector2(kontrolKutusu.X,kontrolKutusu.Y);
+        Vector2 p = new Vector2(kontrolKutusu.X, kontrolKutusu.Y);
         Kutu yanKutu;
         yanKutu = KutuVarmı(p.x - 1, p.y);     //Sol
         if (yanKutu != null)
@@ -314,7 +314,7 @@ public class KutuKontrol : MonoBehaviour
             if (tıklananKutu.z == 0) //Tıklanan Kutu Parlaksa
             {
                 patlatılacakKutular = AynıRenkliKutularıAl(seçilenKutu.Renk);
-                sonPuan= Convert.ToInt32(Puanla(patlatılacakKutular)*puanÇoklayıcı);
+                sonPuan = Convert.ToInt32(Puanla(patlatılacakKutular) * puanÇoklayıcı);
                 puan += sonPuan;
                 KutularıKaldır(patlatılacakKutular);
                 kontrolZamanlayıcı = 1f;
@@ -322,7 +322,7 @@ public class KutuKontrol : MonoBehaviour
             }
             else if (tıklananKutu.z == 1) //Tıklanan Kutu Siyahsa
             {
-                sonPuan = Convert.ToInt32(SiyahKutuPatlaması(seçilenKutu)*puanÇoklayıcı);
+                sonPuan = Convert.ToInt32(SiyahKutuPatlaması(seçilenKutu) * puanÇoklayıcı);
                 puan += sonPuan;
                 kontrolZamanlayıcı = 1f;
                 SesOynat(oynatılacakPatlamaSesi);
@@ -333,7 +333,7 @@ public class KutuKontrol : MonoBehaviour
                 sonPuan = Convert.ToInt32(Puanla(patlatılacakKutular) * puanÇoklayıcı);
                 if (patlatılacakKutular.Count > 2)
                 {
-                    
+
                     puan += sonPuan;
                     KutularıKaldır(patlatılacakKutular);
                     kontrolZamanlayıcı = 1f;
@@ -341,7 +341,7 @@ public class KutuKontrol : MonoBehaviour
                 }
                 else
                 {
-                    sonPuan = 0-puanEksiltmeOranı;
+                    sonPuan = 0 - puanEksiltmeOranı;
                     puan -= puanEksiltmeOranı;
                     SesOynat("Boş Tıklama 1");
                 }
@@ -373,7 +373,7 @@ public class KutuKontrol : MonoBehaviour
     {
         for (int x = 0; x < genişlik; x++)
         {
-            if( KutuVarmı(x, 0)==null)
+            if (KutuVarmı(x, 0) == null)
             {
                 break;
             }
@@ -381,7 +381,7 @@ public class KutuKontrol : MonoBehaviour
             {
                 List<Kutu> patlatılacakKutular = new List<Kutu>();
                 Kutu geç = KutuVarmı(x, y);
-                if (geç==null)
+                if (geç == null)
                 {
                     break;
                 }
@@ -412,10 +412,10 @@ public class KutuKontrol : MonoBehaviour
     static int puanEksiltme;
     public static float Puanla(List<Kutu> patlayanlar)
     {
-        if (patlayanlar.Count<3)
+        if (patlayanlar.Count < 3)
         {
-            GameObject.Find("Skor").GetComponent<TextMesh>().text= Convert.ToString(Convert.ToInt32(GameObject.Find("Skor").GetComponent<TextMesh>().text)-puanEksiltme);
-            GameObject.Find("Artı Süre").GetComponent<TextMesh>().text = "-" + (puanEksiltme/100).ToString("0.0");
+            GameObject.Find("Skor").GetComponent<TextMesh>().text = Convert.ToString(Convert.ToInt32(GameObject.Find("Skor").GetComponent<TextMesh>().text) - puanEksiltme);
+            GameObject.Find("Artı Süre").GetComponent<TextMesh>().text = "-" + (puanEksiltme / 100).ToString("0.0");
             Süre.KalanSüre = Süre.KalanSüre - puanEksiltme / 100;
             artıSüreyiGöster = true;
             return puanEksiltme;
@@ -491,7 +491,7 @@ public class KutuKontrol : MonoBehaviour
         }
         return patlayacak;
     }
-    public  void ArtıSüreyiAyarla()
+    public void ArtıSüreyiAyarla()
     {
         if (artıSüreyiGöster)
         {
