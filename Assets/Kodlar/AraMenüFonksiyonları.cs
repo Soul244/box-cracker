@@ -45,4 +45,12 @@ public class AraMenüFonksiyonları : MonoBehaviour {
         oyunDurdu = false;
         SceneManager.LoadScene("1");
     }
+    public void Cikis()
+    {
+        Application.Quit();
+    }
+    public void PencereKapa()
+    {
+        GameObject.Find("Ara Menü").GetComponent<Canvas>().enabled = false;
+    }
 }
