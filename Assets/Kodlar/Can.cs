@@ -3,7 +3,8 @@ using System.Collections;
 using UnityEngine.UI;
 using System;
 
-public class Can : MonoBehaviour {
+public class Can : MonoBehaviour
+{
     public Text can;
     public Text süre;
     float zaman = 0f;
@@ -11,26 +12,28 @@ public class Can : MonoBehaviour {
     float süresayisi = 300f;
     int gecici = 0;
     int dk, sn = 0;
-	// Use this for initialization
-	void Start () {
-        PlayerPrefs.SetInt("Can Sayısı",10); // Debug için şimdilik böyle kalsın
+    // Use this for initialization
+    void Start()
+    {
+        //PlayerPrefs.SetInt("Can Sayısı", 10); // Debug için şimdilik böyle kalsın
 
-        if (PlayerPrefs.GetInt("Süre")>0)
+        if (PlayerPrefs.GetInt("Süre") > 0)
         {
             süresayisi = PlayerPrefs.GetInt("Süre");
         }
         süre.text = süresayisi.ToString();
         can.text = PlayerPrefs.GetInt("Can Sayısı").ToString();
-    }	
-	// Update is called once per frame
-	void Update () {
+    }
+    // Update is called once per frame
+    void Update()
+    {
         cansayisi = PlayerPrefs.GetInt("Can Sayısı");
         if (cansayisi != 10)
         {
             GameObject.Find("Süre Arkaplanı").GetComponent<SpriteRenderer>().enabled = true;
             zaman += Time.deltaTime;
             gecici = Convert.ToInt32(süresayisi - int.Parse(zaman.ToString().Split('.')[0]));
-            if (gecici>59)
+            if (gecici > 59)
             {
                 dk = gecici / 60;
                 sn = gecici % 60;
@@ -45,7 +48,7 @@ public class Can : MonoBehaviour {
                 süre.text = dk.ToString() + ":00";
                 PlayerPrefs.SetInt("Süre", gecici);
             }
-            else if(sn<10 && sn>0)
+            else if (sn < 10 && sn > 0)
             {
                 süre.text = dk.ToString() + ":0" + sn.ToString();
                 PlayerPrefs.SetInt("Süre", gecici);
@@ -54,7 +57,7 @@ public class Can : MonoBehaviour {
             {
                 süre.text = dk.ToString() + ":" + sn.ToString();
                 PlayerPrefs.SetInt("Süre", gecici);
-            }   
+            }
             if (zaman >= süresayisi)
             {
                 cansayisi++;

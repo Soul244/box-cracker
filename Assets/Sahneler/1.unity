@@ -616,9 +616,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   renkler:
-  - {r: 0.77931046, g: 1, b: 0, a: 0}
-  - {r: 0.6351643, g: 0.8734309, b: 0.9705882, a: 0}
-  - {r: 0.6769926, g: 0.6985294, b: 0.30817476, a: 0}
+  - {r: 1, g: 0.9724138, b: 0, a: 0}
+  - {r: 0, g: 0.7103448, b: 1, a: 0}
+  - {r: 1, g: 0, b: 0, a: 0}
 --- !u!95 &314798612
 Animator:
   serializedVersion: 3
@@ -626,7 +626,7 @@ Animator:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 314798608}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 51a9028b87558ff4baab5bac9e2f1ef1, type: 2}
   m_CullingMode: 0
@@ -2619,7 +2619,7 @@ MonoBehaviour:
   "y\u0131ld\u0131z1": 50
   "y\u0131ld\u0131z2": 150
   "y\u0131ld\u0131z3": 250
-  "parlakKutu\u015Eans\u0131": 200
+  "parlakKutu\u015Eans\u0131": 50
   "siyahKutu\u015Eans\u0131": 30
   arkaplanNesnesi: {fileID: 0}
   arkaplanMateryalleri:
@@ -2771,6 +2771,7 @@ GameObject:
   - 124: {fileID: 1888385137}
   - 81: {fileID: 1888385136}
   - 114: {fileID: 1888385141}
+  - 114: {fileID: 1888385142}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2855,5 +2856,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 63ef6ee3e285cb746845015300d2af4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1888385142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1888385135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc376a1d15426664c8b87eb71d424ab2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
