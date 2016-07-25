@@ -115,6 +115,7 @@
     <Compile Include="Assets\GoogleMobileAds\Platforms\iOS\Utils.cs" />
     <Compile Include="Assets\Kodlar\AraMenüFonksiyonları.cs" />
     <Compile Include="Assets\Kodlar\ArkaplanKaydır2.cs" />
+    <Compile Include="Assets\Kodlar\ArkaplanRenkDeğişimi.cs" />
     <Compile Include="Assets\Kodlar\BaşarımKontrol.cs" />
     <Compile Include="Assets\Kodlar\Can.cs" />
     <Compile Include="Assets\Kodlar\Can2.cs" />
@@ -133,6 +134,8 @@
     <Compile Include="Assets\Kodlar\Menü\SesAyarları.cs" />
     <Compile Include="Assets\Kodlar\Menü\z_BolumMantık.cs" />
     <Compile Include="Assets\Kodlar\Menü\z_LevelTıklama.cs" />
+    <Compile Include="Assets\Kodlar\OyunAçılırken.cs" />
+    <Compile Include="Assets\Kodlar\OyunKapanırken.cs" />
     <Compile Include="Assets\Kodlar\PatlamaEfektiniYoket.cs" />
     <Compile Include="Assets\Kodlar\PatlamaSüresi.cs" />
     <Compile Include="Assets\Kodlar\PuanGöster.cs" />

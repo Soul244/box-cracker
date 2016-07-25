@@ -49,8 +49,4 @@ public class AraMenüFonksiyonları : MonoBehaviour {
     {
         Application.Quit();
     }
-    public void PencereKapa()
-    {
-        GameObject.Find("Ara Menü").GetComponent<Canvas>().enabled = false;
-    }
 }
