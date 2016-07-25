@@ -406,7 +406,7 @@ RectTransform:
   m_RootOrder: 6
   m_AnchorMin: {x: 0.6025, y: 0}
   m_AnchorMax: {x: 0.8025, y: 0.08148085}
-  m_AnchoredPosition: {x: -164, y: 549}
+  m_AnchoredPosition: {x: -164, y: 538}
   m_SizeDelta: {x: 120, y: 55}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &550147508
@@ -1169,7 +1169,6 @@ GameObject:
   - 222: {fileID: 1095798085}
   - 114: {fileID: 1095798084}
   - 114: {fileID: 1095798083}
-  - 95: {fileID: 1095798086}
   - 114: {fileID: 1095798087}
   m_Layer: 5
   m_Name: Kupa
@@ -1194,7 +1193,7 @@ RectTransform:
   m_RootOrder: 4
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -2, y: -299}
+  m_AnchoredPosition: {x: -2, y: -310}
   m_SizeDelta: {x: 260, y: 153}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1095798083
@@ -1282,23 +1281,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1095798081}
---- !u!95 &1095798086
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1095798081}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 0626d5cacbb21a6419870263edfa61b7, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &1095798087
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1323,7 +1305,6 @@ GameObject:
   - 114: {fileID: 1285810213}
   - 82: {fileID: 1285810216}
   - 114: {fileID: 1285810217}
-  - 95: {fileID: 1285810218}
   m_Layer: 5
   m_Name: 'Buy Game '
   m_TagString: Untagged
@@ -1346,7 +1327,7 @@ RectTransform:
   m_RootOrder: 5
   m_AnchorMin: {x: 0.09476782, y: 0.45977357}
   m_AnchorMax: {x: 0.90848, y: 0.666}
-  m_AnchoredPosition: {x: -3, y: -626}
+  m_AnchoredPosition: {x: -3, y: -539}
   m_SizeDelta: {x: -499, y: -198}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1285810213
@@ -1519,23 +1500,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1321ac780fa3e9a41b68be66a0aee902, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!95 &1285810218
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1285810211}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: aff5366460fedc349a4717b5e08b039d, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &1653981247
 GameObject:
   m_ObjectHideFlags: 0
