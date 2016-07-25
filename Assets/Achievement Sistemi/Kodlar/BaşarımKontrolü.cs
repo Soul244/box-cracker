@@ -96,8 +96,8 @@ public class BaşarımKontrolü : MonoBehaviour {
     }
     void Start()
     {
-        //PlayerPrefs.SetInt("Çüş", 0);
-        //PlayerPrefs.Save();
+        PlayerPrefs.SetInt("Çüş", 0);
+        PlayerPrefs.Save();
         BaşarımKoy();
     }
     public static void BaşarımAç(string BaşarımAdı)

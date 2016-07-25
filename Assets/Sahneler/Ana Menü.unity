@@ -401,6 +401,7 @@ GameObject:
   - 114: {fileID: 550147509}
   - 114: {fileID: 550147508}
   - 95: {fileID: 550147507}
+  - 114: {fileID: 550147511}
   m_Layer: 5
   m_Name: Ayarlar
   m_TagString: Untagged
@@ -529,6 +530,17 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 550147505}
+--- !u!114 &550147511
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 550147505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a633c576894a21545a2d5528d3f0045e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &583325330
 GameObject:
   m_ObjectHideFlags: 0
@@ -1206,6 +1218,7 @@ GameObject:
   - 114: {fileID: 1095798083}
   - 114: {fileID: 1095798087}
   - 95: {fileID: 1095798086}
+  - 114: {fileID: 1095798088}
   m_Layer: 5
   m_Name: Kupa
   m_TagString: Untagged
@@ -1345,6 +1358,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d290f96523848e4ab02603501fcd8c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1095798088
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1095798081}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a633c576894a21545a2d5528d3f0045e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1285810211
 GameObject:
   m_ObjectHideFlags: 0
@@ -1359,6 +1383,7 @@ GameObject:
   - 82: {fileID: 1285810216}
   - 114: {fileID: 1285810217}
   - 95: {fileID: 1285810218}
+  - 114: {fileID: 1285810219}
   m_Layer: 5
   m_Name: 'Buy Game '
   m_TagString: Untagged
@@ -1571,6 +1596,17 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &1285810219
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1285810211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a633c576894a21545a2d5528d3f0045e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1653981247
 GameObject:
   m_ObjectHideFlags: 0
