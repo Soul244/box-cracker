@@ -11,18 +11,6 @@ public class BaşarımKontrolü : MonoBehaviour {
     Dictionary<string, Başarım> başarımlar = new Dictionary<string, Başarım>();
     private static BaşarımKontrolü nesne;
 
-    public static BaşarımKontrolü Nesne
-    {
-        get
-        {
-            if (nesne==null)
-            {
-                nesne = GameObject.FindObjectOfType<BaşarımKontrolü>();
-            }
-            return BaşarımKontrolü.nesne;
-        }
-    }
-
     public class Başarım
     {
         GameObject nesne;
@@ -68,7 +56,7 @@ public class BaşarımKontrolü : MonoBehaviour {
             }
         }
 
-        public Başarım(GameObject nesne, string başlık, string açıklama)
+        public Başarım(GameObject nesne, string başlık, string açıklama,Sprite BaşarımResmi)
         {
             nesne.transform.SetParent(GameObject.Find("Genel").transform);
             nesne.transform.localScale = new Vector3(1, 1, 1);
@@ -77,7 +65,7 @@ public class BaşarımKontrolü : MonoBehaviour {
             //Resim = resim;
             Başlık = başlık;
             Açıklama = açıklama;
-            BaşarımYükle();
+            BaşarımYükle(BaşarımResmi);
 
         }
         public void Kaydet(bool açık)
@@ -86,37 +74,56 @@ public class BaşarımKontrolü : MonoBehaviour {
             PlayerPrefs.SetInt(Başlık, kazanıldı ? 1 : 0);
             PlayerPrefs.Save();
         }
-        public bool BaşarımAç()
+        public bool BaşarımAç(Sprite BaşarımResmi)
         {
             if (!kazanıldı)
             {
-                nesne.GetComponent<Image>().sprite = BaşarımKontrolü.Nesne.açıkBaşarıResmi;
+                nesne.GetComponent<Image>().sprite = BaşarımResmi;
                 kazanıldı = true;
                 Kaydet(true);
                 return true;
             }
             return false;
         }
-        public void BaşarımYükle()
+        public void BaşarımYükle(Sprite BaşarımResmi)
         {
             kazanıldı = PlayerPrefs.GetInt(Başlık) == 1 ? true : false;
             if (kazanıldı)
             {
-                nesne.GetComponent<Image>().sprite = BaşarımKontrolü.Nesne.açıkBaşarıResmi;
+                nesne.GetComponent<Image>().sprite = BaşarımResmi;
             }
         }
     }
     void Start()
     {
+        //PlayerPrefs.SetInt("Çüş", 0);
+        //PlayerPrefs.Save();
         BaşarımKoy();
     }
-    public void BaşarımAç(string BaşarımAdı)
+    public static void BaşarımAç(string BaşarımAdı)
     {
-        başarımlar[BaşarımAdı].BaşarımAç();
+        if (PlayerPrefs.GetInt(BaşarımAdı)==0)
+        {
+            PlayerPrefs.SetInt(BaşarımAdı, 1);
+            PlayerPrefs.Save();
+        }
     }
+    //public void BaşarımAç(string BaşarımAdı)
+    //{
+    //    başarımlar[BaşarımAdı].BaşarımAç();
+    //}
     public void BaşarımKoy() //Eklemek istediğin başarımları buraya yazarsın
     {
-        Başarım başarı= new Başarım( Instantiate(başarımNesnesi),"Test1","Yok arkadaşım"); //Her Başarım için bunun gibi 2 satır yazmak zorundasın. Burda Test1 başarımın adı ve Yok Arkadaşım kısmı ise başarımın koşulları olacak.
+        Başarım başarı= new Başarım( Instantiate(başarımNesnesi),"Test1","Yok arkadaşım",açıkBaşarıResmi); //Her Başarım için bunun gibi 2 satır yazmak zorundasın. Burda Test1 başarımın adı ve Yok Arkadaşım kısmı ise başarımın koşulları olacak.
         başarımlar.Add(başarı.Başlık, başarı); // Yazmayı unutma
+        başarı = new Başarım(Instantiate(başarımNesnesi), "Çüş", "Tek Tıklamayla 100 puandan fazla kazan",açıkBaşarıResmi);
+        başarımlar.Add(başarı.Başlık, başarı);
+    }
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            UnityEngine.SceneManagement.SceneManager.LoadScene("Ana Menü");
+        }
     }
 }

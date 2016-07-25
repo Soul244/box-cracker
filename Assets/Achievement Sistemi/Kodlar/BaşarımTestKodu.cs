@@ -12,7 +12,7 @@ public class BaşarımTestKodu : MonoBehaviour {
 	void Update () {
         if (Input.GetKeyDown(KeyCode.E)) //Başarım koşullarını koymak için bunun gibi if açman gerek. Eğer sağlanırsa Aşağıda ki gibi hangi başarımın açılacağını yazmalısın. Bu test kod sayfası. Başka kod sayfası oluşturup yazarsın.
         {
-            BaşarımKontrolü.Nesne.BaşarımAç("Test1");
+            //BaşarımKontrolü.Nesne.BaşarımAç("Test1");
         }
 	}
 }

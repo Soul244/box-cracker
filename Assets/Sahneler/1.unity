@@ -2723,6 +2723,7 @@ GameObject:
   - 4: {fileID: 1803876350}
   - 114: {fileID: 1803876349}
   - 114: {fileID: 1803876352}
+  - 114: {fileID: 1803876348}
   m_Layer: 0
   m_Name: "OyunAyarlar\u0131"
   m_TagString: Untagged
@@ -2730,6 +2731,17 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1803876348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1803876347}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07833711f121fc14187e6e814fb2d02e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1803876349
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2752,7 +2764,7 @@ MonoBehaviour:
   "y\u0131ld\u0131z1": 50
   "y\u0131ld\u0131z2": 150
   "y\u0131ld\u0131z3": 250
-  "parlakKutu\u015Eans\u0131": 50
+  "parlakKutu\u015Eans\u0131": 40
   "siyahKutu\u015Eans\u0131": 30
   arkaplanNesnesi: {fileID: 0}
   arkaplanMateryalleri:
@@ -2770,8 +2782,8 @@ MonoBehaviour:
   "puan\xC7oklay\u0131c\u0131": 1
   "puanEksiltmeOran\u0131": 100
   "artS\xFCreSilmeZaman\u0131": 0.15
-  "renkZamanlay\u0131c\u0131": 0.08
-  "renkPay\u0131": 0.016
+  "renkZamanlay\u0131c\u0131": 0.236
+  "renkPay\u0131": 0.1
 --- !u!4 &1803876350
 Transform:
   m_ObjectHideFlags: 0

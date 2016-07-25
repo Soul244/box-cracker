@@ -61,6 +61,12 @@
     <Reference Include="UnityEditor">
       <HintPath>Library\UnityAssemblies\UnityEditor.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEditor.iOS.Extensions.Xcode">
+      <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.iOS.Extensions.Common">
+      <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Common.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Box_Cracker.CSharp.Plugins.csproj">
@@ -115,6 +121,7 @@
     <Compile Include="Assets\GoogleMobileAds\Platforms\iOS\Utils.cs" />
     <Compile Include="Assets\Kodlar\AraMenüFonksiyonları.cs" />
     <Compile Include="Assets\Kodlar\ArkaplanKaydır2.cs" />
+    <Compile Include="Assets\Kodlar\BaşarımKontrol.cs" />
     <Compile Include="Assets\Kodlar\Can.cs" />
     <Compile Include="Assets\Kodlar\Can2.cs" />
     <Compile Include="Assets\Kodlar\IşıkHareketi.cs" />
@@ -124,6 +131,7 @@
     <Compile Include="Assets\Kodlar\KutuParlak.cs" />
     <Compile Include="Assets\Kodlar\Menü\ArkaplanKaydır.cs" />
     <Compile Include="Assets\Kodlar\Menü\Ayarlar.cs" />
+    <Compile Include="Assets\Kodlar\Menü\BaşarımSayfasıAç.cs" />
     <Compile Include="Assets\Kodlar\Menü\BölümSeç.cs" />
     <Compile Include="Assets\Kodlar\Menü\LevelSıfırlama.cs" />
     <Compile Include="Assets\Kodlar\Menü\MüzikAyarları.cs" />

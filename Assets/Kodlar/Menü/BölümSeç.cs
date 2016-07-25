@@ -13,6 +13,7 @@ public class BölümSeç : MonoBehaviour {
         GetComponent<AudioSource>().Play();
         if (caneksilt())
         {
+            
             SceneManager.LoadScene("1");
         }
     }
