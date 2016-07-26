@@ -96,17 +96,17 @@ public class BaşarımKontrolü : MonoBehaviour {
     }
     void Start()
     {
-        PlayerPrefs.SetInt("Çüş", 0);
-        PlayerPrefs.Save();
         BaşarımKoy();
     }
-    public static void BaşarımAç(string BaşarımAdı)
+    public static bool BaşarımAç(string BaşarımAdı)
     {
         if (PlayerPrefs.GetInt(BaşarımAdı)==0)
         {
             PlayerPrefs.SetInt(BaşarımAdı, 1);
             PlayerPrefs.Save();
+            return true;
         }
+        return false;
     }
     //public void BaşarımAç(string BaşarımAdı)
     //{
