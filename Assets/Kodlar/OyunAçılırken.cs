@@ -16,7 +16,6 @@ public class OyunAçılırken : MonoBehaviour {
             sonuc /= 5;
             sonuc += PlayerPrefs.GetInt("Can Sayısı");
             PlayerPrefs.SetInt("Can Sayısı", sonuc);
-            Debug.Log("Çalıştı");
             uygun = false;
         }
     }

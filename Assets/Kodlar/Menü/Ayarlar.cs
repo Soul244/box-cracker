@@ -3,10 +3,10 @@ using System.Collections;
 using UnityEngine.UI;
 
 public class Ayarlar : MonoBehaviour {
-
+    bool durum;
 	// Use this for initialization
 	void Start () {
-	
+        durum = false;
 	}
 	
 	// Update is called once per frame
@@ -14,7 +14,8 @@ public class Ayarlar : MonoBehaviour {
 	}
     public void ayarlar()
     {
-        ayarlarıgöster(true);
+        durum = !durum;
+        ayarlarıgöster(durum);
     }
     public void ayarlarıkapa()
     {
