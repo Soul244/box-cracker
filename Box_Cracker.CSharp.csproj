@@ -61,6 +61,12 @@
     <Reference Include="UnityEditor">
       <HintPath>Library\UnityAssemblies\UnityEditor.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEditor.iOS.Extensions.Xcode">
+      <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.iOS.Extensions.Common">
+      <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Common.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Box_Cracker.CSharp.Plugins.csproj">
@@ -71,6 +77,7 @@
   <ItemGroup>
     <Compile Include="Assets\Achievement Sistemi\Kodlar\BaşarımKontrolü.cs" />
     <Compile Include="Assets\Achievement Sistemi\Kodlar\BaşarımTestKodu.cs" />
+    <Compile Include="Assets\GeriSayımKontrölü.cs" />
     <Compile Include="Assets\GoogleMobileAds\Api\AdFailedToLoadEventArgs.cs" />
     <Compile Include="Assets\GoogleMobileAds\Api\AdLoader.cs" />
     <Compile Include="Assets\GoogleMobileAds\Api\AdPosition.cs" />

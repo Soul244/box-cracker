@@ -6,12 +6,14 @@ using UnityEngine.UI;
 public class AraMenüFonksiyonları : MonoBehaviour {
     public static bool oyunDurdu = false;
     public static bool oyunBitti = false;
+    public static bool geriSayım = false;
     void Awake()
     {
         oyunDurdu = oyunBitti = false;
     }
     public void AraMenüGöster()
     {
+        
         if (!oyunBitti)
         {
             Canvas AraMenü = GetComponent<Canvas>();
