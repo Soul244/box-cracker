@@ -32,7 +32,7 @@ public class SesAyarları : MonoBehaviour {
         PlayerPrefs.SetInt("SesDurumu", sesDurumu ? 1 : 0);
         foreach (AudioSource item in FindObjectsOfType<AudioSource>())
         {
-            if (item.name== "Müzik")
+            if (item.name== "Müzik(Clone)")
             {
                 continue;
             }
