@@ -8,7 +8,8 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 436360}
-  - 82: {fileID: 8242918}
+  - 114: {fileID: 11403496}
+  - 82: {fileID: 8240230}
   m_Layer: 0
   m_Name: "M\xFCzik"
   m_TagString: Untagged
@@ -29,7 +30,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!82 &8242918
+--- !u!82 &8240230
 AudioSource:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -38,11 +39,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 9faa9c032af2408488ca4137edeeb41f, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.181
+  m_Volume: 1
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   Priority: 128
@@ -103,6 +104,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!114 &11403496
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 168970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9139c18b900c916438b3cb6c1bccbc3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  "M\xFCzikler":
+  - {fileID: 8300000, guid: 99debf87761b66c4e8942cc19711c9eb, type: 3}
+  - {fileID: 8300000, guid: 9faa9c032af2408488ca4137edeeb41f, type: 3}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

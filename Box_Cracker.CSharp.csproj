@@ -151,6 +151,7 @@
     <Compile Include="Assets\Kodlar\TestKodu.cs" />
     <Compile Include="Assets\Kodlar\YüksekSkor.cs" />
     <Compile Include="Assets\Kodlar\İstatistikler.cs" />
+    <Compile Include="Assets\MüzikKontrol.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Plugins\Android\GoogleMobileAdsPlugin\AndroidManifest.xml" />

@@ -9,6 +9,8 @@ public class MüzikAyarları : MonoBehaviour
     Button b;
     public GameObject müzikObjesi;
     GameObject müzik;
+
+
     void Start()
     {
         //Button b = GetComponent<Button>();
