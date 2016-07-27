@@ -7,11 +7,24 @@ public class MüzikAyarları : MonoBehaviour
     public Sprite açık, kapalı;
     AudioSource ses;
     Button b;
+    public GameObject müzikObjesi;
+    GameObject müzik;
     void Start()
     {
         //Button b = GetComponent<Button>();
         //b.image.sprite = açık;
-        ses = GameObject.Find("Main Camera").GetComponent<AudioSource>();
+        GameObject geçiciMüzikObjesi = GameObject.Find("Müzik(Clone)");
+        if (!geçiciMüzikObjesi)
+        {
+            müzik = Instantiate(müzikObjesi);
+        }
+        else
+        {
+            müzik = geçiciMüzikObjesi;
+        }
+        ses = müzik.GetComponent<AudioSource>();
+
+        DontDestroyOnLoad(müzik);
         b = GetComponent<Button>();
         try
         {
@@ -33,7 +46,7 @@ public class MüzikAyarları : MonoBehaviour
     }
     public void MüzikAyarla()
     {
-        ses = GameObject.Find("Main Camera").GetComponent<AudioSource>();
+        ses = müzik.GetComponent<AudioSource>();
         b = GetComponent<Button>();
         if (ses.mute)
         {

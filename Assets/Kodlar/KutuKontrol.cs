@@ -366,7 +366,10 @@ public class KutuKontrol : MonoBehaviour
     }
     private void SesOynat(string ObjeAdı)
     {
-        GameObject.Find(ObjeAdı).GetComponent<AudioSource>().Play();
+        if (SesAyarları.sesDurumu)
+        {
+            GameObject.Find(ObjeAdı).GetComponent<AudioSource>().Play();
+        }
     }
 
     public bool HamleKaldımı()

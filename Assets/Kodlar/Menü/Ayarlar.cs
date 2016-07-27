@@ -14,6 +14,7 @@ public class Ayarlar : MonoBehaviour {
 	}
     public void ayarlar()
     {
+        GetComponent<AudioSource>().Play();
         durum = !durum;
         ayarlarıgöster(durum);
     }
