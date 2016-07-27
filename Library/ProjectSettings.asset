@@ -9,8 +9,8 @@ PlayerSettings:
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: DefaultCompany
-  productName: Box Cracker Beta v2
+  companyName: Indexer
+  productName: Box Cracker Alfa 1.0
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_ShowUnitySplashScreen: 1
@@ -89,7 +89,7 @@ PlayerSettings:
     16:10: 0
     16:9: 1
     Others: 1
-  bundleIdentifier: com.Hasan.BoxCracker
+  bundleIdentifier: com.Indexer.BoxCracker
   bundleVersion: 1.0
   preloadedAssets: []
   metroEnableIndependentInputSource: 0
@@ -160,8 +160,8 @@ PlayerSettings:
   AndroidTargetDevice: 3
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
-  AndroidKeystoreName: 
-  AndroidKeyaliasName: 
+  AndroidKeystoreName: "C:/Users/Hasan/Desktop/Box_Cracker/\u015Fifreleme.keystore"
+  AndroidKeyaliasName: box cracker
   AndroidTVCompatibility: 1
   AndroidIsGame: 1
   androidEnableBanner: 0
