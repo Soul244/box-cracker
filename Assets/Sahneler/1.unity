@@ -2555,7 +2555,7 @@ MonoBehaviour:
   - {fileID: 138812, guid: eb59577b7e17c67438da31af7024f890, type: 2}
   - {fileID: 157896, guid: e8f8f6211c5e1f648a296e0f860b7547, type: 2}
   "patlamaEfektiKalmaS\xFCresi": 0.28
-  "puan\xC7oklay\u0131c\u0131": 5
+  "puan\xC7oklay\u0131c\u0131": 1
   "puanEksiltmeOran\u0131": 100
   "artS\xFCreSilmeZaman\u0131": 0.15
   "renkZamanlay\u0131c\u0131": 0.236
@@ -2815,8 +2815,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07833711f121fc14187e6e814fb2d02e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  "Ba\u015Far\u0131mlar":
-  - CgkI1p743fUHEAIQBA
 --- !u!4 &1954409620
 Transform:
   m_ObjectHideFlags: 0
