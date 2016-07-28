@@ -45,6 +45,7 @@ public class Kutu : MonoBehaviour {
     {
         x = (int)transform.position.x;
         y = (int)transform.position.y;
+        transform.localScale = new Vector3(0.75f,0.75f,0.75f);
         kaybolmaSayacı = KutuKontrol.patlamaEfektiSüresi;
     }
     void OnMouseUpAsButton()
