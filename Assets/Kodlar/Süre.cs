@@ -55,6 +55,7 @@ public class Süre : MonoBehaviour {
             yüksekskor = PlayerPrefs.GetInt("High Score");
             if (skor > yüksekskor)
             {
+                BaşarımKontrol.YeniYüksekSkor(skor);
                 PlayerPrefs.SetInt("High Score", skor);
             }
             GameObject.Find("highscore").GetComponent<Text>().text = "High Score: " + PlayerPrefs.GetInt("High Score").ToString();

@@ -2,42 +2,71 @@
 using System.Collections;
 using UnityEngine.UI;
 
-public class BaşarımKontrol : MonoBehaviour {
-    Vector2 anaPozisyon;
-    Vector2 alınacakPozisyon;
-    bool başarımGöster;
-    float sayaç;
-    RectTransform pozisyon;
-	// Use this for initialization
-	void Start ()
+public class BaşarımKontrol : MonoBehaviour
+{
+    bool ilk = false;
+    bool yanlışTıklama = false;
+    bool yaşamınSırrı = false;
+    public static int patlatılanKutuSayısı;
+    public static void YeniYüksekSkor(int yeniSkor)
     {
-        pozisyon = GetComponent<RectTransform>();
-        anaPozisyon = pozisyon.localPosition;
-        başarımGöster = false;
-        alınacakPozisyon = new Vector2(192.1f, 643.3f);
-        sayaç = 6f;
+        Social.ReportScore(yeniSkor, BoxCrackerKaynak.leaderboard_high_scores, (bool başarılı) => { });
     }
-	
-	// Update is called once per frame
-	void Update () {
-        if (KutuKontrol.sonPuan>99)
+    public static void BaşarımAç(string başarımKodu)
+    {
+        if (Social.localUser.authenticated)
         {
-            if (BaşarımKontrolü.BaşarımAç("Çüş"))
+            Social.ReportProgress(başarımKodu, 100, (bool başarı) => { });
+        }
+    }
+    public static void KutuSayısıPatlamaKontrol(int patlayanKutuSayısı)
+    {
+        patlatılanKutuSayısı += patlayanKutuSayısı;
+        if (patlayanKutuSayısı > 100000)
+        {
+            BaşarımAç(BoxCrackerKaynak.achievement_one_giant_leap_for_mankind);
+        }
+        else if (patlayanKutuSayısı > 10000)
+        {
+            BaşarımAç(BoxCrackerKaynak.achievement_10000_boxes);
+        }
+        else if (patlatılanKutuSayısı>1000)
+        {
+            BaşarımAç(BoxCrackerKaynak.achievement_1000_boxes);
+        }
+        else if (patlatılanKutuSayısı > 41)
+        {
+            BaşarımAç(BoxCrackerKaynak.achievement_answer_to_life_the_universe_and_everything);
+        }
+    }
+    // Use this for initialization
+    void Start()
+    {
+        patlatılanKutuSayısı = PlayerPrefs.GetInt("PatlatılanKutuSayısı");
+        ilk = PlayerPrefs.GetInt("İlkBaşarım") == 1;
+        yanlışTıklama = PlayerPrefs.GetInt("YanlışTıklama") == 1;
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (!ilk)
+        {
+            if (KutuKontrol.sonPuan > 0)
             {
-                başarımGöster = true;
-                transform.GetChild(1).GetComponent<Text>().text = "Çüş";
+                ilk = true;
+                PlayerPrefs.SetInt("İlkBaşarım", 0);
+                Social.ReportProgress(BoxCrackerKaynak.achievement_that_is_one_small_step_for_man, 100, (bool başarı) => { });
             }
         }
-        if (başarımGöster)
+        if (!yanlışTıklama)
         {
-                pozisyon.localPosition = Vector2.Lerp(pozisyon.localPosition, alınacakPozisyon, 0.1f);
-            sayaç -= Time.deltaTime;
-            if (sayaç<=0)
+            if (KutuKontrol.sonPuan < 0)
             {
-                pozisyon.localPosition = anaPozisyon;
-                sayaç = 6f;
-                başarımGöster = false;
+                yanlışTıklama = true;
+                PlayerPrefs.SetInt("YanlışTıklama", 0);
+                Social.ReportProgress(BoxCrackerKaynak.achievement_there_is_a_snake_inside, 100, (bool başarı) => { });
             }
         }
-	}
+    }
 }

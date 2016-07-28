@@ -106,6 +106,7 @@ public class KutuKontrol : MonoBehaviour
     void Start()
     {
         YüksekSkorKontrolü();
+        PuanÇoklayıcı= puanÇoklayıcı;
         GameObject.Find("Artı Süre").GetComponent<TextMesh>().text = "";
         //arkaplanNesnesi.GetComponent<Renderer>().material = arkaplanMateryalleri[UnityEngine.Random.Range(0, arkaplanMateryalleri.Length - 1)];
     }
@@ -289,6 +290,7 @@ public class KutuKontrol : MonoBehaviour
     {
         #region Son Sürümde Silinecek Kodlar
         patlamaEfektiSüresi = patlamaEfektiKalmaSüresi;
+        PuanÇoklayıcı = puanÇoklayıcı;
         KutuDüşmeHızı = kutuDüşmeHızı;
         _RenkPayı = renkPayı;
         _RenkZamanlayıcı = renkZamanlayıcı;
@@ -314,7 +316,7 @@ public class KutuKontrol : MonoBehaviour
             if (tıklananKutu.z == 0) //Tıklanan Kutu Parlaksa
             {
                 patlatılacakKutular = AynıRenkliKutularıAl(seçilenKutu.Renk);
-                sonPuan = Convert.ToInt32(Puanla(patlatılacakKutular) * puanÇoklayıcı);
+                sonPuan = Convert.ToInt32(Puanla(patlatılacakKutular));
                 puan += sonPuan;
                 KutularıKaldır(patlatılacakKutular);
                 kontrolZamanlayıcı = 1f;
@@ -322,7 +324,7 @@ public class KutuKontrol : MonoBehaviour
             }
             else if (tıklananKutu.z == 1) //Tıklanan Kutu Siyahsa
             {
-                sonPuan = Convert.ToInt32(SiyahKutuPatlaması(seçilenKutu) * puanÇoklayıcı);
+                sonPuan = Convert.ToInt32(SiyahKutuPatlaması(seçilenKutu));
                 puan += sonPuan;
                 kontrolZamanlayıcı = 1f;
                 SesOynat(oynatılacakPatlamaSesi);
@@ -330,7 +332,7 @@ public class KutuKontrol : MonoBehaviour
             else //Normal Kutuya Tıklandıysa
             {
                 patlatılacakKutular = TaşırmaAlgoritması((int)tıklananKutu.x, (int)tıklananKutu.y, new bool[genişlik, yükseklik], seçilenKutu.Renk);
-                sonPuan = Convert.ToInt32(Puanla(patlatılacakKutular) * puanÇoklayıcı);
+                sonPuan = Convert.ToInt32(Puanla(patlatılacakKutular));
                 if (patlatılacakKutular.Count > 2)
                 {
 
@@ -413,6 +415,8 @@ public class KutuKontrol : MonoBehaviour
         return false;
     }
     static int puanEksiltme;
+    static float PuanÇoklayıcı;
+    
     public static float Puanla(List<Kutu> patlayanlar)
     {
         if (patlayanlar.Count < 3)
@@ -423,15 +427,18 @@ public class KutuKontrol : MonoBehaviour
             artıSüreyiGöster = true;
             return puanEksiltme;
         }
-        int puan = 1, çoklayıcı = 1;
+        float puan = 1, çoklayıcı = 1;
         çoklayıcı = patlayanlar.Count / 2;
         puan = patlayanlar.Count * çoklayıcı;
-        GameObject.Find("Skor").GetComponent<TextMesh>().text = Convert.ToString(puan + Convert.ToInt32(GameObject.Find("Skor").GetComponent<TextMesh>().text));
+        BaşarımKontrol.KutuSayısıPatlamaKontrol(patlayanlar.Count);
+        puan *= PuanÇoklayıcı;
+        GameObject.Find("Skor").GetComponent<TextMesh>().text = Convert.ToString((int)puan + Convert.ToInt32(GameObject.Find("Skor").GetComponent<TextMesh>().text));
         float süre = puan * 0.01f;
         GameObject.Find("Artı Süre").GetComponent<TextMesh>().text = "+" + süre.ToString("0.0");
         artıSüreyiGöster = true;
         Süre.KalanSüre += süre;
-        return puan;
+        
+        return (int)puan;
     }
     static bool EtrafındaAynıRenkVarmı(float x, float y)
     {
