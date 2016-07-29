@@ -26,16 +26,11 @@ public class KutuKontrol : MonoBehaviour
     [Space(15)]
     public static Vector3 tıklananKutu = new Vector3(-1, -1, -1);
     Color[] renkler = new Color[] { Color.red, Color.blue, Color.yellow, Color.green };
-    [Header("Bölüm Geçme Koşulları")]
-    public int yıldız1;
-    public int yıldız2;
-    public int yıldız3;
-    [Space(15)]
     [Header("Özel Kutu Gelme Şansı")]
-    [Tooltip("1000 üzerinden değerlendirilir")]
-    public int parlakKutuŞansı = 50;
-    [Tooltip("1000 üzerinden değerlendirilir")]
-    public int siyahKutuŞansı = 100;
+    [Tooltip("100 üzerinden değerlendirilir")]
+    public float parlakKutuŞansı = 50;
+    [Tooltip("100 üzerinden değerlendirilir")]
+    public float siyahKutuŞansı = 100;
     [Space(15)]
     [Header("Patlama Efektleri")]
     public GameObject[] patlamaEfektleri;
@@ -97,18 +92,36 @@ public class KutuKontrol : MonoBehaviour
         }
         return null;
     }
+    int ŞansKutusu(params float[] şansOranları)
+    {
+        float şans = UnityEngine.Random.Range(0, 100);
+        Dictionary<float, int> yerTutma = new Dictionary<float, int>();
+        for (int i = 0; i < şansOranları.Length; i++)
+        {
+            yerTutma.Add(şansOranları[i], i);
+        }
+        Array.Sort(şansOranları);
+        for (int i = 0; i < şansOranları.Length; i++)
+        {
+            if (şans<şansOranları[i])
+            {
+                return yerTutma[şansOranları[i]];
+            }
+        }
+        return -1;
+    }
     void KutuKoy(float x, float y)
     {
-        int şans = UnityEngine.Random.Range(0, 1000);
         int index = UnityEngine.Random.Range(0, renkler.Length);
         Color kutuRengi = renkler[index];
         GameObject temp;
-        if (şans < siyahKutuŞansı)
+        int çıkanKutu = ŞansKutusu(new float[] { parlakKutuŞansı, siyahKutuŞansı });
+        if (çıkanKutu==1)
         {
             temp = (GameObject)Instantiate(siyahKutu, new Vector2(x, y), Quaternion.identity);
             kutuRengi = Color.white;
         }
-        else if (şans < parlakKutuŞansı)
+        else if (çıkanKutu==0)
         {
             temp = (GameObject)Instantiate(parlakKutu, new Vector2(x, y), Quaternion.identity);
             temp.GetComponent<Renderer>().material.SetColor("_SpecColor", kutuRengi);

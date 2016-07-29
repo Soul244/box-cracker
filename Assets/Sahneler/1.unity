@@ -2685,23 +2685,12 @@ MonoBehaviour:
   kutu: {fileID: 180260, guid: 46c004b311a1a264f9a35579128f890d, type: 2}
   parlakKutu: {fileID: 180260, guid: b7a815b863cbf2f40a3d2d68d734689a, type: 2}
   siyahKutu: {fileID: 166536, guid: c135172bc37bdb146bb9179ecf73941d, type: 2}
-  patlamaEfekti: {fileID: 121104, guid: 572bb41ced8d2e9488ba44910d551fa2, type: 2}
   "Geni\u015Flik": 6
   "Y\xFCkseklik": 8
   "kutuSay\u0131s\u0131": 10000
   "kutuD\xFC\u015FmeH\u0131z\u0131": 25
-  "y\u0131ld\u0131z1": 50
-  "y\u0131ld\u0131z2": 150
-  "y\u0131ld\u0131z3": 250
-  "parlakKutu\u015Eans\u0131": 40
-  "siyahKutu\u015Eans\u0131": 30
-  arkaplanNesnesi: {fileID: 0}
-  arkaplanMateryalleri:
-  - {fileID: 2100000, guid: 61c089d25d8acfd4a81e5126ddb6d69c, type: 2}
-  - {fileID: 2100000, guid: 144f39f309679774191570ab9e32587e, type: 2}
-  - {fileID: 2100000, guid: eba822f1f916808459ead4170aa0312c, type: 2}
-  - {fileID: 2100000, guid: b8c891541fea3ab48acc69bffc79b80e, type: 2}
-  - {fileID: 2100000, guid: 12848cfc3cec9364e911f3d17fdaec8e, type: 2}
+  "parlakKutu\u015Eans\u0131": 4
+  "siyahKutu\u015Eans\u0131": 3
   patlamaEfektleri:
   - {fileID: 171572, guid: 3883bd98cfba0f3459d6a6851048aea0, type: 2}
   - {fileID: 166378, guid: b763a6d5989e44a4e8550da6d3ae024f, type: 2}
