@@ -12,9 +12,6 @@ public class KutuKontrol : MonoBehaviour
     public GameObject parlakKutu;
     public GameObject siyahKutu;
     [Space(15)]
-    [Header("Efektler")]
-    public GameObject patlamaEfekti;
-    [Space(15)]
     [Header("Kutu Ayarları")]
     [Range(1, 10)]
     public int Genişlik = 6;
@@ -39,11 +36,6 @@ public class KutuKontrol : MonoBehaviour
     public int parlakKutuŞansı = 50;
     [Tooltip("1000 üzerinden değerlendirilir")]
     public int siyahKutuŞansı = 100;
-    [Space(15)]
-    //[Header("Arkaplan Özellikleri")]
-    //public GameObject arkaplanNesnesi;
-    //public Material[] arkaplanMateryalleri;
-    public Dictionary<string, int> renkSayıları;
     [Space(15)]
     [Header("Patlama Efektleri")]
     public GameObject[] patlamaEfektleri;
@@ -72,15 +64,6 @@ public class KutuKontrol : MonoBehaviour
     public static float _RenkPayı;
     static bool artıSüreyiGöster = false;
     float artSüreSil;
-    //void RenkTanımla()
-    //{
-    //    RenkTanımlayıcı = new Dictionary<Color, string>();
-    //    RenkTanımlayıcı.Add(Color.red, "Red");
-    //    RenkTanımlayıcı.Add(Color.blue, "Blue");
-    //    RenkTanımlayıcı.Add(Color.yellow, "Yellow");
-    //    RenkTanımlayıcı.Add(Color.green, "Green");
-    //    RenkTanımlayıcı.Add(Color.white, "Bomb");
-    //}
     void Awake()
     {
         #region Silinecek Değerler
@@ -95,20 +78,12 @@ public class KutuKontrol : MonoBehaviour
         patlamaEfektiSüresi = patlamaEfektiKalmaSüresi;
         genişlik = Genişlik;
         yükseklik = Yükseklik;
-        //RenkTanımla();
-        //renkSayıları = new Dictionary<string, int>();
-        //foreach (Color item in renkler)
-        //{
-        //    renkSayıları.Add(RenkTanımlayıcı[item], 0);
-        //}
-        //renkSayıları.Add("Bomb", 0);
     }
     void Start()
     {
         YüksekSkorKontrolü();
-        PuanÇoklayıcı= puanÇoklayıcı;
+        PuanÇoklayıcı = puanÇoklayıcı;
         GameObject.Find("Artı Süre").GetComponent<TextMesh>().text = "";
-        //arkaplanNesnesi.GetComponent<Renderer>().material = arkaplanMateryalleri[UnityEngine.Random.Range(0, arkaplanMateryalleri.Length - 1)];
     }
     public static Kutu KutuVarmı(float x, float y)
     {
@@ -143,14 +118,12 @@ public class KutuKontrol : MonoBehaviour
             temp = (GameObject)Instantiate(kutu, new Vector2(x, y), Quaternion.identity);
 
         }
-        //renkSayıları[RenkTanımlayıcı[kutuRengi]]++;
         temp.GetComponent<Renderer>().material.color = kutuRengi;
     }
     public void KutularıKaldır(List<Kutu> Kutular)
     {
         foreach (Kutu item in Kutular)
         {
-            //renkSayıları[RenkTanımlayıcı[item.GetComponent<Renderer>().material.color]]--;
             item.Patlat(patlamaEfektleri[UnityEngine.Random.Range(0, 3)]);
         }
     }
@@ -158,54 +131,20 @@ public class KutuKontrol : MonoBehaviour
     {
         if (HamleKaldımı() == false)// YAPILACAK HAMLE KALMADIYSA OYUNU BİTİR
         {
-            //Application.LoadLevel("Anamenü");
-            //SceneManager.LoadScene("Ana Menü");
             int öncekiPuan = PlayerPrefs.GetInt("High Score");
             if (puan < öncekiPuan)
             {
-                //if (puan >= yıldız1 && puan < yıldız2) SesOynat("Kazanma 1 Yıldız");
-                //else if (puan >= yıldız2 && puan < yıldız3) SesOynat("Kazanma 2 Yıldız");
-                //else if (puan >= yıldız3) SesOynat("Kazanma 3 Yıldız");
-                //return;
+
             }
             else
             {
                 PlayerPrefs.SetInt("High Score", puan);
-                //    if (puan >= yıldız1 && puan < yıldız2)
-                //    {
-                //        SesOynat("Kazanma 1 Yıldız");
-                //        Debug.Log(puan.ToString());
-                //        sonrakiBolum = int.Parse(Application.loadedLevelName) + 1;
-                //        PlayerPrefs.SetInt("Level " + sonrakiBolum.ToString() + " Buton", 1);
-                //        PlayerPrefs.SetInt("Level " + Application.loadedLevelName + " Buton", 2);
-                //    }
-                //    else if (puan >= yıldız2 && puan < yıldız3)
-                //    {
-                //        SesOynat("Kazanma 2 Yıldız");
-                //        Debug.Log("iki yıldız");
-                //        sonrakiBolum = int.Parse(Application.loadedLevelName) + 1;
-                //        PlayerPrefs.SetInt("Level " + sonrakiBolum.ToString() + " Buton", 1);
-                //        PlayerPrefs.SetInt("Level " + Application.loadedLevelName + " Buton", 3);
-                //    }
-                //    else if (puan >= yıldız3)
-                //    {
-                //        SesOynat("Kazanma 3 Yıldız");
-                //        Debug.Log("üç yıldız");
-                //        sonrakiBolum = int.Parse(Application.loadedLevelName) + 1;
-                //        PlayerPrefs.SetInt("Level " + sonrakiBolum.ToString() + " Buton", 1);
-                //        PlayerPrefs.SetInt("Level " + Application.loadedLevelName + " Buton", 4);
-                //    }
             }
             GameObject.Find("highscore").GetComponent<UnityEngine.UI.Text>().text = "High Score: " + PlayerPrefs.GetInt("High Score").ToString();
             GameObject.Find("score").GetComponent<UnityEngine.UI.Text>().text = "Score: " + GameObject.Find("Skor").GetComponent<TextMesh>().text;
             GameObject.Find("Ara Menü").GetComponent<Canvas>().enabled = true;
             AraMenüFonksiyonları.oyunDurdu = AraMenüFonksiyonları.oyunBitti = true;
         }
-        //0 = Bölüm kitli
-        //1= Bölüm Açık
-        //2 = 1 Yıldız
-        //3 = 2 Yıldız
-        //4 = 3 YIldız
     }
 
     List<Kutu> AynıRenkliKutularıAl(Color Renk)
@@ -390,24 +329,22 @@ public class KutuKontrol : MonoBehaviour
                 {
                     break;
                 }
-                if (geç != null)
+                if (!geç.Patlak)
                 {
-                    if (!geç.Patlak)
+                    if (geç.parlak)
                     {
-                        if (geç.parlak)
-                        {
-                            return true;
-                        }
-                        else if (geç.siyah)
-                        {
-                            return true;
-                        }
-                        patlatılacakKutular = TaşırmaAlgoritması((int)geç.X, (int)geç.Y, new bool[genişlik, yükseklik], geç.Renk);
-                        if (patlatılacakKutular.Count > 2)
-                        {
-                            return true;
-                        }
+                        return true;
                     }
+                    else if (geç.siyah)
+                    {
+                        return true;
+                    }
+                    patlatılacakKutular = TaşırmaAlgoritması((int)geç.X, (int)geç.Y, new bool[genişlik, yükseklik], geç.Renk);
+                    if (patlatılacakKutular.Count > 2)
+                    {
+                        return true;
+                    }
+
                 }
 
             }
@@ -416,7 +353,7 @@ public class KutuKontrol : MonoBehaviour
     }
     static int puanEksiltme;
     static float PuanÇoklayıcı;
-    
+
     public static float Puanla(List<Kutu> patlayanlar)
     {
         if (patlayanlar.Count < 3)
@@ -437,7 +374,7 @@ public class KutuKontrol : MonoBehaviour
         GameObject.Find("Artı Süre").GetComponent<TextMesh>().text = "+" + süre.ToString("0.0");
         artıSüreyiGöster = true;
         Süre.KalanSüre += süre;
-        
+
         return (int)puan;
     }
     static bool EtrafındaAynıRenkVarmı(float x, float y)
