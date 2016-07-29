@@ -40,9 +40,9 @@ public class KutuKontrol : MonoBehaviour
     [Tooltip("1000 üzerinden değerlendirilir")]
     public int siyahKutuŞansı = 100;
     [Space(15)]
-    [Header("Arkaplan Özellikleri")]
-    public GameObject arkaplanNesnesi;
-    public Material[] arkaplanMateryalleri;
+    //[Header("Arkaplan Özellikleri")]
+    //public GameObject arkaplanNesnesi;
+    //public Material[] arkaplanMateryalleri;
     public Dictionary<string, int> renkSayıları;
     [Space(15)]
     [Header("Patlama Efektleri")]
