@@ -56,7 +56,7 @@ public class BaşarımKontrol : MonoBehaviour
             {
                 ilk = true;
                 PlayerPrefs.SetInt("İlkBaşarım", 0);
-                Social.ReportProgress(BoxCrackerKaynak.achievement_that_is_one_small_step_for_man, 100, (bool başarı) => { });
+                BaşarımAç(BoxCrackerKaynak.achievement_that_is_one_small_step_for_man);
             }
         }
         if (!yanlışTıklama)
@@ -65,7 +65,7 @@ public class BaşarımKontrol : MonoBehaviour
             {
                 yanlışTıklama = true;
                 PlayerPrefs.SetInt("YanlışTıklama", 0);
-                Social.ReportProgress(BoxCrackerKaynak.achievement_there_is_a_snake_inside, 100, (bool başarı) => { });
+                BaşarımAç(BoxCrackerKaynak.achievement_there_is_a_snake_inside);
             }
         }
     }
