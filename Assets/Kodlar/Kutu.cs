@@ -110,7 +110,7 @@ public class Kutu : MonoBehaviour {
         }
         if (this.y!=transform.position.y)
         {
-            transform.position = Vector2.Lerp(transform.position, new Vector2(x, y), KutuKontrol.KutuDüşmeHızı);
+            transform.position = Vector2.Lerp(transform.position, new Vector2(x, y), KutuKontrol.KutuDüşmeHızı*Time.deltaTime);
         }
         
         //else if (y==0 && !KutuKontrol.KutuVarmı(x-1,0))

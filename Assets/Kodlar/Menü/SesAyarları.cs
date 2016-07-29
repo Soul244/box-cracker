@@ -15,6 +15,14 @@ public class SesAyarları : MonoBehaviour {
     {
         Button b = GetComponent<Button>();
         b.image.sprite = sesDurumu ? açık : kapalı;
+        foreach (AudioSource item in FindObjectsOfType<AudioSource>())
+        {
+            if (item.name == "Müzik(Clone)")
+            {
+                continue;
+            }
+            item.GetComponent<AudioSource>().mute = !sesDurumu;
+        }
     }
     public void SesleriAyarla()
     {

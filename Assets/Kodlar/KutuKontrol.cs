@@ -23,7 +23,7 @@ public class KutuKontrol : MonoBehaviour
     public int Yükseklik = 8;
     public static int yükseklik = 8;
     public int kutuSayısı = 64;
-    [Range(0.01f, 1f)]
+    [Range(1f, 50f)]
     public float kutuDüşmeHızı;
     public static float KutuDüşmeHızı;
     [Space(15)]

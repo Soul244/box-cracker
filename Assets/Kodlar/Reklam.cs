@@ -16,4 +16,21 @@ public class Reklam : MonoBehaviour {
 	void Update () {
 	
 	}
+    private void RequestInterstitial()
+    {
+#if UNITY_ANDROID
+        string adUnitId = "INSERT_ANDROID_INTERSTITIAL_AD_UNIT_ID_HERE";
+#elif UNITY_IPHONE
+        string adUnitId = "INSERT_IOS_INTERSTITIAL_AD_UNIT_ID_HERE";
+#else
+        string adUnitId = "unexpected_platform";
+#endif
+
+        // Initialize an InterstitialAd.
+        InterstitialAd interstitial = new InterstitialAd(adUnitId);
+        // Create an empty ad request.
+        AdRequest request = new AdRequest.Builder().Build();
+        // Load the interstitial with the request.
+        interstitial.LoadAd(request);
+    }
 }

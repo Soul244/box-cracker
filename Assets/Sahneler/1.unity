@@ -1260,8 +1260,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 660301880}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.17, y: 0.415, z: 0}
-  m_LocalScale: {x: 0.07430451, y: 0.047974087, z: 0.99900097}
+  m_LocalPosition: {x: -0.09, y: 0.415, z: 0}
+  m_LocalScale: {x: 0.09009423, y: 0.047974087, z: 0.99900097}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 1864420850}
@@ -1280,7 +1280,7 @@ TextMesh:
   m_Anchor: 4
   m_Alignment: 1
   m_TabSize: 4
-  m_FontSize: 93
+  m_FontSize: 250
   m_FontStyle: 0
   m_RichText: 1
   m_Font: {fileID: 12800000, guid: bccdd9cf75f1e46a18792ebf55750151, type: 3}
@@ -2689,7 +2689,7 @@ MonoBehaviour:
   "Geni\u015Flik": 6
   "Y\xFCkseklik": 8
   "kutuSay\u0131s\u0131": 10000
-  "kutuD\xFC\u015FmeH\u0131z\u0131": 0.75
+  "kutuD\xFC\u015FmeH\u0131z\u0131": 25
   "y\u0131ld\u0131z1": 50
   "y\u0131ld\u0131z2": 150
   "y\u0131ld\u0131z3": 250
@@ -2710,7 +2710,7 @@ MonoBehaviour:
   "patlamaEfektiKalmaS\xFCresi": 0.28
   "puan\xC7oklay\u0131c\u0131": 1
   "puanEksiltmeOran\u0131": 100
-  "artS\xFCreSilmeZaman\u0131": 0.15
+  "artS\xFCreSilmeZaman\u0131": 0.35
   "renkZamanlay\u0131c\u0131": 0.236
   "renkPay\u0131": 0.1
 --- !u!4 &1803876350

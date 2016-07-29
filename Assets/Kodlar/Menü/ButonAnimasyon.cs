@@ -15,7 +15,7 @@ public class ButonAnimasyon : MonoBehaviour {
 	void Update () {
         if (büyült)
         {
-            transform.localScale = Vector2.Lerp(transform.localScale, makBoyut, 0.3f);
+            transform.localScale = Vector2.Lerp(transform.localScale, makBoyut, 13f*Time.deltaTime);
             if ((Vector2)transform.localScale==makBoyut)
             {
                 büyült = false;
@@ -23,7 +23,7 @@ public class ButonAnimasyon : MonoBehaviour {
         }
         else
         {
-            transform.localScale = Vector2.Lerp(transform.localScale, boyut, 0.3f);
+            transform.localScale = Vector2.Lerp(transform.localScale, boyut, 13f*Time.deltaTime);
             if ((Vector2)transform.localScale == boyut)
             {
                 büyült = true;
