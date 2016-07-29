@@ -160,7 +160,7 @@ PlayerSettings:
   AndroidTargetDevice: 3
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
-  AndroidKeystoreName: "C:/Users/OmerG/OneDrive/Documents/GitHub/Box_Cracker/\u015Fifreleme.keystore"
+  AndroidKeystoreName: "C:/Users/Hasan/Desktop/Box_Cracker/\u015Fifreleme.keystore"
   AndroidKeyaliasName: box cracker
   AndroidTVCompatibility: 1
   AndroidIsGame: 1

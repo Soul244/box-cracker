@@ -61,12 +61,6 @@
     <Reference Include="UnityEditor">
       <HintPath>Library\UnityAssemblies\UnityEditor.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEditor.iOS.Extensions.Xcode">
-      <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.iOS.Extensions.Common">
-      <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Common.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Box_Cracker.CSharp.Plugins.csproj">
@@ -318,8 +312,6 @@
     <Compile Include="Assets\Kodlar\Menü\MüzikAyarları.cs" />
     <Compile Include="Assets\Kodlar\Menü\OyunSatınAl.cs" />
     <Compile Include="Assets\Kodlar\Menü\SesAyarları.cs" />
-    <Compile Include="Assets\Kodlar\Menü\z_BolumMantık.cs" />
-    <Compile Include="Assets\Kodlar\Menü\z_LevelTıklama.cs" />
     <Compile Include="Assets\Kodlar\OyunAçılırken.cs" />
     <Compile Include="Assets\Kodlar\OyunKapanırken.cs" />
     <Compile Include="Assets\Kodlar\PatlamaEfektiniYoket.cs" />

@@ -16,10 +16,10 @@ public class Reklam : MonoBehaviour {
 	void Update () {
 	
 	}
-    private void RequestInterstitial()
+    public static void RequestInterstitial()
     {
 #if UNITY_ANDROID
-        string adUnitId = "INSERT_ANDROID_INTERSTITIAL_AD_UNIT_ID_HERE";
+        string adUnitId = "ca-app-pub-2207285899275971/8079281645";
 #elif UNITY_IPHONE
         string adUnitId = "INSERT_IOS_INTERSTITIAL_AD_UNIT_ID_HERE";
 #else

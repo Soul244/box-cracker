@@ -15,6 +15,12 @@ public class BölümSeç : MonoBehaviour {
         {
             
             SceneManager.LoadScene("1");
+            PlayerPrefs.SetInt("Ara Reklam", PlayerPrefs.GetInt("Ara Reklam") + 1);
+            if (PlayerPrefs.GetInt("Ara Reklam")==5)
+            {
+                Reklam.RequestInterstitial();
+                PlayerPrefs.SetInt("Ara Reklam", 0);
+            }
         }
     }
     // Use this for initialization
