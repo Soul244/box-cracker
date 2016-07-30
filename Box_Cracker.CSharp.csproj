@@ -328,6 +328,7 @@
     <Compile Include="Assets\Kodlar\TestKodu.cs" />
     <Compile Include="Assets\Kodlar\YüksekSkor.cs" />
     <Compile Include="Assets\Kodlar\İstatistikler.cs" />
+    <Compile Include="Assets\MesajÖzeliği.cs" />
     <Compile Include="Assets\MüzikKontrol.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -335,6 +336,7 @@
     <None Include="Assets\GooglePlayGames\Editor\template-AndroidManifest.txt" />
     <None Include="Assets\GooglePlayGames\Editor\template-Constants.txt" />
     <None Include="Assets\GooglePlayGames\Editor\template-GameInfo.txt" />
+    <None Include="Assets\Plugins\Android\GoogleMobileAdsPlugin\AndroidManifest.xml" />
     <None Include="Assets\Plugins\Android\MainLibProj\AndroidManifest.xml" />
     <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\BlendModesOverlay.shader" />
     <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\BlurEffectConeTaps.shader" />

@@ -13,20 +13,21 @@ public class BölümSeç : MonoBehaviour {
         GetComponent<AudioSource>().Play();
         if (caneksilt())
         {
-            
+
             SceneManager.LoadScene("1");
-            PlayerPrefs.SetInt("Ara Reklam", PlayerPrefs.GetInt("Ara Reklam") + 1);
-            if (PlayerPrefs.GetInt("Ara Reklam")==5)
-            {
-                Reklam.RequestInterstitial();
-                PlayerPrefs.SetInt("Ara Reklam", 0);
-            }
+
         }
     }
     // Use this for initialization
     void Start () {
-	
-	}
+        int sayı = PlayerPrefs.GetInt("Ara Reklam");
+        PlayerPrefs.SetInt("Ara Reklam", sayı + 1);
+        if (sayı == 5)
+        {
+            Reklam.RequestInterstitial();
+            PlayerPrefs.SetInt("Ara Reklam", 0);
+        }
+    }
 	
 	// Update is called once per frame
 	void Update () {

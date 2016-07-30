@@ -1455,7 +1455,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64160fa610853e346a43d6f7d7da7f39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mesajArkaplan: {fileID: 2800000, guid: 0cb414860525a3f4eb549e810ace6a2c, type: 3}
+  mesaj: {fileID: 127284, guid: d61aa2017ce731445973241f5736ed92, type: 2}
 --- !u!4 &1281174850
 Transform:
   m_ObjectHideFlags: 0

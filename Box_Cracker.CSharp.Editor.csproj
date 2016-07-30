@@ -138,6 +138,7 @@
     <Compile Include="Assets\GooglePlayGames\Editor\xcode\Sections.cs" />
     <Compile Include="Assets\GooglePlayGames\Editor\xcode\Serializer.cs" />
     <Compile Include="Assets\GooglePlayGames\Editor\xcode\Utils.cs" />
+    <Compile Include="Assets\PlayServicesResolver\Editor\AdMobDependencies.cs" />
     <Compile Include="Assets\PlayServicesResolver\Editor\DefaultResolver.cs" />
     <Compile Include="Assets\PlayServicesResolver\Editor\IResolver.cs" />
     <Compile Include="Assets\PlayServicesResolver\Editor\PlayServicesResolver.cs" />
@@ -151,6 +152,7 @@
     <None Include="Assets\GooglePlayGames\Editor\template-AndroidManifest.txt" />
     <None Include="Assets\GooglePlayGames\Editor\template-Constants.txt" />
     <None Include="Assets\GooglePlayGames\Editor\template-GameInfo.txt" />
+    <None Include="Assets\Plugins\Android\GoogleMobileAdsPlugin\AndroidManifest.xml" />
     <None Include="Assets\Plugins\Android\MainLibProj\AndroidManifest.xml" />
     <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\BlendModesOverlay.shader" />
     <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\BlurEffectConeTaps.shader" />
