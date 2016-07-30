@@ -318,6 +318,7 @@
     <Compile Include="Assets\Kodlar\Menü\MüzikAyarları.cs" />
     <Compile Include="Assets\Kodlar\Menü\OyunSatınAl.cs" />
     <Compile Include="Assets\Kodlar\Menü\SesAyarları.cs" />
+    <Compile Include="Assets\Kodlar\Menü\TamSayfaReklam.cs" />
     <Compile Include="Assets\Kodlar\OyunAçılırken.cs" />
     <Compile Include="Assets\Kodlar\OyunKapanırken.cs" />
     <Compile Include="Assets\Kodlar\PatlamaEfektiniYoket.cs" />

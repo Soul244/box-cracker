@@ -1437,6 +1437,7 @@ GameObject:
   - 4: {fileID: 1281174850}
   - 114: {fileID: 1281174849}
   - 82: {fileID: 1281174851}
+  - 114: {fileID: 1281174852}
   m_Layer: 0
   m_Name: "GooglePlayBa\u011Flant\u0131"
   m_TagString: Untagged
@@ -1543,6 +1544,17 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!114 &1281174852
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1281174848}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4752e601e63028499498fa59e8bd28d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1285810211
 GameObject:
   m_ObjectHideFlags: 0
