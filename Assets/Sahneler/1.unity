@@ -2697,7 +2697,7 @@ MonoBehaviour:
   - {fileID: 138812, guid: eb59577b7e17c67438da31af7024f890, type: 2}
   - {fileID: 157896, guid: e8f8f6211c5e1f648a296e0f860b7547, type: 2}
   "patlamaEfektiKalmaS\xFCresi": 0.28
-  "puan\xC7oklay\u0131c\u0131": 5
+  "puan\xC7oklay\u0131c\u0131": 1
   "puanEksiltmeOran\u0131": 100
   "artS\xFCreSilmeZaman\u0131": 0.35
   "renkZamanlay\u0131c\u0131": 0.236
@@ -3004,8 +3004,8 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000011114782, y: -0.000015258789}
-  m_SizeDelta: {x: 634, y: 580}
+  m_AnchoredPosition: {x: 0, y: -0.000030517578}
+  m_SizeDelta: {x: 398, y: 364}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2064384241
 MonoBehaviour:
