@@ -62,6 +62,31 @@ public class Süre : MonoBehaviour {
             GameObject.Find("score").GetComponent<Text>().text = "Score: " + skor.ToString();
             GameObject.Find("Ara Menü").GetComponent<Canvas>().enabled = true;
             AraMenüFonksiyonları.oyunDurdu = AraMenüFonksiyonları.oyunBitti= true;
+            if (KutuKontrol.toplamPuan < 0)
+            {
+                BaşarımKontrol.BaşarımAç(BoxCrackerKaynak.achievement_retard_alert);
+                if (KutuKontrol.toplamPuan < -4999)
+                {
+                    BaşarımKontrol.BaşarımAç(BoxCrackerKaynak.achievement_great_again);
+                }
+                KutuKontrol.toplamPuan = 0;
+            }
+            else if (KutuKontrol.toplamPuan>999)
+            {
+                BaşarımKontrol.BaşarımAç(BoxCrackerKaynak.achievement_success);
+                if (KutuKontrol.toplamPuan>2499)
+                {
+                    BaşarımKontrol.BaşarımAç(BoxCrackerKaynak.achievement_a_toast_for_you);
+                    if (KutuKontrol.toplamPuan > 4999)
+                    {
+                        BaşarımKontrol.BaşarımAç(BoxCrackerKaynak.achievement_impossible);
+                    }
+                }
+            }
+            if (!KutuKontrol.yankışKutuyaTıklandı)
+            {
+                BaşarımKontrol.BaşarımAç(BoxCrackerKaynak.achievement_not_bad);
+            }
             return;
         }
         tx.GetComponent<Text>().text = süresayisi.ToString("0");

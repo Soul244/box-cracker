@@ -44,6 +44,7 @@ public class KutuKontrol : MonoBehaviour
     //Dictionary<Color, string> RenkTanımlayıcı;
     public static bool patlamaVar = false;
     int puan = 0;
+    public static int toplamPuan;
     public static int sonPuan = 0;
     float kontrolZamanlayıcı = 6f;
     [Space(15)]
@@ -57,6 +58,7 @@ public class KutuKontrol : MonoBehaviour
     [Range(0, 0.1f)]
     public float renkPayı;
     public static float _RenkPayı;
+    public static bool yankışKutuyaTıklandı = false;
     static bool artıSüreyiGöster = false;
     float artSüreSil;
     void Awake()
@@ -65,6 +67,8 @@ public class KutuKontrol : MonoBehaviour
         _RenkPayı = renkPayı;
         _RenkZamanlayıcı = renkZamanlayıcı;
         #endregion
+        toplamPuan = 0;
+        yankışKutuyaTıklandı = false;
         KutuDüşmeHızı = kutuDüşmeHızı;
         artSüreSil = artSüreSilmeZamanı;
         artıSüreyiGöster = false;
@@ -293,9 +297,10 @@ public class KutuKontrol : MonoBehaviour
                     kontrolZamanlayıcı = 1f;
                     SesOynat(oynatılacakPatlamaSesi);
                 }
-                else
+                else // Patlanamayacak durumda olan kutuya tıklandıysa
                 {
                     sonPuan = 0 - puanEksiltmeOranı;
+                    yankışKutuyaTıklandı = true;
                     puan -= puanEksiltmeOranı;
                     SesOynat("Boş Tıklama 1");
                 }
@@ -303,6 +308,7 @@ public class KutuKontrol : MonoBehaviour
             PuanGöster.puanGösterilecekKutu = tıklananKutu;
             tıklananKutu = new Vector3(-1, -1, -1);
             YüksekSkorKontrolü();
+            toplamPuan = puan;
         }
         if (kontrolZamanlayıcı <= 0)
         {

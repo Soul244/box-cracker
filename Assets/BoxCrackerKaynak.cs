@@ -24,12 +24,18 @@
 
 public static class BoxCrackerKaynak
 {
-        public const string achievement_one_giant_leap_for_mankind = "CgkI1p743fUHEAIQBQ"; // <GPGSID>
-        public const string achievement_that_is_one_small_step_for_man = "CgkI1p743fUHEAIQBA"; // <GPGSID>
-        public const string leaderboard_high_scores = "CgkI1p743fUHEAIQAw"; // <GPGSID>
         public const string achievement_10000_boxes = "CgkI1p743fUHEAIQAg"; // <GPGSID>
-        public const string achievement_1000_boxes = "CgkI1p743fUHEAIQAQ"; // <GPGSID>
+        public const string achievement_great_again = "CgkI1p743fUHEAIQCQ"; // <GPGSID>
+        public const string achievement_one_giant_leap_for_mankind = "CgkI1p743fUHEAIQBQ"; // <GPGSID>
+        public const string leaderboard_high_scores = "CgkI1p743fUHEAIQAw"; // <GPGSID>
+        public const string achievement_not_bad = "CgkI1p743fUHEAIQCg"; // <GPGSID>
         public const string achievement_answer_to_life_the_universe_and_everything = "CgkI1p743fUHEAIQBw"; // <GPGSID>
+        public const string achievement_that_is_one_small_step_for_man = "CgkI1p743fUHEAIQBA"; // <GPGSID>
+        public const string achievement_retard_alert = "CgkI1p743fUHEAIQCA"; // <GPGSID>
+        public const string achievement_a_toast_for_you = "CgkI1p743fUHEAIQDA"; // <GPGSID>
+        public const string achievement_success = "CgkI1p743fUHEAIQCw"; // <GPGSID>
+        public const string achievement_impossible = "CgkI1p743fUHEAIQDQ"; // <GPGSID>
+        public const string achievement_1000_boxes = "CgkI1p743fUHEAIQAQ"; // <GPGSID>
         public const string achievement_there_is_a_snake_inside = "CgkI1p743fUHEAIQBg"; // <GPGSID>
 
 }

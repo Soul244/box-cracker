@@ -10,7 +10,10 @@ public class BaşarımKontrol : MonoBehaviour
     public static int patlatılanKutuSayısı;
     public static void YeniYüksekSkor(int yeniSkor)
     {
-        Social.ReportScore(yeniSkor, BoxCrackerKaynak.leaderboard_high_scores, (bool başarılı) => { });
+        if (Social.localUser.authenticated)
+        {
+            Social.ReportScore(yeniSkor, BoxCrackerKaynak.leaderboard_high_scores, (bool başarılı) => { });
+        }
     }
     public static void BaşarımAç(string başarımKodu)
     {
