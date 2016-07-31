@@ -302,6 +302,7 @@
     <Compile Include="Assets\Kodlar\BaşarımKontrol.cs" />
     <Compile Include="Assets\Kodlar\Can.cs" />
     <Compile Include="Assets\Kodlar\Can2.cs" />
+    <Compile Include="Assets\Kodlar\GenelReklamlar.cs" />
     <Compile Include="Assets\Kodlar\IşıkHareketi.cs" />
     <Compile Include="Assets\Kodlar\KaybolmaEfekti.cs" />
     <Compile Include="Assets\Kodlar\Kutu.cs" />

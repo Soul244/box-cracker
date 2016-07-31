@@ -36,7 +36,7 @@ public class BölümSeç : MonoBehaviour {
             PlayerPrefs.SetInt("Ara Reklam", sayı + 1);
             if (sayı == 5)
             {
-                interstitial.Show();
+                GenelReklamlar.TamSayfaReklam();
                 PlayerPrefs.SetInt("Ara Reklam", 0);
             }
             SceneManager.LoadScene("1");
@@ -45,8 +45,7 @@ public class BölümSeç : MonoBehaviour {
     }
     // Use this for initialization
     void Start () {
-            RequestInterstitial();
-        
+        GenelReklamlar.BannerKaldır();        
     }
 	
 	// Update is called once per frame
