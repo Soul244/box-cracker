@@ -56,8 +56,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83db9a6ed255c934ea920b9bcf79b15a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parlak: 1
-  siyah: 0
+  kutuCinsi: 1
   "zamanlay\u0131c\u0131": 0.08
   "renkPay\u0131": 0.016
 --- !u!212 &21222050

@@ -21,8 +21,7 @@ public class KutuParlak : Kutu
     // Use this for initialization
     void Start()
     {
-        parlak = true;
-        Patlak = false;
+        kutuCinsi = KutuÖzelliği.Parlak;
         rend = GetComponent<Renderer>();
         hasRenk = rend.material.color;
         beyazlaştır = true;
