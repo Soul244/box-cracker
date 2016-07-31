@@ -11,6 +11,7 @@ public class KutuKontrol : MonoBehaviour
     public GameObject kutu;
     public GameObject parlakKutu;
     public GameObject siyahKutu;
+    public GameObject süreKutu;
     [Space(15)]
     [Header("Kutu Ayarları")]
     [Range(1, 10)]
@@ -31,6 +32,8 @@ public class KutuKontrol : MonoBehaviour
     public float parlakKutuŞansı = 50;
     [Tooltip("100 üzerinden değerlendirilir")]
     public float siyahKutuŞansı = 100;
+    [Tooltip("100 üzerinden değerlendirilir")]
+    public float süreKutuŞansı = 2;
     [Space(15)]
     [Header("Patlama Efektleri")]
     public GameObject[] patlamaEfektleri;
@@ -59,7 +62,7 @@ public class KutuKontrol : MonoBehaviour
     public float renkPayı;
     public static float _RenkPayı;
     public static bool yankışKutuyaTıklandı = false;
-    static bool artıSüreyiGöster = false;
+    public static bool artıSüreyiGöster = false;
     float artSüreSil;
     void Awake()
     {
@@ -119,7 +122,7 @@ public class KutuKontrol : MonoBehaviour
         int index = UnityEngine.Random.Range(0, renkler.Length);
         Color kutuRengi = renkler[index];
         GameObject temp;
-        int çıkanKutu = ŞansKutusu(new float[] { parlakKutuŞansı, siyahKutuŞansı });
+        int çıkanKutu = ŞansKutusu(new float[] { parlakKutuŞansı, siyahKutuŞansı,süreKutuŞansı });
         if (çıkanKutu==1)
         {
             temp = (GameObject)Instantiate(siyahKutu, new Vector2(x, y), Quaternion.identity);
@@ -128,6 +131,11 @@ public class KutuKontrol : MonoBehaviour
         else if (çıkanKutu==0)
         {
             temp = (GameObject)Instantiate(parlakKutu, new Vector2(x, y), Quaternion.identity);
+            temp.GetComponent<Renderer>().material.SetColor("_SpecColor", kutuRengi);
+        }
+        else if (çıkanKutu==2)
+        {
+            temp = (GameObject)Instantiate(süreKutu, new Vector2(x, y), Quaternion.identity);
             temp.GetComponent<Renderer>().material.SetColor("_SpecColor", kutuRengi);
         }
         else {
@@ -232,7 +240,7 @@ public class KutuKontrol : MonoBehaviour
         float puan = 0;
         foreach (Kutu item in patlatılacakKutular)
         {
-            if (!item.Patlak && item.siyah)
+            if (!item.Patlak && item.Siyah)
             {
                 item.Patlak = true;
                 puan += SiyahKutuPatlaması(item);
@@ -350,14 +358,18 @@ public class KutuKontrol : MonoBehaviour
                 }
                 if (!geç.Patlak)
                 {
-                    if (geç.parlak)
+                    if (!geç.Normal)
                     {
                         return true;
                     }
-                    else if (geç.siyah)
-                    {
-                        return true;
-                    }
+                    //if (geç.Parlak)
+                    //{
+                    //    return true;
+                    //}
+                    //else if (geç.Siyah)
+                    //{
+                    //    return true;
+                    //}
                     patlatılacakKutular = TaşırmaAlgoritması((int)geç.X, (int)geç.Y, new bool[genişlik, yükseklik], geç.Renk);
                     if (patlatılacakKutular.Count > 2)
                     {
@@ -390,6 +402,13 @@ public class KutuKontrol : MonoBehaviour
         puan *= PuanÇoklayıcı;
         GameObject.Find("Skor").GetComponent<TextMesh>().text = Convert.ToString((int)puan + Convert.ToInt32(GameObject.Find("Skor").GetComponent<TextMesh>().text));
         float süre = puan * 0.01f;
+        foreach (Kutu item in patlayanlar)
+        {
+            if (item.Süre)
+            {
+                süre++; //Her süreli kutu için 1 saniye ekleme
+            }
+        }
         GameObject.Find("Artı Süre").GetComponent<TextMesh>().text = "+" + süre.ToString("0.0");
         artıSüreyiGöster = true;
         Süre.KalanSüre += süre;

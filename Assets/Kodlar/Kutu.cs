@@ -3,24 +3,58 @@ using System.Collections;
 
 public class Kutu : MonoBehaviour
 {
-    bool patlak;
-    public bool parlak;
-    public bool siyah;
+    public KutuÖzelliği kutuCinsi;
+    public enum KutuÖzelliği
+    {
+        Normal,
+        Parlak,
+        Siyah,
+        Patlak,
+        Süre
+    }
     public virtual Color Renk
     {
         get { return GetComponent<Renderer>().material.color; }
     }
     int x, y;
+    public bool Süre
+    {
+        get
+        {
+            return kutuCinsi == KutuÖzelliği.Süre;
+        }
+    }
+    public bool Normal
+    {
+        get
+        {
+            return kutuCinsi == KutuÖzelliği.Normal;
+        }
+    }
+    public bool Siyah
+    {
+        get
+        {
+            return kutuCinsi == KutuÖzelliği.Siyah;
+        }
+    }
+    public bool Parlak
+    {
+        get
+        {
+            return kutuCinsi == KutuÖzelliği.Parlak;
+        }
+    }
     public bool Patlak
     {
         get
         {
-            return patlak;
+            return kutuCinsi==KutuÖzelliği.Patlak;
         }
 
         set
         {
-            patlak = value;
+            kutuCinsi = value ? KutuÖzelliği.Patlak:kutuCinsi;
         }
     }
 
@@ -55,13 +89,17 @@ public class Kutu : MonoBehaviour
         if (!KutuKontrol.patlamaVar && !AraMenüFonksiyonları.oyunDurdu)
         {
             int kutuÖzelliği = -1;
-            if (parlak)
+            if (kutuCinsi==KutuÖzelliği.Parlak)
             {
                 kutuÖzelliği = 0;
             }
-            else if (siyah)
+            else if (kutuCinsi == KutuÖzelliği.Siyah)
             {
                 kutuÖzelliği = 1;
+            }
+            else if (kutuCinsi==KutuÖzelliği.Süre)
+            {
+                kutuÖzelliği = 2;
             }
             PuanGöster.yeniKutuyaTıklanıldı = true;
             KutuKontrol.tıklananKutu = new Vector3(x, y, kutuÖzelliği);
@@ -69,7 +107,7 @@ public class Kutu : MonoBehaviour
     }
     public void Patlat(GameObject PatlamaEfekti)
     {
-        patlak = true;
+        kutuCinsi = KutuÖzelliği.Patlak;
         Instantiate(PatlamaEfekti, new Vector3(x, y, transform.position.z - 0.5f), Quaternion.identity);
         KutuKontrol.patlamaVar = patlamaDurumu = true;
 
@@ -80,12 +118,7 @@ public class Kutu : MonoBehaviour
             return false;
         return Renk == DiğerKutu.Renk;
     }
-    // Use this for initialization
-    void Start()
-    {
-        //transform.Rotate(-90, 0, 0);
-        patlak = false;
-    }
+    
 
     // Update is called once per frame
     protected void Update()
