@@ -12,8 +12,10 @@ public class OyunAçılırken : MonoBehaviour {
             DateTime kapanış = DateTime.Parse(PlayerPrefs.GetString("Kapanıs"));
             DateTime simdikizaman = DateTime.Now;
             TimeSpan fark = simdikizaman.Subtract(kapanış);
-            int sonuc = fark.Minutes;
-            sonuc /= 5;
+            int sonuc = fark.Seconds;
+            sonuc /= 300;
+            int eksisüre = sonuc % 300;
+            PlayerPrefs.SetInt("Süre", PlayerPrefs.GetInt("Süre") - eksisüre);
             sonuc += PlayerPrefs.GetInt("Can Sayısı");
             PlayerPrefs.SetInt("Can Sayısı", sonuc);
             uygun = false;

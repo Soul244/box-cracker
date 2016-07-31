@@ -44,8 +44,14 @@ public class AraMenüFonksiyonları : MonoBehaviour {
     }
     public void TekrarOyna()
     {
+        int can = PlayerPrefs.GetInt("Can Sayısı");       
+        if (can!=0)
+        {
+            PlayerPrefs.SetInt("Can Sayısı", can - 1);
+            SceneManager.LoadScene("1");
+            oyunDurdu = true;
+        }
         oyunDurdu = false;
-        SceneManager.LoadScene("1");
     }
     public void Cikis()
     {
