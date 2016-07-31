@@ -1423,7 +1423,7 @@ TextMesh:
   m_FontSize: 120
   m_FontStyle: 0
   m_RichText: 1
-  m_Font: {fileID: 12800000, guid: bccdd9cf75f1e46a18792ebf55750151, type: 3}
+  m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
   m_Color:
     serializedVersion: 2
     rgba: 4278255390
@@ -1437,7 +1437,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: bccdd9cf75f1e46a18792ebf55750151, type: 3}
+  - {fileID: 10100, guid: 0000000000000000e000000000000000, type: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -2920,7 +2920,7 @@ MonoBehaviour:
   "kutuD\xFC\u015FmeH\u0131z\u0131": 25
   "parlakKutu\u015Eans\u0131": 4
   "siyahKutu\u015Eans\u0131": 3
-  "s\xFCreKutu\u015Eans\u0131": 30
+  "s\xFCreKutu\u015Eans\u0131": 2
   patlamaEfektleri:
   - {fileID: 171572, guid: 3883bd98cfba0f3459d6a6851048aea0, type: 2}
   - {fileID: 166378, guid: b763a6d5989e44a4e8550da6d3ae024f, type: 2}
@@ -2928,7 +2928,7 @@ MonoBehaviour:
   - {fileID: 157896, guid: e8f8f6211c5e1f648a296e0f860b7547, type: 2}
   "patlamaEfektiKalmaS\xFCresi": 0.28
   "puan\xC7oklay\u0131c\u0131": 1
-  "puanEksiltmeOran\u0131": 100
+  "puanEksiltmeOran\u0131": 50
   "artS\xFCreSilmeZaman\u0131": 0.35
   "renkZamanlay\u0131c\u0131": 0.236
   "renkPay\u0131": 0.1
