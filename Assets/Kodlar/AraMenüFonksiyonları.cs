@@ -2,11 +2,13 @@
 using System.Collections;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using System;
 
 public class AraMenüFonksiyonları : MonoBehaviour {
     public static bool oyunDurdu = false;
     public static bool oyunBitti = false;
     public static bool geriSayım = false;
+    public Text tx;
     void Awake()
     {
         oyunDurdu = oyunBitti = false;
@@ -47,6 +49,7 @@ public class AraMenüFonksiyonları : MonoBehaviour {
         int can = PlayerPrefs.GetInt("Can Sayısı");       
         if (can!=0)
         {
+            tx.text = Convert.ToString(can - 1);
             PlayerPrefs.SetInt("Can Sayısı", can - 1);
             SceneManager.LoadScene("1");
             oyunDurdu = true;

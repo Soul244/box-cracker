@@ -116,8 +116,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   "M\xFCzikler":
-  - {fileID: 8300000, guid: 99debf87761b66c4e8942cc19711c9eb, type: 3}
   - {fileID: 8300000, guid: 9faa9c032af2408488ca4137edeeb41f, type: 3}
+  - {fileID: 8300000, guid: 99debf87761b66c4e8942cc19711c9eb, type: 3}
+  - {fileID: 8300000, guid: f777cdda70bc794418faa864cb6f88af, type: 3}
+  - {fileID: 8300000, guid: 756ee5df2d7dc41468719bd64a9f1411, type: 3}
+  - {fileID: 8300000, guid: 9f52994ea963fed4ba4adad96011a1b7, type: 3}
+  - {fileID: 8300000, guid: 7d80367686b366b4e903d0199d123f38, type: 3}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

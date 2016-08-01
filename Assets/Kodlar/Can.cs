@@ -15,7 +15,7 @@ public class Can : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        PlayerPrefs.SetInt("Can Sayısı", 10); // Debug için şimdilik böyle kalsın
+        //PlayerPrefs.SetInt("Can Sayısı", 10); // Debug için şimdilik böyle kalsın
         if (PlayerPrefs.GetInt("Süre") > 0)
         {
             if (PlayerPrefs.GetInt("Can Sayısı") != 10)
