@@ -12,12 +12,29 @@ public class OyunAçılırken : MonoBehaviour {
             DateTime kapanış = DateTime.Parse(PlayerPrefs.GetString("Kapanıs"));
             DateTime simdikizaman = DateTime.Now;
             TimeSpan fark = simdikizaman.Subtract(kapanış);
-            int sonuc = fark.Seconds;
-            sonuc /= 300;
-            int eksisüre = sonuc % 300;
-            PlayerPrefs.SetInt("Süre", PlayerPrefs.GetInt("Süre") - eksisüre);
-            sonuc += PlayerPrefs.GetInt("Can Sayısı");
-            PlayerPrefs.SetInt("Can Sayısı", sonuc);
+            int süre = Convert.ToInt32(fark.TotalSeconds); 
+            int can = 0;
+            int eksisüre = 0;
+            int öncekisüre = PlayerPrefs.GetInt("Süre");
+            if (süre<300)
+            {
+                if (süre>öncekisüre)
+                {
+                    PlayerPrefs.SetInt("Can Sayısı", PlayerPrefs.GetInt("Can Sayısı") + 1);
+                    PlayerPrefs.SetInt("Süre", 300-(süre - öncekisüre));
+                }
+                else
+                {
+                    PlayerPrefs.SetInt("Süre", PlayerPrefs.GetInt("Süre") - süre);
+                }
+            }
+            else
+            {
+                can = süre / 300;
+                eksisüre = süre % 300;
+                PlayerPrefs.SetInt("Süre", PlayerPrefs.GetInt("Süre") - eksisüre);
+                PlayerPrefs.SetInt("Can Sayısı", PlayerPrefs.GetInt("Can Sayısı")+ can);
+            }
             uygun = false;
         }
     }
