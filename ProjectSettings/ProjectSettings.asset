@@ -10,7 +10,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: Indexer
-  productName: Box Cracker Alpha 1.0
+  productName: Box Cracker
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_ShowUnitySplashScreen: 1
@@ -175,7 +175,7 @@ PlayerSettings:
   - m_BuildTarget: 
     m_Icons:
     - serializedVersion: 2
-      m_Icon: {fileID: 2800000, guid: 52c28aa2954ad8e43bf03117f84fbb61, type: 3}
+      m_Icon: {fileID: 2800000, guid: f4fc28a5f2a13c54d80e891938d96cae, type: 3}
       m_Width: 128
       m_Height: 128
   m_BuildTargetBatching: []

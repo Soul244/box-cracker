@@ -32,8 +32,15 @@ public class OyunAçılırken : MonoBehaviour {
             {
                 can = süre / 300;
                 eksisüre = süre % 300;
-                PlayerPrefs.SetInt("Süre", PlayerPrefs.GetInt("Süre") - eksisüre);
-                PlayerPrefs.SetInt("Can Sayısı", PlayerPrefs.GetInt("Can Sayısı")+ can);
+                if (can>10)
+                {
+                    PlayerPrefs.SetInt("Can Sayısı", 10);
+                }
+                else
+                {
+                    PlayerPrefs.SetInt("Süre", PlayerPrefs.GetInt("Süre") - eksisüre);
+                    PlayerPrefs.SetInt("Can Sayısı", PlayerPrefs.GetInt("Can Sayısı") + can);
+                }
             }
             uygun = false;
         }
