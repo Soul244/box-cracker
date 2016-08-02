@@ -61,6 +61,12 @@
     <Reference Include="UnityEditor">
       <HintPath>Library\UnityAssemblies\UnityEditor.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEditor.iOS.Extensions.Xcode">
+      <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.iOS.Extensions.Common">
+      <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Common.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Box_Cracker.CSharp.Plugins.csproj">
@@ -70,7 +76,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\BoxCrackerKaynak.cs" />
-    <Compile Include="Assets\GeriSayımKontrölü.cs" />
     <Compile Include="Assets\GoogleMobileAds\Api\AdFailedToLoadEventArgs.cs" />
     <Compile Include="Assets\GoogleMobileAds\Api\AdLoader.cs" />
     <Compile Include="Assets\GoogleMobileAds\Api\AdPosition.cs" />
@@ -296,6 +301,7 @@
     <Compile Include="Assets\Kodlar\Can.cs" />
     <Compile Include="Assets\Kodlar\Can2.cs" />
     <Compile Include="Assets\Kodlar\GenelReklamlar.cs" />
+    <Compile Include="Assets\Kodlar\GeriSayımKontrölü.cs" />
     <Compile Include="Assets\Kodlar\IşıkHareketi.cs" />
     <Compile Include="Assets\Kodlar\KaybolmaEfekti.cs" />
     <Compile Include="Assets\Kodlar\Kutu.cs" />
@@ -313,6 +319,8 @@
     <Compile Include="Assets\Kodlar\Menü\OyunSatınAl.cs" />
     <Compile Include="Assets\Kodlar\Menü\SesAyarları.cs" />
     <Compile Include="Assets\Kodlar\Menü\TamSayfaReklam.cs" />
+    <Compile Include="Assets\Kodlar\MesajÖzeliği.cs" />
+    <Compile Include="Assets\Kodlar\MüzikKontrol.cs" />
     <Compile Include="Assets\Kodlar\OyunAçılırken.cs" />
     <Compile Include="Assets\Kodlar\OyunKapanırken.cs" />
     <Compile Include="Assets\Kodlar\PatlamaEfektiniYoket.cs" />
@@ -323,8 +331,6 @@
     <Compile Include="Assets\Kodlar\TestKodu.cs" />
     <Compile Include="Assets\Kodlar\YüksekSkor.cs" />
     <Compile Include="Assets\Kodlar\İstatistikler.cs" />
-    <Compile Include="Assets\MesajÖzeliği.cs" />
-    <Compile Include="Assets\MüzikKontrol.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\GooglePlayGames\Editor\Podfile.txt" />

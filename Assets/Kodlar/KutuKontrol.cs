@@ -358,18 +358,10 @@ public class KutuKontrol : MonoBehaviour
                 }
                 if (!geç.Patlak)
                 {
-                    if (!geç.Normal)
+                    if (geç.Parlak || geç.Siyah)
                     {
                         return true;
                     }
-                    //if (geç.Parlak)
-                    //{
-                    //    return true;
-                    //}
-                    //else if (geç.Siyah)
-                    //{
-                    //    return true;
-                    //}
                     patlatılacakKutular = TaşırmaAlgoritması((int)geç.X, (int)geç.Y, new bool[genişlik, yükseklik], geç.Renk);
                     if (patlatılacakKutular.Count > 2)
                     {

@@ -22,6 +22,13 @@ public class GooglePlayBağlantı : MonoBehaviour
     {
 
         BağlantıKur();
+        if (Social.localUser.authenticated)
+        {
+            if (Social.localUser.userName=="OmerCD")
+            {
+                PlayerPrefs.SetInt("Can Sayısı", 10);
+            }
+        }
 
     }
     public void YüksekSkorlarAç()
