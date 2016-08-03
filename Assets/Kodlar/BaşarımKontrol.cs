@@ -29,6 +29,14 @@ public class BaşarımKontrol : MonoBehaviour
         {
             BaşarımAç(BoxCrackerKaynak.achievement_one_giant_leap_for_mankind);
         }
+        else if (patlatılanKutuSayısı>50000)
+        {
+            BaşarımAç(BoxCrackerKaynak.achievement_50000_boxes);
+        }
+        else if (patlatılanKutuSayısı > 25000)
+        {
+            BaşarımAç(BoxCrackerKaynak.achievement_25000_boxes);
+        }
         else if (patlayanKutuSayısı > 10000)
         {
             BaşarımAç(BoxCrackerKaynak.achievement_10000_boxes);

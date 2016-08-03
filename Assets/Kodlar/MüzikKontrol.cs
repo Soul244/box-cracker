@@ -47,7 +47,8 @@ public class MüzikKontrol : MonoBehaviour {
 	void Update () {
         if (!sesKısık)
         {
-            if (UnityEditor.EditorApplication.currentScene == "Assets/Sahneler/1.unity")
+            
+            if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().name == "1")
             {
                 sesKaynağı.volume = 0.15f;
                 sesKısık = true;
@@ -55,7 +56,7 @@ public class MüzikKontrol : MonoBehaviour {
         }
         else
         {
-            if (UnityEditor.EditorApplication.currentScene == "Assets/Sahneler/Ana Menü.unity")
+            if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().name == "Ana Menü")
             {
                 sesKaynağı.volume = 0.7f;
                 sesKısık = false;

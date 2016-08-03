@@ -32,13 +32,13 @@ public class BölümSeç : MonoBehaviour {
         GetComponent<AudioSource>().Play();
         if (caneksilt())
         {
-            int sayı = PlayerPrefs.GetInt("Ara Reklam");
-            PlayerPrefs.SetInt("Ara Reklam", sayı + 1);
-            if (sayı == 5)
-            {
+            //int sayı = PlayerPrefs.GetInt("Ara Reklam");
+            //PlayerPrefs.SetInt("Ara Reklam", sayı + 1);
+            //if (sayı == 5)
+            //{
                 GenelReklamlar.TamSayfaReklam();
-                PlayerPrefs.SetInt("Ara Reklam", 0);
-            }
+            //    PlayerPrefs.SetInt("Ara Reklam", 0);
+            //}
             SceneManager.LoadScene("1");
 
         }
