@@ -18,6 +18,8 @@ public class Can : MonoBehaviour
         if (PlayerPrefs.GetInt("Oyun Kuruldu")==0)
         {
             PlayerPrefs.SetInt("Can Sayısı", 10); // Debug için şimdilik böyle kalsın
+            PlayerPrefs.SetInt("SesDurumu", 1);
+            PlayerPrefs.SetInt("Ses", 1);
             PlayerPrefs.SetInt("Oyun Kuruldu", 1);
         }
         if (PlayerPrefs.GetInt("Süre") > 0)

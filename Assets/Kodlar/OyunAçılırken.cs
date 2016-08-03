@@ -7,6 +7,13 @@ public class OyunAçılırken : MonoBehaviour {
 	// Use this for initialization
     void Awake()
     {
+        if (PlayerPrefs.GetInt("Oyun Kuruldu") == 0)
+        {
+            PlayerPrefs.SetInt("Can Sayısı", 10); // Debug için şimdilik böyle kalsın
+            PlayerPrefs.SetInt("SesDurumu", 1);
+            PlayerPrefs.SetInt("Ses", 1);
+            PlayerPrefs.SetInt("Oyun Kuruldu", 1);
+        }
         if (uygun)
         {
             DateTime kapanış = DateTime.Parse(PlayerPrefs.GetString("Kapanıs"));
@@ -39,7 +46,14 @@ public class OyunAçılırken : MonoBehaviour {
                 else
                 {
                     PlayerPrefs.SetInt("Süre", PlayerPrefs.GetInt("Süre") - eksisüre);
-                    PlayerPrefs.SetInt("Can Sayısı", PlayerPrefs.GetInt("Can Sayısı") + can);
+                    if (PlayerPrefs.GetInt("Can Sayısı") + can>10)
+                    {
+                        PlayerPrefs.SetInt("Can Sayısı", 10);
+                    }
+                    else
+                    {
+                        PlayerPrefs.SetInt("Can Sayısı", PlayerPrefs.GetInt("Can Sayısı") + can);
+                    }
                 }
             }
             uygun = false;
