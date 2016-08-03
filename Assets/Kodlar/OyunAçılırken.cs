@@ -7,6 +7,7 @@ public class OyunAçılırken : MonoBehaviour {
 	// Use this for initialization
     void Awake()
     {
+
         //Application.targetFrameRate = 30;
         if (PlayerPrefs.GetInt("Oyun Kuruldu") == 0)
         {
@@ -15,9 +16,9 @@ public class OyunAçılırken : MonoBehaviour {
             PlayerPrefs.SetInt("Ses", 1);
             PlayerPrefs.SetInt("Oyun Kuruldu", 1);
         }
-        if (uygun)
+        if (PlayerPrefs.GetInt("Oyun Açıldı") == 1)
         {
-            DateTime kapanış = DateTime.Parse(PlayerPrefs.GetString("Kapanıs"));
+        DateTime kapanış = DateTime.Parse(PlayerPrefs.GetString("Kapanıs"));
             DateTime simdikizaman = DateTime.Now;
             TimeSpan fark = simdikizaman.Subtract(kapanış);
             int süre = Convert.ToInt32(fark.TotalSeconds); 
@@ -57,7 +58,7 @@ public class OyunAçılırken : MonoBehaviour {
                     }
                 }
             }
-            uygun = false;
+            PlayerPrefs.SetInt("Oyun Açıldı", 1);
         }
     }
 }

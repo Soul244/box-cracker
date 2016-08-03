@@ -291,7 +291,7 @@ public class KutuKontrol : MonoBehaviour
                 sonPuan = Convert.ToInt32(SiyahKutuPatlaması(seçilenKutu));
                 puan += sonPuan;
                 kontrolZamanlayıcı = 1f;
-                SesOynat(oynatılacakPatlamaSesi);
+                SesOynat("Bomba Sesi 1");
             }
             else //Normal Kutuya Tıklandıysa
             {
