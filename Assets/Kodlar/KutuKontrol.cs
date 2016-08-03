@@ -54,22 +54,22 @@ public class KutuKontrol : MonoBehaviour
     [Header("Artı Süre Silme Süresi")]
     public float artSüreSilmeZamanı = 0.15f;
     [Space(15)]
-    [Header("Geçici Değerler Silinecek")]
-    [Range(0, 1)]
-    public float renkZamanlayıcı;
-    public static float _RenkZamanlayıcı;
-    [Range(0, 0.1f)]
-    public float renkPayı;
-    public static float _RenkPayı;
+    //[Header("Geçici Değerler Silinecek")]
+    //[Range(0, 1)]
+    //public float renkZamanlayıcı;
+    //public static float _RenkZamanlayıcı;
+    //[Range(0, 0.1f)]
+    //public float renkPayı;
+    //public static float _RenkPayı;
     public static bool yankışKutuyaTıklandı = false;
     public static bool artıSüreyiGöster = false;
     float artSüreSil;
     void Awake()
     {
-        #region Silinecek Değerler
-        _RenkPayı = renkPayı;
-        _RenkZamanlayıcı = renkZamanlayıcı;
-        #endregion
+        //#region Silinecek Değerler
+        //_RenkPayı = renkPayı;
+        //_RenkZamanlayıcı = renkZamanlayıcı;
+        //#endregion
         toplamPuan = 0;
         yankışKutuyaTıklandı = false;
         KutuDüşmeHızı = kutuDüşmeHızı;
@@ -252,13 +252,13 @@ public class KutuKontrol : MonoBehaviour
     }
     void Update()
     {
-        #region Son Sürümde Silinecek Kodlar
-        patlamaEfektiSüresi = patlamaEfektiKalmaSüresi;
-        PuanÇoklayıcı = puanÇoklayıcı;
-        KutuDüşmeHızı = kutuDüşmeHızı;
-        _RenkPayı = renkPayı;
-        _RenkZamanlayıcı = renkZamanlayıcı;
-        #endregion
+        //#region Son Sürümde Silinecek Kodlar
+        //patlamaEfektiSüresi = patlamaEfektiKalmaSüresi;
+        //PuanÇoklayıcı = puanÇoklayıcı;
+        //KutuDüşmeHızı = kutuDüşmeHızı;
+        //_RenkPayı = renkPayı;
+        //_RenkZamanlayıcı = renkZamanlayıcı;
+        //#endregion
         kontrolZamanlayıcı -= Time.deltaTime;
         if (kutuSayısı > 0)
         {
@@ -362,7 +362,7 @@ public class KutuKontrol : MonoBehaviour
                     {
                         return true;
                     }
-                    patlatılacakKutular = TaşırmaAlgoritması((int)geç.X, (int)geç.Y, new bool[genişlik, yükseklik], geç.Renk);
+                    patlatılacakKutular = BölümKontrolTaşırmaAlgoritması((int)geç.X, (int)geç.Y, new bool[genişlik, yükseklik], geç.Renk);
                     if (patlatılacakKutular.Count > 2)
                     {
                         return true;
@@ -430,6 +430,59 @@ public class KutuKontrol : MonoBehaviour
             }
         }
         return false;
+    }
+    public List<Kutu> BölümKontrolTaşırmaAlgoritması(int x, int y, bool[,] kontrolEdildi, Color Renk)
+    {
+        List<Kutu> patlayacak = new List<Kutu>();
+        if (x >= 0 && y >= 0 && x < genişlik && y < yükseklik)
+        {
+            if (kontrolEdildi[x, y])
+            {
+                return patlayacak;
+            }
+            Kutu geç = KutuVarmı(x, y);
+            if (geç != null)
+            {
+                if (!geç.Patlak)
+                {
+                    if (geç.Renk == Renk)
+                    {
+                        patlayacak.Add(geç);
+
+                    }
+                    else
+                    {
+                        return patlayacak;
+                    }
+                }
+            }
+            if (!EtrafındaAynıRenkVarmı(x, y))
+            {
+                return patlayacak;
+            }
+            kontrolEdildi[x, y] = true;
+            patlayacak.AddRange(TaşırmaAlgoritması(x - 1, y, kontrolEdildi, Renk));
+            if (patlayacak.Count>2)
+            {
+                return patlayacak;
+            }
+            patlayacak.AddRange(TaşırmaAlgoritması(x + 1, y, kontrolEdildi, Renk));
+            if (patlayacak.Count > 2)
+            {
+                return patlayacak;
+            }
+            patlayacak.AddRange(TaşırmaAlgoritması(x, y - 1, kontrolEdildi, Renk));
+            if (patlayacak.Count > 2)
+            {
+                return patlayacak;
+            }
+            patlayacak.AddRange(TaşırmaAlgoritması(x, y + 1, kontrolEdildi, Renk));
+            if (patlayacak.Count > 2)
+            {
+                return patlayacak;
+            }
+        }
+        return patlayacak;
     }
     public static List<Kutu> TaşırmaAlgoritması(int x, int y, bool[,] kontrolEdildi, Color Renk)
     {

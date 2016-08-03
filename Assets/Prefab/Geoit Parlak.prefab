@@ -57,8 +57,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   kutuCinsi: 1
-  "zamanlay\u0131c\u0131": 0.08
-  "renkPay\u0131": 0.016
+  "zamanlay\u0131c\u0131": 0.236
+  "renkPay\u0131": 0.1
 --- !u!212 &21222050
 SpriteRenderer:
   m_ObjectHideFlags: 1

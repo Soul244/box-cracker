@@ -6,6 +6,7 @@ public class Ayarlar : MonoBehaviour {
     bool durum;
 	// Use this for initialization
 	void Start () {
+        //Application.targetFrameRate = 30;
         durum = false;
 	}
 	

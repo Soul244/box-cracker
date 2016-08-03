@@ -143,11 +143,11 @@ QualitySettings:
     shadowResolution: 0
     shadowProjection: 1
     shadowCascades: 1
-    shadowDistance: 150
+    shadowDistance: 0
     shadowNearPlaneOffset: 2
     shadowCascade2Split: 0.33333334
     shadowCascade4Split: {x: 0.06666667, y: 0.19999999, z: 0.46666664}
-    blendWeights: 4
+    blendWeights: 1
     textureQuality: 0
     anisotropicTextures: 0
     antiAliasing: 2
@@ -158,7 +158,7 @@ QualitySettings:
     vSyncCount: 0
     lodBias: 2
     maximumLODLevel: 0
-    particleRaycastBudget: 4096
+    particleRaycastBudget: 32
     asyncUploadTimeSlice: 2
     asyncUploadBufferSize: 4
     excludedTargetPlatforms: []

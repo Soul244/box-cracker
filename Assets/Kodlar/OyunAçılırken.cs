@@ -7,6 +7,7 @@ public class OyunAçılırken : MonoBehaviour {
 	// Use this for initialization
     void Awake()
     {
+        //Application.targetFrameRate = 30;
         if (PlayerPrefs.GetInt("Oyun Kuruldu") == 0)
         {
             PlayerPrefs.SetInt("Can Sayısı", 10); // Debug için şimdilik böyle kalsın

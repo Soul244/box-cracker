@@ -5,9 +5,9 @@ public class KutuParlak : Kutu
 {
     Renderer rend;
     [Range(0, 0.5f)]
-    public float zamanlayıcı = 0.08f;
+    public float zamanlayıcı = 0.236f;
     [Range(0, 0.1f)]
-    public float renkPayı = 0.016f;
+    public float renkPayı = 0.1f;
     bool beyazlaştır;
 
     Color hasRenk;
@@ -26,21 +26,23 @@ public class KutuParlak : Kutu
         hasRenk = rend.material.color;
         beyazlaştır = true;
     }
+#pragma warning disable CS0108 // Member hides inherited member; missing new keyword
     void Update()
+#pragma warning restore CS0108 // Member hides inherited member; missing new keyword
     {
         base.Update();
         Color anlıkRenk = rend.material.color;
         if (beyazlaştır)
         {
-            rend.material.color = Color.Lerp(anlıkRenk, Color.white, KutuKontrol._RenkZamanlayıcı);
-            if (anlıkRenk.b > 1 - KutuKontrol._RenkPayı && anlıkRenk.g > 1 - KutuKontrol._RenkPayı && anlıkRenk.r > 1 - KutuKontrol._RenkPayı)
+            rend.material.color = Color.Lerp(anlıkRenk, Color.white, zamanlayıcı);
+            if (anlıkRenk.b > 1 - renkPayı && anlıkRenk.g > 1 - renkPayı && anlıkRenk.r > 1 - renkPayı)
             {
                 beyazlaştır = false;
             }
         }
         else
         {
-            rend.material.color = Color.Lerp(anlıkRenk, hasRenk, KutuKontrol._RenkZamanlayıcı);
+            rend.material.color = Color.Lerp(anlıkRenk, hasRenk, zamanlayıcı);
             beyazlaştır = anlıkRenk == hasRenk;
         }
 
