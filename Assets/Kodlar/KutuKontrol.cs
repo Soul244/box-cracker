@@ -374,7 +374,7 @@ public class KutuKontrol : MonoBehaviour
         }
         return false;
     }
-    static int puanEksiltme;
+    static float puanEksiltme;
     static float PuanÇoklayıcı;
 
     public static float Puanla(List<Kutu> patlayanlar)
@@ -382,8 +382,8 @@ public class KutuKontrol : MonoBehaviour
         if (patlayanlar.Count < 3)
         {
             GameObject.Find("Skor").GetComponent<TextMesh>().text = Convert.ToString(Convert.ToInt32(GameObject.Find("Skor").GetComponent<TextMesh>().text) - puanEksiltme);
-            GameObject.Find("Artı Süre").GetComponent<TextMesh>().text = "-" + (puanEksiltme / 100).ToString("0.00");
-            Süre.KalanSüre = Süre.KalanSüre - puanEksiltme / 100;
+            GameObject.Find("Artı Süre").GetComponent<TextMesh>().text = "-" + (puanEksiltme / 100f).ToString("0.00");
+            Süre.KalanSüre = Süre.KalanSüre - puanEksiltme / 100f;
             artıSüreyiGöster = true;
             return puanEksiltme;
         }

@@ -459,7 +459,6 @@ GameObject:
   - 4: {fileID: 314798610}
   - 108: {fileID: 314798609}
   - 114: {fileID: 314798611}
-  - 95: {fileID: 314798612}
   m_Layer: 0
   m_Name: "I\u015F\u0131k"
   m_TagString: Untagged
@@ -495,7 +494,7 @@ Light:
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_Lightmapping: 1
+  m_Lightmapping: 4
   m_BounceIntensity: 0.91
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -528,23 +527,6 @@ MonoBehaviour:
   - {r: 1, g: 0.9724138, b: 0, a: 0}
   - {r: 0, g: 0.7103448, b: 1, a: 0}
   - {r: 1, g: 0, b: 0, a: 0}
---- !u!95 &314798612
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 314798608}
-  m_Enabled: 0
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 51a9028b87558ff4baab5bac9e2f1ef1, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &374472979
 GameObject:
   m_ObjectHideFlags: 0
@@ -1990,7 +1972,7 @@ RectTransform:
   m_GameObject: {fileID: 994497155}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 107}
-  m_LocalScale: {x: 0.25, y: 0.25, z: 0.0487309}
+  m_LocalScale: {x: 0.16, y: 0.25, z: 0.0487309}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 655758092}
@@ -3812,7 +3794,7 @@ RectTransform:
   m_GameObject: {fileID: 2134656509}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 107}
-  m_LocalScale: {x: 0.25, y: 0.25, z: 0.0487309}
+  m_LocalScale: {x: 0.16, y: 0.25, z: 0.0487309}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 655758092}
