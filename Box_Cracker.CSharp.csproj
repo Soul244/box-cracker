@@ -329,6 +329,7 @@
     <Compile Include="Assets\Kodlar\Reklam.cs" />
     <Compile Include="Assets\Kodlar\Süre.cs" />
     <Compile Include="Assets\Kodlar\TestKodu.cs" />
+    <Compile Include="Assets\Kodlar\Yapıcılar.cs" />
     <Compile Include="Assets\Kodlar\YüksekSkor.cs" />
     <Compile Include="Assets\Kodlar\İstatistikler.cs" />
   </ItemGroup>

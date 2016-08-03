@@ -312,7 +312,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: bc1f78b539447124381f9c7d2537c9eb, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.7
+  m_Volume: 1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1478,7 +1478,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: d8cc1651d0b71b4499d1303d5d997e84, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.7
+  m_Volume: 1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1658,7 +1658,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 87439ccda58c6894188ef9f414210ff5, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.7
+  m_Volume: 1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -2257,7 +2257,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 9f3d8f7c494561d41a2d72a5dff38d62, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.7
+  m_Volume: 1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -3186,8 +3186,6 @@ MonoBehaviour:
   "puan\xC7oklay\u0131c\u0131": 1
   "puanEksiltmeOran\u0131": 50
   "artS\xFCreSilmeZaman\u0131": 0.35
-  "renkZamanlay\u0131c\u0131": 0.236
-  "renkPay\u0131": 0.1
 --- !u!4 &1803876350
 Transform:
   m_ObjectHideFlags: 0
