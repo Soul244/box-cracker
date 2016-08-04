@@ -4,10 +4,14 @@ using System;
 
 public class OyunAçılırken : MonoBehaviour {
     static bool uygun=true;
+    public GameObject bağlantı;
 	// Use this for initialization
     void Awake()
     {
-
+        if (!GameObject.Find("GooglePlayBağlantı(Clone)"))
+        {
+            Instantiate(bağlantı);
+        }
         //Application.targetFrameRate = 30;
         if (PlayerPrefs.GetInt("Oyun Kuruldu") == 0)
         {
