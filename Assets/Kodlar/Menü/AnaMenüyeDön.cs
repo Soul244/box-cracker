@@ -1,11 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.SceneManagement;
-public class Yapıcılar : MonoBehaviour {
-
-public void OnMouseUpAsButton()
+public class AnaMenüyeDön : MonoBehaviour {
+    public void Buton1()
     {
         GetComponent<AudioSource>().Play();
-        SceneManager.LoadScene("Geliştirici");
+        SceneManager.LoadScene("Ana Menü");
     }
 }

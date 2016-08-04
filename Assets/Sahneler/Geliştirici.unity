@@ -96,6 +96,8 @@ GameObject:
   - 222: {fileID: 73769810}
   - 114: {fileID: 73769809}
   - 114: {fileID: 73769808}
+  - 114: {fileID: 73769811}
+  - 82: {fileID: 73769812}
   m_Layer: 5
   m_Name: "AnaMen\xFC"
   m_TagString: Untagged
@@ -159,7 +161,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 73769809}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 73769811}
+        m_MethodName: Buton1
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &73769809
@@ -195,6 +208,91 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 73769806}
+--- !u!114 &73769811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 73769806}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05e8fc0bc527dd04499978f71e6f904b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!82 &73769812
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 73769806}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: d8cc1651d0b71b4499d1303d5d997e84, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!1 &231392015
 GameObject:
   m_ObjectHideFlags: 0
@@ -205,6 +303,7 @@ GameObject:
   - 224: {fileID: 231392016}
   - 222: {fileID: 231392018}
   - 114: {fileID: 231392017}
+  - 114: {fileID: 231392019}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -227,8 +326,8 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.12501526, y: -853}
-  m_SizeDelta: {x: 750, y: 2815}
+  m_AnchoredPosition: {x: 0.12501526, y: -1690}
+  m_SizeDelta: {x: 750, y: 4488}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &231392017
 MonoBehaviour:
@@ -250,20 +349,20 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 75
+    m_Font: {fileID: 12800000, guid: bccdd9cf75f1e46a18792ebf55750151, type: 3}
+    m_FontSize: 115
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 7
-    m_MaxSize: 75
+    m_MaxSize: 115
     m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\nDeveloper:\n\n\n\xD6mer Can \nDanac\u0131\u011Flu\n\n\nHasan Can\n Gedik\n\n\n\n\nThanks
-    for some sound:\n\nDustyroom (dustyroom.com)\n\nThanks for icons:\n\nhttps://github.com/google/material-design-icons\n\nThanks
+  m_Text: "\nDevelopers:\n\n\xD6mer Can \nDanac\u0131o\u011Flu\n\nHasan Can\n Gedik\n\n\nThanks
+    for sounds:\n\nDustyroom (dustyroom.com)\n\nThanks for icons:\n\nhttps://github.com/google/material-design-icons\n\nThanks
     for music:\n\nVertex Studio (https://www.assetstore.unity3d.com/en/#!/content/4883)\n"
 --- !u!222 &231392018
 CanvasRenderer:
@@ -271,6 +370,19 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 231392015}
+--- !u!114 &231392019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 231392015}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7abc656de6249d48b1c02492780244f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tx: {fileID: 231392017}
+  speed: 5
 --- !u!1 &282637800
 GameObject:
   m_ObjectHideFlags: 0

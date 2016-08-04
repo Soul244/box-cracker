@@ -301,6 +301,7 @@
     <Compile Include="Assets\Kodlar\Kutu.cs" />
     <Compile Include="Assets\Kodlar\KutuKontrol.cs" />
     <Compile Include="Assets\Kodlar\KutuParlak.cs" />
+    <Compile Include="Assets\Kodlar\Menü\AnaMenüyeDön.cs" />
     <Compile Include="Assets\Kodlar\Menü\ArkaplanKaydır.cs" />
     <Compile Include="Assets\Kodlar\Menü\Ayarlar.cs" />
     <Compile Include="Assets\Kodlar\Menü\BaşarımSayfasıAç.cs" />
@@ -313,6 +314,7 @@
     <Compile Include="Assets\Kodlar\Menü\OyunSatınAl.cs" />
     <Compile Include="Assets\Kodlar\Menü\SesAyarları.cs" />
     <Compile Include="Assets\Kodlar\Menü\TamSayfaReklam.cs" />
+    <Compile Include="Assets\Kodlar\Menü\TextKaydır.cs" />
     <Compile Include="Assets\Kodlar\MesajÖzeliği.cs" />
     <Compile Include="Assets\Kodlar\MüzikKontrol.cs" />
     <Compile Include="Assets\Kodlar\OyunAçılırken.cs" />

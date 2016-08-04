@@ -1,4 +1,4 @@
 sceneSetups:
-- path: "Assets/Sahneler/Geli\u015Ftirici.unity"
+- path: "Assets/Sahneler/Ana Men\xFC.unity"
   isLoaded: 1
   isActive: 1
