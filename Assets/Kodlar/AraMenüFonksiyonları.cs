@@ -52,9 +52,8 @@ public class AraMenüFonksiyonları : MonoBehaviour {
             tx.text = Convert.ToString(can - 1);
             PlayerPrefs.SetInt("Can Sayısı", can - 1);
             SceneManager.LoadScene("1");
-            oyunDurdu = true;
         }
-        oyunDurdu = false;
+        oyunDurdu = true;
     }
     public void Cikis()
     {
