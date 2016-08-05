@@ -5,9 +5,13 @@ using System;
 public class OyunAçılırken : MonoBehaviour {
     static bool uygun=true;
     public GameObject bağlantı;
+    public GameObject Kupa, Skor;
 	// Use this for initialization
     void Awake()
     {
+        GooglePlayBağlantı gpb = bağlantı.GetComponent<GooglePlayBağlantı>();
+        Kupa.GetComponent<UnityEngine.UI.Button>().onClick.AddListener(gpb.BaşarımlarıAç);
+        Skor.GetComponent<UnityEngine.UI.Button>().onClick.AddListener(gpb.YüksekSkorlarAç);
         if (!GameObject.Find("GooglePlayBağlantı(Clone)"))
         {
             Instantiate(bağlantı);
