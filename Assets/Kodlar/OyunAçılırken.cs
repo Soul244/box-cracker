@@ -20,15 +20,15 @@ public class OyunAçılırken : MonoBehaviour {
             PlayerPrefs.SetInt("Ses", 1);
             PlayerPrefs.SetInt("Oyun Kuruldu", 1);
         }
-        if (PlayerPrefs.GetInt("Oyun Açıldı") == 1)
+        if (PlayerPrefs.GetInt("Oyun Açıldı") == 0)
         {
-        DateTime kapanış = DateTime.Parse(PlayerPrefs.GetString("Kapanıs"));
+            DateTime kapanış = DateTime.Parse(PlayerPrefs.GetString("Kapanıs"));
             DateTime simdikizaman = DateTime.Now;
             TimeSpan fark = simdikizaman.Subtract(kapanış);
             int süre = Convert.ToInt32(fark.TotalSeconds); 
             int can = 0;
             int eksisüre = 0;
-            int öncekisüre = PlayerPrefs.GetInt("Süre");
+            int öncekisüre = PlayerPrefs.GetInt("Süre");           
             if (süre<300)
             {
                 if (süre>öncekisüre)

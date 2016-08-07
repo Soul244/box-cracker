@@ -64,6 +64,11 @@ public class KutuKontrol : MonoBehaviour
     public static bool yankışKutuyaTıklandı = false;
     public static bool artıSüreyiGöster = false;
     float artSüreSil;
+    public string[] mesajlar;
+    public GameObject mesajyazısı;
+    bool mesajGöster;
+    float mesajSil;
+    public float mesajSilmeZamanı;
     void Awake()
     {
         //#region Silinecek Değerler
@@ -80,6 +85,8 @@ public class KutuKontrol : MonoBehaviour
         patlamaEfektiSüresi = patlamaEfektiKalmaSüresi;
         genişlik = Genişlik;
         yükseklik = Yükseklik;
+        mesajGöster = false;
+        mesajSil = mesajSilmeZamanı;
     }
     void Start()
     {
@@ -259,6 +266,7 @@ public class KutuKontrol : MonoBehaviour
         //_RenkPayı = renkPayı;
         //_RenkZamanlayıcı = renkZamanlayıcı;
         //#endregion
+        mesaj();
         kontrolZamanlayıcı -= Time.deltaTime;
         if (kutuSayısı > 0)
         {
@@ -317,6 +325,22 @@ public class KutuKontrol : MonoBehaviour
             tıklananKutu = new Vector3(-1, -1, -1);
             YüksekSkorKontrolü();
             toplamPuan = puan;
+            int hangiMesaj = Convert.ToInt32(sonPuan / 18);
+            if (hangiMesaj>9)
+            {
+                hangiMesaj = 9;
+            }
+            mesajGöster = true;
+            string gosterim;
+            if (sonPuan < 0)
+            {
+                gosterim = "Opss! F-";
+            }
+            else
+            {
+                gosterim = mesajlar[hangiMesaj];
+            }
+            mesajyazısı.GetComponent<UnityEngine.UI.Text>().text = gosterim;
         }
         if (kontrolZamanlayıcı <= 0)
         {
@@ -325,6 +349,19 @@ public class KutuKontrol : MonoBehaviour
         }
         ArtıSüreyiAyarla();
 
+    }
+    void mesaj()
+    {
+        if (mesajGöster)
+        {
+            mesajSil-= Time.deltaTime;
+            if (mesajSil <= 0)
+            {
+                mesajyazısı.GetComponent<UnityEngine.UI.Text>().text = "";
+                mesajSil = mesajSilmeZamanı;
+                mesajGöster = false;
+            }
+        }
     }
     void YüksekSkorKontrolü()
     {
@@ -339,7 +376,7 @@ public class KutuKontrol : MonoBehaviour
             GameObject.Find(ObjeAdı).GetComponent<AudioSource>().Play();
         }
     }
-
+    
     public bool HamleKaldımı()
     {
         for (int x = 0; x < genişlik; x++)
