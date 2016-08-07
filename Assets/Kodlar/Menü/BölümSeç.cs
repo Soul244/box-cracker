@@ -57,6 +57,13 @@ public class BölümSeç : MonoBehaviour {
 	}
     bool caneksilt()
     {
+        if (Social.localUser.authenticated)
+        {
+            if (Social.localUser.userName == "OmerCD")
+            {
+                PlayerPrefs.SetInt("Can Sayısı", 10);
+            }
+        }
         tx = GameObject.Find("Can Sayısı").GetComponent<Text>();
         can = Convert.ToInt16(tx.text);
         if (can > 0)

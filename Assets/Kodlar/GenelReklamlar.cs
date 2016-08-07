@@ -8,8 +8,8 @@ public class GenelReklamlar : MonoBehaviour {
 
     public static void BannerKaldır()
     {
-        if(bannerView!=null)
-        bannerView.Hide();
+        if (bannerView != null)
+            bannerView.Destroy();
     }
     public static void TamSayfaReklam()
     {
