@@ -15,27 +15,21 @@ public class Can : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        if (PlayerPrefs.GetInt("Oyun Kuruldu")==0)
+        if (PlayerPrefs.GetInt("Can Sayısı") != 10)
         {
-            PlayerPrefs.SetInt("Can Sayısı", 10); // Debug için şimdilik böyle kalsın
-            PlayerPrefs.SetInt("SesDurumu", 1);
-            PlayerPrefs.SetInt("Ses", 1);
-            PlayerPrefs.SetInt("Oyun Kuruldu", 1);
+            süresayisi = PlayerPrefs.GetInt("Süre");
+            süre.text = süresayisi.ToString();
         }
-        if (PlayerPrefs.GetInt("Süre") > 0)
+        else
         {
-            if (PlayerPrefs.GetInt("Can Sayısı") != 10)
-            {
-                süresayisi = PlayerPrefs.GetInt("Süre");
-            }
+            süre.text = "Filled";
         }
-        süre.text = süresayisi.ToString();
         can.text = PlayerPrefs.GetInt("Can Sayısı").ToString();
+        cansayisi = PlayerPrefs.GetInt("Can Sayısı");
     }
     // Update is called once per frame
     void Update()
     {
-        cansayisi = PlayerPrefs.GetInt("Can Sayısı");
         if (cansayisi != 10)
         {
             zaman += Time.deltaTime;
@@ -73,6 +67,7 @@ public class Can : MonoBehaviour
                 süresayisi = 300f;
                 zaman = 0;
             }
+            cansayisi = PlayerPrefs.GetInt("Can Sayısı");
         }
         else
         {

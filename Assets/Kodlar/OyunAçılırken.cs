@@ -32,41 +32,38 @@ public class OyunAçılırken : MonoBehaviour {
             int süre = Convert.ToInt32(fark.TotalSeconds); 
             int can = 0;
             int eksisüre = 0;
-            int öncekisüre = PlayerPrefs.GetInt("Süre");           
-            if (süre<300)
+            int öncekisüre = PlayerPrefs.GetInt("Süre");
+            if (PlayerPrefs.GetInt("Can Sayısı")!=10)
             {
-                if (süre>öncekisüre)
+                if (süre < 300)
                 {
-                    PlayerPrefs.SetInt("Can Sayısı", PlayerPrefs.GetInt("Can Sayısı") + 1);
-                    PlayerPrefs.SetInt("Süre", 300-(süre - öncekisüre));
+                    if (süre > öncekisüre)
+                    {
+                        PlayerPrefs.SetInt("Can Sayısı", PlayerPrefs.GetInt("Can Sayısı") + 1);
+                        PlayerPrefs.SetInt("Süre", 300 - (süre - öncekisüre));
+                    }
+                    else
+                    {
+                        PlayerPrefs.SetInt("Süre", öncekisüre - süre);
+                    }
                 }
                 else
                 {
-                    PlayerPrefs.SetInt("Süre", PlayerPrefs.GetInt("Süre") - süre);
-                }
-            }
-            else
-            {
-                can = süre / 300;
-                eksisüre = süre % 300;
-                if (can>10)
-                {
-                    PlayerPrefs.SetInt("Can Sayısı", 10);
-                }
-                else
-                {
-                    PlayerPrefs.SetInt("Süre", PlayerPrefs.GetInt("Süre") - eksisüre);
-                    if (PlayerPrefs.GetInt("Can Sayısı") + can>10)
+                    can = süre / 300;
+                    eksisüre = süre % 300;                   
+                    if (PlayerPrefs.GetInt("Can Sayısı") + can > 10)
                     {
                         PlayerPrefs.SetInt("Can Sayısı", 10);
+                        PlayerPrefs.SetInt("Süre", 300);
                     }
                     else
                     {
                         PlayerPrefs.SetInt("Can Sayısı", PlayerPrefs.GetInt("Can Sayısı") + can);
+                        PlayerPrefs.SetInt("Süre", öncekisüre - eksisüre);
                     }
                 }
-            }
-            PlayerPrefs.SetInt("Oyun Açıldı", 1);
+                PlayerPrefs.SetInt("Oyun Açıldı", 1);
+            }           
         }
     }
 }
