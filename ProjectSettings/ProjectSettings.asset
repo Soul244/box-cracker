@@ -10,7 +10,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: Indexer
-  productName: Box_Cracker
+  productName: Box Cracker
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_ShowUnitySplashScreen: 1
@@ -160,8 +160,8 @@ PlayerSettings:
   AndroidTargetDevice: 3
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
-  AndroidKeystoreName: 
-  AndroidKeyaliasName: 
+  AndroidKeystoreName: "C:/Users/Hasan/Desktop/Projeler/Box_Cracker/\u015Fifreleme.keystore"
+  AndroidKeyaliasName: box cracker
   AndroidTVCompatibility: 1
   AndroidIsGame: 1
   androidEnableBanner: 1
