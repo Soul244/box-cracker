@@ -160,7 +160,7 @@ PlayerSettings:
   AndroidTargetDevice: 3
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
-  AndroidKeystoreName: "C:/Users/Hasan/Desktop/Projeler/Box_Cracker/\u015Fifreleme.keystore"
+  AndroidKeystoreName: "C:/Users/OmerG/OneDrive/Documents/GitHub/Box_Cracker/\u015Fifreleme.keystore"
   AndroidKeyaliasName: box cracker
   AndroidTVCompatibility: 1
   AndroidIsGame: 1
@@ -424,9 +424,15 @@ PlayerSettings:
   - Android::ScriptingBackend
   - Standalone::ScriptingBackend
   - WebPlayer::ScriptingBackend
+  - iOS::Architecture
+  - iOS::EnableIncrementalBuildSupportForIl2cpp
+  - iOS::ScriptingBackend
   Android::ScriptingBackend: 0
   Standalone::ScriptingBackend: 0
   WebPlayer::ScriptingBackend: 0
+  iOS::Architecture: 2
+  iOS::EnableIncrementalBuildSupportForIl2cpp: 1
+  iOS::ScriptingBackend: 1
   boolPropertyNames:
   - XboxOne::enus
   XboxOne::enus: 1

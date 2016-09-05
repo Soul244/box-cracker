@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
 public class OyunKapanırken : MonoBehaviour {
 
@@ -10,5 +11,11 @@ public class OyunKapanırken : MonoBehaviour {
         PlayerPrefs.SetString("Kapanıs", System.DateTime.Now.ToString());
         PlayerPrefs.SetInt("PatlatılanKutuSayısı", BaşarımKontrol.patlatılanKutuSayısı);
         PlayerPrefs.SetInt("Oyun Açıldı", 0);
+    }
+    void OnApplicationPause(bool pauseStatus)
+    {
+        if(pauseStatus)
+        PlayerPrefs.SetString("Kapanıs", System.DateTime.Now.ToString());
+
     }
 }

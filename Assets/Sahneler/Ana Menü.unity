@@ -2111,8 +2111,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3886400913649ba44878990c2e0f9884, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  can: {fileID: 2067038726}
-  "s\xFCre": {fileID: 583325332}
+  "canYaz\u0131": {fileID: 2067038726}
+  "s\xFCreYaz\u0131": {fileID: 583325332}
 --- !u!1 &2067274891
 GameObject:
   m_ObjectHideFlags: 0

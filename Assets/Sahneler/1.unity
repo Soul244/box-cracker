@@ -2964,8 +2964,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3886400913649ba44878990c2e0f9884, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  can: {fileID: 1762731661}
-  "s\xFCre": {fileID: 475009700}
+  "canYaz\u0131": {fileID: 1762731661}
+  "s\xFCreYaz\u0131": {fileID: 475009700}
 --- !u!114 &1762731661
 MonoBehaviour:
   m_ObjectHideFlags: 0
