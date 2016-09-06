@@ -70,6 +70,7 @@ public class Can : MonoBehaviour
                 }
             }
             süresayisi = PlayerPrefs.GetInt("Süre");
+            cansayisi = PlayerPrefs.GetInt("Can Sayısı");
         }
     }
     void CanArttir()

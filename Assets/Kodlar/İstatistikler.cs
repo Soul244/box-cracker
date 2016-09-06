@@ -86,8 +86,4 @@ public class İstatistikler : MonoBehaviour {
             }
         }
     }
-    void Start()
-    {
-        
-    }
 }

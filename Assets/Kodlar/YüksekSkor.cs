@@ -8,8 +8,4 @@ public class YüksekSkor : MonoBehaviour {
         GetComponent<TextMesh>().text = PlayerPrefs.GetInt("High Score").ToString();
         Debug.Log(PlayerPrefs.GetInt("High Score").ToString());
     }
-
-    // Update is called once per frame
-    void Update () {
-    }
 }

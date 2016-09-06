@@ -15,7 +15,4 @@ public class TestKodu : MonoBehaviour {
     {
         Instantiate(patlamaEfekti, küp.transform.position, Quaternion.identity);
     }
-    void Update()
-    {
-    }
 }

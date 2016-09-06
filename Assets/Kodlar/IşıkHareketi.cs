@@ -5,12 +5,6 @@ public class IşıkHareketi : MonoBehaviour {
     public Color[] renkler;
     int renkSira = 0;
     float zamanlayıcı = 4f;
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
 	void Update () {
         zamanlayıcı -= Time.deltaTime;
         if (zamanlayıcı<=0)
