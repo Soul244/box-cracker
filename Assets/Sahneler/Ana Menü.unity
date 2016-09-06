@@ -1863,6 +1863,8 @@ GameObject:
   - 81: {fileID: 1653981248}
   - 114: {fileID: 1653981254}
   - 114: {fileID: 1653981255}
+  - 114: {fileID: 1653981249}
+  - 114: {fileID: 1653981253}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1877,6 +1879,19 @@ AudioListener:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1653981247}
   m_Enabled: 1
+--- !u!114 &1653981249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1653981247}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3886400913649ba44878990c2e0f9884, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  "canYaz\u0131": {fileID: 2067038726}
+  "s\xFCreYaz\u0131": {fileID: 583325332}
 --- !u!92 &1653981250
 Behaviour:
   m_ObjectHideFlags: 0
@@ -1931,6 +1946,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!114 &1653981253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1653981247}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04e919886d454f44ebddf3f82c8b10f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1653981254
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2035,7 +2061,6 @@ GameObject:
   - 224: {fileID: 2067038725}
   - 222: {fileID: 2067038727}
   - 114: {fileID: 2067038726}
-  - 114: {fileID: 2067038728}
   m_Layer: 5
   m_Name: "Can Say\u0131s\u0131"
   m_TagString: Untagged
@@ -2100,19 +2125,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2067038724}
---- !u!114 &2067038728
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2067038724}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3886400913649ba44878990c2e0f9884, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  "canYaz\u0131": {fileID: 2067038726}
-  "s\xFCreYaz\u0131": {fileID: 583325332}
 --- !u!1 &2067274891
 GameObject:
   m_ObjectHideFlags: 0
